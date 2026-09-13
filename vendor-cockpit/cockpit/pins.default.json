@@ -1,0 +1,26 @@
+{
+ "all": [
+  "all-kpi",
+  "all-spend-split"
+ ],
+ "amazon": [
+  "exec-kpi",
+  "exec-trend"
+ ],
+ "flipkart": [
+  "exec-kpi",
+  "exec-trend"
+ ],
+ "google": [
+  "exec-kpi",
+  "exec-trend"
+ ],
+ "meta": [
+  "daily-kpi",
+  "daily-trend"
+ ],
+ "shopify": [
+  "exec-kpi",
+  "exec-trend"
+ ]
+}

@@ -1,0 +1,78 @@
+# MetricFlow-style registry for the Flipkart test warehouse (Flipkart_ads_test @ Neon).
+# Same rules as production primitives.yaml: gold/bronze store ADDITIVE FACTS ONLY,
+# every rate/ratio computes from SUM()s at read; metric names resolve HERE — if a
+# metric is absent, the engine STOPS and says it is not modeled, never improvises.
+
+semantic_models:
+  account:    {table: gold_flipkart_account_daily,     layer: gold,   name_dim: null,           dims: []}
+  campaign:   {table: gold_flipkart_campaign_daily,    layer: gold,   name_dim: campaign_name,  dims: [campaign_name, campaign_type, bidding_type, status]}
+  adgroup:    {table: bronze_flipkart_adgroup_daily,   layer: bronze, name_dim: ad_group_name,  dims: [campaign_name, ad_group_name, campaign_type]}
+  keyword:    {table: bronze_flipkart_keyword_daily,   layer: bronze, name_dim: keyword,        dims: [keyword, match_type, campaign_id]}
+  search:     {table: bronze_flipkart_search_term_daily, layer: bronze, name_dim: search_term,  dims: [search_term, matched_keyword, campaign_id]}
+  placement:  {table: bronze_flipkart_placement_daily, layer: bronze, name_dim: placement,      dims: [placement, campaign_type, campaign_id]}
+  sku:        {table: bronze_flipkart_fsn_daily,       layer: bronze, name_dim: product_name,   dims: [fsn, product_name, sku_status, campaign_id]}
+  adproduct:  {table: bronze_flipkart_fsn_daily,       layer: bronze, name_dim: product_name,   dims: [fsn, product_name, sku_status, campaign_id]}
+  budget:     {table: bronze_flipkart_wallet_daily,    layer: bronze, name_dim: null,           dims: []}
+
+# time dimension is `day` on every model; workspace_id mandatory in every query
+time_dimension: day
+tenant_key: workspace_id
+settled_flag: is_settled
+
+# metric -> {expr over SUM()s, unit (inr|num|pct|x), label (native Flipkart term),
+#            invert (lower=better), models (which semantic models carry it), agg
+#            (for level metrics that must NOT be summed across days)}
+metrics:
+  spend:            {expr: "sum(spend)",  unit: inr, label: "Ad Spend", models: [account, campaign, adgroup, keyword, search, placement, sku, adproduct, budget]}
+  views:            {expr: "sum(views)",  unit: num, label: "Views", models: [account, campaign, adgroup, keyword, search, placement, sku, adproduct]}
+  clicks:           {expr: "sum(clicks)", unit: num, label: "Clicks", models: [account, campaign, adgroup, keyword, search, placement, sku, adproduct]}
+  ppv:              {expr: "sum(product_page_views)", unit: num, label: "PPV", models: [account, campaign, adgroup, keyword, search, placement, sku, adproduct]}
+  atc:              {expr: "sum(add_to_cart)", unit: num, label: "ATC", models: [account, campaign, adgroup, keyword, search, placement, sku, adproduct]}
+  orders:           {expr: "sum(orders)", unit: num, label: "Orders", models: [account, campaign, adgroup, keyword, search, placement, sku, adproduct]}
+  units:            {expr: "sum(direct_units)+sum(indirect_units)", unit: num, label: "Units", models: [account, campaign, adgroup, keyword, search, placement, sku, adproduct]}
+  direct_revenue:   {expr: "sum(direct_revenue)", unit: inr, label: "Direct Revenue", models: [account, campaign, adgroup, keyword, search, placement, sku, adproduct]}
+  indirect_revenue: {expr: "sum(indirect_revenue)", unit: inr, label: "Indirect Revenue", models: [account, campaign, adgroup, keyword, search, placement, sku, adproduct]}
+  revenue:          {expr: "sum(direct_revenue)+sum(indirect_revenue)", unit: inr, label: "Revenue", models: [account, campaign, adgroup, keyword, search, placement, sku, adproduct],
+                     note: "clicks+views attributed, direct+indirect — platform-claimed, not money in the bank"}
+  ctr:              {expr: "sum(clicks)::numeric/nullif(sum(views),0)*100", unit: pct, label: "CTR", models: [account, campaign, adgroup, keyword, search, placement, sku, adproduct]}
+  cpc:              {expr: "sum(spend)/nullif(sum(clicks),0)", unit: inr, label: "CPC", invert: true, models: [account, campaign, adgroup, keyword, search, placement, sku, adproduct]}
+  cvr:              {expr: "sum(orders)::numeric/nullif(sum(clicks),0)*100", unit: pct, label: "CVR", models: [account, campaign, adgroup, keyword, search, placement, sku, adproduct],
+                     note: "FCC basis: orders (click+view attributed) / clicks — inflated by design vs click-only CVR"}
+  roi:              {expr: "(sum(direct_revenue)+sum(indirect_revenue))/nullif(sum(spend),0)", unit: x, label: "ROI", models: [account, campaign, adgroup, keyword, search, placement, sku, adproduct],
+                     note: "includes indirect (halo) revenue — always surface direct_roi beside it", companion: direct_roi}
+  direct_roi:       {expr: "sum(direct_revenue)/nullif(sum(spend),0)", unit: x, label: "Direct ROI", models: [account, campaign, adgroup, keyword, search, placement, sku, adproduct]}
+  indirect_roi:     {expr: "sum(indirect_revenue)/nullif(sum(spend),0)", unit: x, label: "Indirect ROI", models: [account, campaign, adgroup, keyword, search, placement, sku, adproduct]}
+  aov:              {expr: "(sum(direct_revenue)+sum(indirect_revenue))/nullif(sum(orders),0)", unit: inr, label: "AOV", models: [account, campaign, adgroup, keyword, search, placement, sku, adproduct]}
+  units_sold:       {expr: "sum(units_sold)", unit: num, label: "SKUs Sold", models: [sku, adproduct]}
+  # budget / wallet — levels, not flows: never summed across days
+  budget:                 {expr: "avg(budget)", unit: inr, label: "Daily Budget", models: [budget], agg: level}
+  wallet_balance:         {expr: "avg(wallet_balance)", unit: inr, label: "Wallet Balance", models: [budget], agg: level,
+                           note: "level series — trend/last value only; a sum across days is meaningless"}
+  blocked_funds:          {expr: "avg(blocked_funds)", unit: inr, label: "Blocked Funds", models: [budget], agg: level}
+  released_funds:         {expr: "avg(released_funds)", unit: inr, label: "Released Funds", models: [budget], agg: level}
+  redeemed_spend:         {expr: "sum(redeemed_spend)", unit: inr, label: "Redeemed Spend", models: [budget]}
+  expiring_funds:         {expr: "avg(expiring_funds)", unit: inr, label: "Expiring Funds", models: [budget], agg: level}
+  budget_utilization_pct: {expr: "sum(spend)/nullif(avg(budget),0)*100", unit: pct, label: "Budget Utilization", models: [budget]}
+
+# router dimension words -> physical columns (per model where they differ)
+dimensions:
+  date:          {column: day}
+  campaign:      {column: campaign_name}
+  campaign_type: {column: campaign_type}
+  status:        {column: status}
+  keyword:       {column: keyword}
+  match_type:    {column: match_type}
+  search_term:   {column: search_term}
+  matched_keyword: {column: matched_keyword}
+  placement:     {column: placement}
+  fsn:           {column: fsn}
+  product_name:  {column: product_name}
+  sku_status:    {column: sku_status}
+  ad_group:      {column: ad_group_name}
+
+caveats:
+  roi_includes_indirect: "ROI blends indirect (halo) revenue — Direct ROI is shown beside it; never label it ROAS/ACOS."
+  settlement_provisional: "T+28 settlement: rows after the settled cutoff are provisional (is_settled=false) — excluded from rankings/verdicts, labeled on trends."
+  cvr_fcc_basis: "CVR is FCC's official basis: view-attributed orders over clicks — inflated by design."
+  bronze_fallback: "This grain has no basic gold table — served from the bronze report stream."
+  wallet_levels: "Wallet metrics are LEVELS (balance-style), aggregated as daily averages/last value, never summed across days."

@@ -1,0 +1,76 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://meerkats.ai/schemas/ad-dashboards/dashboard.schema.json",
+ "title": "Dashboard state",
+ "description": "The dashboard surface: which platform view is active and the ordered stack of cards per view. The dashboard shows only pinned cards, newest pin last; unpinned cards live on a separate Reports page. Navigation is the platform dropdown only — there is no global date range (every card owns its own; see card.schema.json).",
+ "type": "object",
+ "properties": {
+  "activePlatform": {
+   "enum": [
+    "all",
+    "amazon",
+    "flipkart",
+    "google",
+    "meta",
+    "shopify"
+   ],
+   "description": "Persisted platform selection (localStorage key mk-dash-platform in the reference implementation)."
+  },
+  "client": {
+   "type": "object",
+   "description": "Whose account this dashboard reports on. Rendered in the top bar as mono caps beside the wordmark.",
+   "properties": {
+    "name": {
+     "type": "string"
+    },
+    "currency": {
+     "const": "INR",
+     "description": "This system formats INR with K / L / Cr only."
+    }
+   },
+   "required": [
+    "name"
+   ],
+   "additionalProperties": false
+  },
+  "views": {
+   "type": "object",
+   "description": "Card stacks per platform view. Array order = render order (newest pin last).",
+   "properties": {
+    "all": {
+     "$ref": "#/$defs/cardStack"
+    },
+    "amazon": {
+     "$ref": "#/$defs/cardStack"
+    },
+    "flipkart": {
+     "$ref": "#/$defs/cardStack"
+    },
+    "google": {
+     "$ref": "#/$defs/cardStack"
+    },
+    "meta": {
+     "$ref": "#/$defs/cardStack"
+    },
+    "shopify": {
+     "$ref": "#/$defs/cardStack"
+    }
+   },
+   "additionalProperties": false
+  }
+ },
+ "required": [
+  "activePlatform",
+  "views"
+ ],
+ "additionalProperties": false,
+ "$defs": {
+  "cardStack": {
+   "type": "array",
+   "items": {
+    "$ref": "https://meerkats.ai/schemas/ad-dashboards/card.schema.json"
+   },
+   "description": "Full-width cards stacked vertically with a 16px gap, max page width 1440."
+  }
+ }
+}

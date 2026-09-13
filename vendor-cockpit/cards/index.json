@@ -1,0 +1,44 @@
+{
+ "amazon": {
+  "cards": 32,
+  "pinned_by_default": [
+   "exec-kpi",
+   "exec-trend"
+  ]
+ },
+ "flipkart": {
+  "cards": 28,
+  "pinned_by_default": [
+   "exec-kpi",
+   "exec-trend"
+  ]
+ },
+ "google": {
+  "cards": 34,
+  "pinned_by_default": [
+   "exec-kpi",
+   "exec-trend"
+  ]
+ },
+ "meta": {
+  "cards": 23,
+  "pinned_by_default": [
+   "daily-kpi",
+   "daily-trend"
+  ]
+ },
+ "shopify": {
+  "cards": 5,
+  "pinned_by_default": [
+   "exec-kpi",
+   "exec-trend"
+  ]
+ },
+ "all": {
+  "cards": 3,
+  "pinned_by_default": [
+   "all-kpi",
+   "all-spend-split"
+  ]
+ }
+}

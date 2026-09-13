@@ -1,0 +1,2804 @@
+[
+ {
+  "id": "exec-kpi",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "exec"
+  },
+  "title": "Account / Executive Performance — KPIs",
+  "question": "How is paid-search / paid-media investment translating into conversions and value?",
+  "representation": "kpiStrip",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "account",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "avg_cpc",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value",
+     "conv_value_per_cost"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "impressions",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true
+  },
+  "pinned": true,
+  "csvDownload": true
+ },
+ {
+  "id": "exec-bars",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "exec"
+  },
+  "title": "Account / Executive Performance — Comparison",
+  "question": "How is paid-search / paid-media investment translating into conversions and value?",
+  "representation": "barsVertical",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "account",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "avg_cpc",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value",
+     "conv_value_per_cost"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ]
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": false,
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "avg_cpc",
+      "label": "Avg CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     },
+     {
+      "value": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "exec-trend",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "exec"
+  },
+  "title": "Account / Executive Performance — Trend",
+  "question": "How is paid-search / paid-media investment translating into conversions and value?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "account",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "avg_cpc",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value",
+     "conv_value_per_cost"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "impressions",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true,
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "avg_cpc",
+      "label": "Avg CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     },
+     {
+      "value": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     }
+    ]
+   }
+  },
+  "pinned": true,
+  "csvDownload": true
+ },
+ {
+  "id": "campaign-table",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "campaign"
+  },
+  "title": "Campaign Performance — Table",
+  "question": "Which campaigns are driving the most valuable conversions efficiently?",
+  "representation": "dataTable",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "campaign",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "avg_cpc",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value",
+     "conv_value_per_cost"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "campaign-rank",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "campaign"
+  },
+  "title": "Campaign Performance — Ranking",
+  "question": "Which campaigns are driving the most valuable conversions efficiently?",
+  "representation": "barsHorizontal",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "campaign",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "avg_cpc",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value",
+     "conv_value_per_cost"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "avg_cpc",
+      "label": "Avg CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value",
+      "label": "Conv. value",
+      "unit": "inr"
+     },
+     {
+      "value": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "campaign-trend",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "campaign"
+  },
+  "title": "Campaign Performance — Trend",
+  "question": "Which campaigns are driving the most valuable conversions efficiently?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "campaign",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "avg_cpc",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value",
+     "conv_value_per_cost"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "impressions",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true,
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "avg_cpc",
+      "label": "Avg CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value",
+      "label": "Conv. value",
+      "unit": "inr"
+     },
+     {
+      "value": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "campaign-grid",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "campaign"
+  },
+  "title": "Campaign Performance — Grid",
+  "question": "Which campaigns are driving the most valuable conversions efficiently?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "campaign",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "avg_cpc",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value",
+     "conv_value_per_cost"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "avg_cpc",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "avg_cpc",
+      "label": "Avg CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value",
+      "label": "Conv. value",
+      "unit": "inr"
+     },
+     {
+      "value": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "adgroup-table",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "adgroup"
+  },
+  "title": "Ad Group / Asset Group Performance — Table",
+  "question": "Which groups of ads/assets are contributing to performance?",
+  "representation": "dataTable",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "adgroup",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "spend",
+     "conversions",
+     "conv_value",
+     "ctr",
+     "cost_per_conv",
+     "conv_value_per_cost"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "adgroup-rank",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "adgroup"
+  },
+  "title": "Ad Group / Asset Group Performance — Ranking",
+  "question": "Which groups of ads/assets are contributing to performance?",
+  "representation": "barsHorizontal",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "adgroup",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "spend",
+     "conversions",
+     "conv_value",
+     "ctr",
+     "cost_per_conv",
+     "conv_value_per_cost"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "adgroup-grid",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "adgroup"
+  },
+  "title": "Ad Group / Asset Group Performance — Grid",
+  "question": "Which groups of ads/assets are contributing to performance?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "adgroup",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "spend",
+     "conversions",
+     "conv_value",
+     "ctr",
+     "cost_per_conv",
+     "conv_value_per_cost"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "cost_per_conv",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "search-table",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "search"
+  },
+  "title": "Search Terms / Queries — Table",
+  "question": "Which actual queries are driving conversions and spend?",
+  "representation": "dataTable",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "search",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "avg_cpc",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "search_term"
+    ],
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "search-rank",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "search"
+  },
+  "title": "Search Terms / Queries — Ranking",
+  "question": "Which actual queries are driving conversions and spend?",
+  "representation": "barsHorizontal",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "search",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "avg_cpc",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "avg_cpc",
+      "label": "Avg CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "search-grid",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "search"
+  },
+  "title": "Search Terms / Queries — Grid",
+  "question": "Which actual queries are driving conversions and spend?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "search",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "avg_cpc",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "search_term"
+    ]
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "avg_cpc",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "avg_cpc",
+      "label": "Avg CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "keyword-table",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "keyword"
+  },
+  "title": "Keyword Performance — Table",
+  "question": "Which keywords are driving efficient traffic and conversions?",
+  "representation": "dataTable",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "keyword",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "avg_cpc",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "keyword",
+     "match_type"
+    ],
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "keyword-rank",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "keyword"
+  },
+  "title": "Keyword Performance — Ranking",
+  "question": "Which keywords are driving efficient traffic and conversions?",
+  "representation": "barsHorizontal",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "keyword",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "avg_cpc",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "avg_cpc",
+      "label": "Avg CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "keyword-trend",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "keyword"
+  },
+  "title": "Keyword Performance — Trend",
+  "question": "Which keywords are driving efficient traffic and conversions?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "keyword",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "avg_cpc",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "impressions",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true,
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "avg_cpc",
+      "label": "Avg CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "keyword-grid",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "keyword"
+  },
+  "title": "Keyword Performance — Grid",
+  "question": "Which keywords are driving efficient traffic and conversions?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "keyword",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "avg_cpc",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "keyword",
+     "match_type"
+    ]
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "avg_cpc",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "avg_cpc",
+      "label": "Avg CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "device-bars",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "device"
+  },
+  "title": "Device Performance — Comparison",
+  "question": "Are mobile, desktop and tablet users behaving differently?",
+  "representation": "barsVertical",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "device",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "avg_cpc",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ]
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": false,
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "avg_cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "device-trend",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "device"
+  },
+  "title": "Device Performance — Trend",
+  "question": "Are mobile, desktop and tablet users behaving differently?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "device",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "avg_cpc",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "impressions",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true,
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "avg_cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "device-grid",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "device"
+  },
+  "title": "Device Performance — Grid",
+  "question": "Are mobile, desktop and tablet users behaving differently?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "device",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "avg_cpc",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "avg_cpc",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "avg_cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "location-table",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "location"
+  },
+  "title": "Location Performance — Table",
+  "question": "Which geographies are driving efficient conversions?",
+  "representation": "dataTable",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "location",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "location-rank",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "location"
+  },
+  "title": "Location Performance — Ranking",
+  "question": "Which geographies are driving efficient conversions?",
+  "representation": "barsHorizontal",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "location",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "location-grid",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "location"
+  },
+  "title": "Location Performance — Grid",
+  "question": "Which geographies are driving efficient conversions?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "location",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "cost_per_conv",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "asset-table",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "asset"
+  },
+  "title": "Ad / Asset Performance — Table",
+  "question": "Which creative assets are contributing to conversions and value?",
+  "representation": "dataTable",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "asset",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "conversions",
+     "conv_value",
+     "cost_per_conv",
+     "conv_value_per_cost"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "asset-rank",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "asset"
+  },
+  "title": "Ad / Asset Performance — Ranking",
+  "question": "Which creative assets are contributing to conversions and value?",
+  "representation": "barsHorizontal",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "asset",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "conversions",
+     "conv_value",
+     "cost_per_conv",
+     "conv_value_per_cost"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "asset-trend",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "asset"
+  },
+  "title": "Ad / Asset Performance — Trend",
+  "question": "Which creative assets are contributing to conversions and value?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "asset",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "conversions",
+     "conv_value",
+     "cost_per_conv",
+     "conv_value_per_cost"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "impressions",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true,
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "asset-grid",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "asset"
+  },
+  "title": "Ad / Asset Performance — Grid",
+  "question": "Which creative assets are contributing to conversions and value?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "asset",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "spend",
+     "conversions",
+     "conv_value",
+     "cost_per_conv",
+     "conv_value_per_cost"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "cost_per_conv",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "goal-kpi",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "goal"
+  },
+  "title": "Conversion Action / Goal Performance — KPIs",
+  "question": "Which business outcomes are being generated and at what cost/value?",
+  "representation": "kpiStrip",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "goal",
+    "metrics": [
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value",
+     "conv_value_per_cost",
+     "all_conversions"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "conversions",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "goal-bars",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "goal"
+  },
+  "title": "Conversion Action / Goal Performance — Comparison",
+  "question": "Which business outcomes are being generated and at what cost/value?",
+  "representation": "barsVertical",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "goal",
+    "metrics": [
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value",
+     "conv_value_per_cost",
+     "all_conversions"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ]
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": false,
+   "metricSelector": {
+    "value": "conversions",
+    "options": [
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_rate",
+      "label": "Conversion rate",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     },
+     {
+      "value": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     },
+     {
+      "value": "all_conversions",
+      "label": "All conversions",
+      "unit": "num"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "goal-trend",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "goal"
+  },
+  "title": "Conversion Action / Goal Performance — Trend",
+  "question": "Which business outcomes are being generated and at what cost/value?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "goal",
+    "metrics": [
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value",
+     "conv_value_per_cost",
+     "all_conversions"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "conversions",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true,
+   "metricSelector": {
+    "value": "conversions",
+    "options": [
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_rate",
+      "label": "Conversion rate",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     },
+     {
+      "value": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     },
+     {
+      "value": "all_conversions",
+      "label": "All conversions",
+      "unit": "num"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "goal-grid",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "goal"
+  },
+  "title": "Conversion Action / Goal Performance — Grid",
+  "question": "Which business outcomes are being generated and at what cost/value?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "goal",
+    "metrics": [
+     "conversions",
+     "conv_rate",
+     "cost_per_conv",
+     "conv_value",
+     "conv_value_per_cost",
+     "all_conversions"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "cost_per_conv",
+    "options": [
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_rate",
+      "label": "Conversion rate",
+      "unit": "pct"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     },
+     {
+      "value": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     },
+     {
+      "value": "all_conversions",
+      "label": "All conversions",
+      "unit": "num"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "budget-bars",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "budget"
+  },
+  "title": "Budget & Pacing — Comparison",
+  "question": "Are campaigns spending as planned and producing enough conversion value?",
+  "representation": "barsVertical",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "budget",
+    "metrics": [
+     "budget",
+     "spend",
+     "budget_utilization_pct",
+     "conversions",
+     "conv_value",
+     "cost_per_conv",
+     "conv_value_per_cost"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ]
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": false,
+   "metricSelector": {
+    "value": "budget",
+    "options": [
+     {
+      "value": "budget",
+      "label": "Budget",
+      "unit": "inr"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "budget_utilization_pct",
+      "label": "Budget utilization",
+      "unit": "pct"
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "budget-trend",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "budget"
+  },
+  "title": "Budget & Pacing — Trend",
+  "question": "Are campaigns spending as planned and producing enough conversion value?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "budget",
+    "metrics": [
+     "budget",
+     "spend",
+     "budget_utilization_pct",
+     "conversions",
+     "conv_value",
+     "cost_per_conv",
+     "conv_value_per_cost"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "budget",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true,
+   "metricSelector": {
+    "value": "budget",
+    "options": [
+     {
+      "value": "budget",
+      "label": "Budget",
+      "unit": "inr"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "budget_utilization_pct",
+      "label": "Budget utilization",
+      "unit": "pct"
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "budget-grid",
+  "platform": "google",
+  "catalogRef": {
+   "platform": "google",
+   "reportId": "budget"
+  },
+  "title": "Budget & Pacing — Grid",
+  "question": "Are campaigns spending as planned and producing enough conversion value?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "budget",
+    "metrics": [
+     "budget",
+     "spend",
+     "budget_utilization_pct",
+     "conversions",
+     "conv_value",
+     "cost_per_conv",
+     "conv_value_per_cost"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "cost_per_conv",
+    "options": [
+     {
+      "value": "budget",
+      "label": "Budget",
+      "unit": "inr"
+     },
+     {
+      "value": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "value": "budget_utilization_pct",
+      "label": "Budget utilization",
+      "unit": "pct"
+     },
+     {
+      "value": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "value": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     },
+     {
+      "value": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ }
+]

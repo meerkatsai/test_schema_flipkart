@@ -1,0 +1,141 @@
+[
+ {
+  "id": "all-kpi",
+  "platform": "all",
+  "title": "Blended Performance — KPIs",
+  "question": "What did we spend across every platform and what did it return blended?",
+  "representation": "kpiStrip",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "account",
+    "metrics": [
+     "spend",
+     "mer"
+    ],
+    "dimensions": [
+     "date"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "comparison": {
+     "metric": "spend",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true
+  },
+  "pinned": true,
+  "csvDownload": true,
+  "note": "cross-platform card — contracts/config/measurement.yaml comparability rules apply; spend is additive and safe, revenue bases differ, never blend self-reported ROAS; MER always printed with its formula"
+ },
+ {
+  "id": "all-spend-split",
+  "platform": "all",
+  "title": "Spend by Platform — Comparison",
+  "question": "How is ad spend distributed across platforms?",
+  "representation": "barsVertical",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "account",
+    "metrics": [
+     "spend",
+     "spend_share"
+    ],
+    "dimensions": [
+     "platform"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "spend",
+    "options": [
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "spend_share",
+      "label": "Spend share",
+      "unit": "pct"
+     }
+    ]
+   }
+  },
+  "pinned": true,
+  "csvDownload": true,
+  "note": "cross-platform card — contracts/config/measurement.yaml comparability rules apply; spend is additive and safe, revenue bases differ, never blend self-reported ROAS"
+ },
+ {
+  "id": "all-spend-trend",
+  "platform": "all",
+  "title": "Blended Spend — Trend",
+  "question": "How is total ad spend moving day by day, split by platform?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "account",
+    "metrics": [
+     "spend"
+    ],
+    "dimensions": [
+     "date",
+     "platform"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "comparison": {
+     "metric": "spend",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true,
+   "metricSelector": {
+    "value": "spend",
+    "options": [
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true,
+  "note": "cross-platform card — contracts/config/measurement.yaml comparability rules apply; spend is additive and safe, revenue bases differ, never blend self-reported ROAS"
+ }
+]

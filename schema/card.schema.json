@@ -1,0 +1,809 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://meerkats.ai/schemas/ad-dashboards/card.schema.json",
+ "title": "Report card",
+ "description": "One dashboard card = one dataset × one representation, rendered inside the full-width pinnable ReportCard shell. Never combine chart types in a card. The `data` payload shape is fixed by `representation` and maps 1:1 onto the props of the matching component in src/components/charts/ (or cards/KpiStrip.jsx). ALIGNED to the Meerkats DSL: every card is BACKED by exactly one validated query_task (query_and_act/v1) — controls are UI sugar over it (mapping: src/lib/queryBinding.js); the server executes the task against the semantic layer over gold and the result rows are shaped into `data`.",
+ "type": "object",
+ "properties": {
+  "id": {
+   "type": "string",
+   "pattern": "^[a-z][a-z0-9_-]*$",
+   "description": "Stable card key, unique within its platform view (pin state is keyed platform:id)."
+  },
+  "platform": {
+   "enum": [
+    "all",
+    "amazon",
+    "flipkart",
+    "google",
+    "meta",
+    "shopify"
+   ],
+   "description": "Which dashboard view the card belongs to. \"all\" is the blended cross-platform view."
+  },
+  "catalogRef": {
+   "type": "object",
+   "description": "The catalog row this card was built from (see catalog.schema.json). Omitted for blended all-platform cards.",
+   "properties": {
+    "platform": {
+     "enum": [
+      "amazon",
+      "flipkart",
+      "google",
+      "meta",
+      "shopify"
+     ]
+    },
+    "reportId": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "platform",
+    "reportId"
+   ],
+   "additionalProperties": false
+  },
+  "title": {
+   "type": "string",
+   "description": "Card title (Title Case, from the catalog). No emoji, no exclamation marks."
+  },
+  "question": {
+   "type": "string",
+   "description": "Business question subtitle, sentence case, ends with a question mark."
+  },
+  "representation": {
+   "enum": [
+    "kpiStrip",
+    "trendLine",
+    "barsHorizontal",
+    "barsVertical",
+    "heatmap",
+    "dataTable",
+    "periodTable"
+   ],
+   "description": "The single visualization this card renders. kpiStrip→KpiStrip, trendLine→TrendLine, barsHorizontal→BarsHorizontal (ranked), barsVertical→BarsVertical (few categories / side-by-side), heatmap→Heatmap (entity × dimension grid), dataTable→DataTable (exact values), periodTable→PeriodTable (entity × date, value + Δ per cell)."
+  },
+  "query": {
+   "$ref": "https://meerkats.ai/schemas/query_and_act/v1.json#/$defs/query_task",
+   "description": "THE data contract of the card: one validated DSL query task (schema/dsl/query_and_act-v1.schema.json). metrics/dimensions use canonical metric_sources keys (catalog metric.key); time_range/comparison derive from controls via src/lib/queryBinding.js. The backend executes THIS — never a hand-built query — so every card is replayable and provenance-stamped."
+  },
+  "provenance": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "data_as_of"
+   ],
+   "description": "PROV contract: every number carries its freshness. `synced` renders from data_as_of. provisional_from marks the platform's settled-window start (Amazon 30d, Flipkart T+28, Meta ~72h) — charts label days >= provisional_from as provisional, never as final.",
+   "properties": {
+    "data_as_of": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "provisional_from": {
+     "type": "string",
+     "format": "date"
+    },
+    "catalog_version": {
+     "type": "string"
+    }
+   }
+  },
+  "controls": {
+   "type": "object",
+   "description": "Header controls. EVERY card owns its own date range; time-based cards also own period + compare. There is no global date range.",
+   "properties": {
+    "dateRange": {
+     "type": "object",
+     "properties": {
+      "preset": {
+       "enum": [
+        "7d",
+        "30d",
+        "mtd",
+        "90d",
+        "custom"
+       ]
+      },
+      "from": {
+       "type": "string",
+       "format": "date",
+       "description": "Required when preset is \"custom\"."
+      },
+      "to": {
+       "type": "string",
+       "format": "date",
+       "description": "Required when preset is \"custom\"."
+      }
+     },
+     "required": [
+      "preset"
+     ],
+     "additionalProperties": false
+    },
+    "period": {
+     "enum": [
+      "D",
+      "W",
+      "M"
+     ],
+     "description": "Granularity segmented control. Only on time-based cards."
+    },
+    "compare": {
+     "type": "boolean",
+     "description": "Compare toggle (previous period, rendered dashed grey). Only on time-based cards."
+    },
+    "metricSelector": {
+     "$ref": "#/$defs/selector"
+    },
+    "entitySelector": {
+     "$ref": "#/$defs/selector"
+    }
+   },
+   "required": [
+    "dateRange"
+   ],
+   "additionalProperties": false
+  },
+  "synced": {
+   "type": "string",
+   "description": "Last-synced label, mono lowercase system voice, e.g. \"2m ago\"."
+  },
+  "pinned": {
+   "type": "boolean",
+   "description": "Pinned cards render on the dashboard, newest pin last; unpinned cards live on the Reports page."
+  },
+  "csvDownload": {
+   "type": "boolean",
+   "default": true
+  },
+  "data": {
+   "description": "Representation payload; shape is selected by `representation`.",
+   "oneOf": [
+    {
+     "$ref": "#/$defs/kpiStripData"
+    },
+    {
+     "$ref": "#/$defs/trendLineData"
+    },
+    {
+     "$ref": "#/$defs/barsHorizontalData"
+    },
+    {
+     "$ref": "#/$defs/barsVerticalData"
+    },
+    {
+     "$ref": "#/$defs/heatmapData"
+    },
+    {
+     "$ref": "#/$defs/dataTableData"
+    },
+    {
+     "$ref": "#/$defs/periodTableData"
+    }
+   ]
+  }
+ },
+ "required": [
+  "id",
+  "platform",
+  "title",
+  "question",
+  "representation",
+  "query",
+  "controls",
+  "data"
+ ],
+ "additionalProperties": false,
+ "allOf": [
+  {
+   "if": {
+    "properties": {
+     "representation": {
+      "const": "kpiStrip"
+     }
+    }
+   },
+   "then": {
+    "properties": {
+     "data": {
+      "$ref": "#/$defs/kpiStripData"
+     }
+    }
+   }
+  },
+  {
+   "if": {
+    "properties": {
+     "representation": {
+      "const": "trendLine"
+     }
+    }
+   },
+   "then": {
+    "properties": {
+     "data": {
+      "$ref": "#/$defs/trendLineData"
+     }
+    }
+   }
+  },
+  {
+   "if": {
+    "properties": {
+     "representation": {
+      "const": "barsHorizontal"
+     }
+    }
+   },
+   "then": {
+    "properties": {
+     "data": {
+      "$ref": "#/$defs/barsHorizontalData"
+     }
+    }
+   }
+  },
+  {
+   "if": {
+    "properties": {
+     "representation": {
+      "const": "barsVertical"
+     }
+    }
+   },
+   "then": {
+    "properties": {
+     "data": {
+      "$ref": "#/$defs/barsVerticalData"
+     }
+    }
+   }
+  },
+  {
+   "if": {
+    "properties": {
+     "representation": {
+      "const": "heatmap"
+     }
+    }
+   },
+   "then": {
+    "properties": {
+     "data": {
+      "$ref": "#/$defs/heatmapData"
+     }
+    }
+   }
+  },
+  {
+   "if": {
+    "properties": {
+     "representation": {
+      "const": "dataTable"
+     }
+    }
+   },
+   "then": {
+    "properties": {
+     "data": {
+      "$ref": "#/$defs/dataTableData"
+     }
+    }
+   }
+  },
+  {
+   "if": {
+    "properties": {
+     "representation": {
+      "const": "periodTable"
+     }
+    }
+   },
+   "then": {
+    "properties": {
+     "data": {
+      "$ref": "#/$defs/periodTableData"
+     }
+    }
+   }
+  }
+ ],
+ "$defs": {
+  "unit": {
+   "enum": [
+    "inr",
+    "num",
+    "pct",
+    "x"
+   ],
+   "description": "Formatter key for lib/format.js fmtBy(): inr → ₹ with K/L/Cr; num → K/L/Cr; pct → 26.2%; x → 4.7×. One decimal max on cards; unavailable values render as —."
+  },
+  "selector": {
+   "type": "object",
+   "description": "A small in-card dropdown (metric or entity).",
+   "properties": {
+    "value": {
+     "type": "string"
+    },
+    "options": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "type": "object",
+      "properties": {
+       "value": {
+        "type": "string"
+       },
+       "label": {
+        "type": "string"
+       },
+       "unit": {
+        "$ref": "#/$defs/unit"
+       },
+       "invert": {
+        "type": "boolean",
+        "description": "true when lower is better (ACOS, CPC, CPI, cost/conv.). Inverts delta colouring and rank order."
+       }
+      },
+      "required": [
+       "value",
+       "label"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   "required": [
+    "value",
+    "options"
+   ],
+   "additionalProperties": false
+  },
+  "delta": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Percent change. Rendered by the Delta component: +9.4% / −3.8%, green/red status colour only (inverted when lower-is-better), null renders —."
+  },
+  "kpiStripData": {
+   "type": "object",
+   "description": "KpiStrip props. Every KPI has context: delta vs previous period AND vs target.",
+   "properties": {
+    "kind": {
+     "const": "kpiStrip"
+    },
+    "items": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "type": "object",
+      "properties": {
+       "key": {
+        "type": "string"
+       },
+       "label": {
+        "type": "string",
+        "description": "Native platform metric name."
+       },
+       "value": {
+        "type": "string",
+        "description": "Pre-formatted display value, e.g. \"₹23.7 L\", \"3.8×\", \"26.2%\"."
+       },
+       "delta": {
+        "$ref": "#/$defs/delta"
+       },
+       "target": {
+        "$ref": "#/$defs/delta"
+       },
+       "invert": {
+        "type": "boolean"
+       },
+       "spark": {
+        "type": "array",
+        "items": {
+         "type": "number"
+        },
+        "description": "Sparkline series."
+       },
+       "compare": {
+        "type": [
+         "array",
+         "null"
+        ],
+        "items": {
+         "type": "number"
+        },
+        "description": "Dashed grey compare sparkline; null/omitted when Compare is off."
+       }
+      },
+      "required": [
+       "key",
+       "label",
+       "value",
+       "delta"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "columns": {
+     "type": "integer",
+     "minimum": 1,
+     "description": "Override grid column count; defaults to items.length."
+    }
+   },
+   "required": [
+    "kind",
+    "items"
+   ],
+   "additionalProperties": false
+  },
+  "trendLineData": {
+   "type": "object",
+   "description": "TrendLine props. Hover = crosshair + nearest-series tooltip, other series dim. Comparison series is dashed grey and never counts against the 8-colour series palette.",
+   "properties": {
+    "kind": {
+     "const": "trendLine"
+    },
+    "labels": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "type": "string"
+     },
+     "description": "X-axis labels; same length as every series' data."
+    },
+    "series": {
+     "type": "array",
+     "minItems": 1,
+     "maxItems": 9,
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "label": {
+        "type": "string"
+       },
+       "data": {
+        "type": "array",
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "dashed": {
+        "type": "boolean",
+        "description": "true only for the previous-period / target comparison series (grey, 1.5px)."
+       }
+      },
+      "required": [
+       "id",
+       "label",
+       "data"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "unit": {
+     "$ref": "#/$defs/unit"
+    },
+    "height": {
+     "type": "integer",
+     "default": 240
+    }
+   },
+   "required": [
+    "kind",
+    "labels",
+    "series",
+    "unit"
+   ],
+   "additionalProperties": false
+  },
+  "barsHorizontalData": {
+   "type": "object",
+   "description": "BarsHorizontal props: rankings with many named categories, sorted by the caller (rank 1 first; ascending when the metric inverts). One RGBY colour per category.",
+   "properties": {
+    "kind": {
+     "const": "barsHorizontal"
+    },
+    "items": {
+     "type": "array",
+     "minItems": 1,
+     "maxItems": 10,
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "label": {
+        "type": "string"
+       },
+       "value": {
+        "type": "number"
+       },
+       "sub": {
+        "type": "string",
+        "description": "Optional mono sub-value under the number."
+       }
+      },
+      "required": [
+       "id",
+       "label",
+       "value"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "unit": {
+     "$ref": "#/$defs/unit"
+    }
+   },
+   "required": [
+    "kind",
+    "items",
+    "unit"
+   ],
+   "additionalProperties": false
+  },
+  "barsVerticalData": {
+   "type": "object",
+   "description": "BarsVertical props: a small number of discrete categories or side-by-side comparisons (e.g. Android vs iOS). Single series → one colour per category; multi-series → one colour per series.",
+   "properties": {
+    "kind": {
+     "const": "barsVertical"
+    },
+    "groups": {
+     "type": "array",
+     "minItems": 1,
+     "maxItems": 8,
+     "items": {
+      "type": "object",
+      "properties": {
+       "label": {
+        "type": "string"
+       },
+       "values": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+         "type": "number"
+        }
+       }
+      },
+      "required": [
+       "label",
+       "values"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "seriesLabels": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Legend labels; length must equal each group's values length. Omit for single-series."
+    },
+    "unit": {
+     "$ref": "#/$defs/unit"
+    },
+    "height": {
+     "type": "integer",
+     "default": 240
+    }
+   },
+   "required": [
+    "kind",
+    "groups",
+    "unit"
+   ],
+   "additionalProperties": false
+  },
+  "heatmapData": {
+   "type": "object",
+   "description": "Heatmap props: rows × cols entity/dimension grid, 5-step sequential blue ramp, value text always printed. invert=true when lower is better.",
+   "properties": {
+    "kind": {
+     "const": "heatmap"
+    },
+    "rows": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "type": "string"
+     }
+    },
+    "cols": {
+     "type": "array",
+     "minItems": 2,
+     "items": {
+      "type": "string"
+     }
+    },
+    "values": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "type": "array",
+      "items": {
+       "type": [
+        "number",
+        "null"
+       ]
+      }
+     },
+     "description": "values[rowIndex][colIndex]; null renders — on a sunken cell."
+    },
+    "invert": {
+     "type": "boolean",
+     "default": false
+    },
+    "unit": {
+     "$ref": "#/$defs/unit"
+    }
+   },
+   "required": [
+    "kind",
+    "rows",
+    "cols",
+    "values",
+    "unit"
+   ],
+   "additionalProperties": false
+  },
+  "dataTableData": {
+   "type": "object",
+   "description": "DataTable props: exact values, full metric sets, operational drill-down. Shows pageSize rows then \"Show more\".",
+   "properties": {
+    "kind": {
+     "const": "dataTable"
+    },
+    "columns": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "type": "object",
+      "properties": {
+       "key": {
+        "type": "string"
+       },
+       "label": {
+        "type": "string",
+        "description": "Native platform metric name."
+       },
+       "unit": {
+        "$ref": "#/$defs/unit",
+        "description": "Omit for plain-text columns (e.g. the name column)."
+       },
+       "align": {
+        "enum": [
+         "left",
+         "right"
+        ]
+       },
+       "bar": {
+        "type": "boolean",
+        "description": "Render an inline neutral proportion bar behind the value (e.g. spend share)."
+       },
+       "width": {
+        "type": "string",
+        "description": "CSS width, e.g. \"24%\"."
+       }
+      },
+      "required": [
+       "key",
+       "label"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "rows": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "id"
+      ],
+      "additionalProperties": true
+     },
+     "description": "Row objects keyed by column keys; numeric cells are raw numbers (formatting applied by unit)."
+    },
+    "pageSize": {
+     "type": "integer",
+     "default": 10
+    },
+    "sortKey": {
+     "type": "string"
+    },
+    "sortDir": {
+     "enum": [
+      "asc",
+      "desc"
+     ],
+     "default": "desc"
+    }
+   },
+   "required": [
+    "kind",
+    "columns",
+    "rows"
+   ],
+   "additionalProperties": false
+  },
+  "periodTableData": {
+   "type": "object",
+   "description": "PeriodTable props (DoD / WoW / MoM): rows = entities, columns = dates, each cell = value + Δ vs the previous column, plus a trailing whole-period Δ column.",
+   "properties": {
+    "kind": {
+     "const": "periodTable"
+    },
+    "periods": {
+     "type": "array",
+     "minItems": 2,
+     "items": {
+      "type": "string"
+     },
+     "description": "Date column labels: days (\"1 Aug\"), ISO weeks (\"W35\"), or months (\"Aug\")."
+    },
+    "rows": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "label": {
+        "type": "string"
+       },
+       "values": {
+        "type": "array",
+        "items": {
+         "type": "number"
+        },
+        "description": "Same length as periods."
+       }
+      },
+      "required": [
+       "id",
+       "label",
+       "values"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "invert": {
+     "type": "boolean",
+     "default": false
+    },
+    "unit": {
+     "$ref": "#/$defs/unit"
+    },
+    "pageSize": {
+     "type": "integer",
+     "default": 10
+    }
+   },
+   "required": [
+    "kind",
+    "periods",
+    "rows",
+    "unit"
+   ],
+   "additionalProperties": false
+  }
+ }
+}

@@ -1,0 +1,2718 @@
+[
+ {
+  "id": "exec-kpi",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "exec"
+  },
+  "title": "Account / Executive Performance — KPIs",
+  "question": "How is Amazon advertising performing overall and is spend translating into sales?",
+  "representation": "kpiStrip",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "account",
+    "metrics": [
+     "spend",
+     "impressions",
+     "clicks",
+     "ctr",
+     "cpc",
+     "sales",
+     "orders",
+     "units",
+     "roas",
+     "acos",
+     "cvr",
+     "ntb_sales"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "spend",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true
+  },
+  "pinned": true,
+  "csvDownload": true
+ },
+ {
+  "id": "exec-bars",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "exec"
+  },
+  "title": "Account / Executive Performance — Comparison",
+  "question": "How is Amazon advertising performing overall and is spend translating into sales?",
+  "representation": "barsVertical",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "account",
+    "metrics": [
+     "spend",
+     "impressions",
+     "clicks",
+     "ctr",
+     "cpc",
+     "sales",
+     "orders",
+     "units",
+     "roas",
+     "acos",
+     "cvr",
+     "ntb_sales"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ]
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": false,
+   "metricSelector": {
+    "value": "spend",
+    "options": [
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "units",
+      "label": "Units",
+      "unit": "num"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     },
+     {
+      "value": "cvr",
+      "label": "Conversion rate",
+      "unit": "pct"
+     },
+     {
+      "value": "ntb_sales",
+      "label": "New-to-brand",
+      "unit": "inr"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "exec-trend",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "exec"
+  },
+  "title": "Account / Executive Performance — Trend",
+  "question": "How is Amazon advertising performing overall and is spend translating into sales?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "account",
+    "metrics": [
+     "spend",
+     "impressions",
+     "clicks",
+     "ctr",
+     "cpc",
+     "sales",
+     "orders",
+     "units",
+     "roas",
+     "acos",
+     "cvr",
+     "ntb_sales"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "spend",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true,
+   "metricSelector": {
+    "value": "spend",
+    "options": [
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "units",
+      "label": "Units",
+      "unit": "num"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     },
+     {
+      "value": "cvr",
+      "label": "Conversion rate",
+      "unit": "pct"
+     },
+     {
+      "value": "ntb_sales",
+      "label": "New-to-brand",
+      "unit": "inr"
+     }
+    ]
+   }
+  },
+  "pinned": true,
+  "csvDownload": true
+ },
+ {
+  "id": "campaign-table",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "campaign"
+  },
+  "title": "Campaign Performance — Table",
+  "question": "Which campaigns are driving sales efficiently?",
+  "representation": "dataTable",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "campaign",
+    "metrics": [
+     "spend",
+     "impressions",
+     "clicks",
+     "ctr",
+     "cpc",
+     "sales",
+     "orders",
+     "units",
+     "roas",
+     "acos",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "spend",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "campaign-rank",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "campaign"
+  },
+  "title": "Campaign Performance — Ranking",
+  "question": "Which campaigns are driving sales efficiently?",
+  "representation": "barsHorizontal",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "campaign",
+    "metrics": [
+     "spend",
+     "impressions",
+     "clicks",
+     "ctr",
+     "cpc",
+     "sales",
+     "orders",
+     "units",
+     "roas",
+     "acos",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "spend",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "spend",
+    "options": [
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "units",
+      "label": "Units",
+      "unit": "num"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     },
+     {
+      "value": "cvr",
+      "label": "Conversion rate",
+      "unit": "pct"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "campaign-trend",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "campaign"
+  },
+  "title": "Campaign Performance — Trend",
+  "question": "Which campaigns are driving sales efficiently?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "campaign",
+    "metrics": [
+     "spend",
+     "impressions",
+     "clicks",
+     "ctr",
+     "cpc",
+     "sales",
+     "orders",
+     "units",
+     "roas",
+     "acos",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "spend",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true,
+   "metricSelector": {
+    "value": "spend",
+    "options": [
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "units",
+      "label": "Units",
+      "unit": "num"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     },
+     {
+      "value": "cvr",
+      "label": "Conversion rate",
+      "unit": "pct"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "campaign-grid",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "campaign"
+  },
+  "title": "Campaign Performance — Grid",
+  "question": "Which campaigns are driving sales efficiently?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "campaign",
+    "metrics": [
+     "spend",
+     "impressions",
+     "clicks",
+     "ctr",
+     "cpc",
+     "sales",
+     "orders",
+     "units",
+     "roas",
+     "acos",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "cpc",
+    "options": [
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "units",
+      "label": "Units",
+      "unit": "num"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     },
+     {
+      "value": "cvr",
+      "label": "Conversion rate",
+      "unit": "pct"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "asin-table",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "asin"
+  },
+  "title": "Product / ASIN Performance — Table",
+  "question": "Which products are actually benefiting from advertising?",
+  "representation": "dataTable",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "asin",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "sales",
+     "orders",
+     "units",
+     "spend",
+     "roas",
+     "acos",
+     "ntb_sales"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "asin-rank",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "asin"
+  },
+  "title": "Product / ASIN Performance — Ranking",
+  "question": "Which products are actually benefiting from advertising?",
+  "representation": "barsHorizontal",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "asin",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "sales",
+     "orders",
+     "units",
+     "spend",
+     "roas",
+     "acos",
+     "ntb_sales"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "units",
+      "label": "Units",
+      "unit": "num"
+     },
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     },
+     {
+      "value": "ntb_sales",
+      "label": "NTB sales",
+      "unit": "inr"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "asin-trend",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "asin"
+  },
+  "title": "Product / ASIN Performance — Trend",
+  "question": "Which products are actually benefiting from advertising?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "asin",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "sales",
+     "orders",
+     "units",
+     "spend",
+     "roas",
+     "acos",
+     "ntb_sales"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "impressions",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true,
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "units",
+      "label": "Units",
+      "unit": "num"
+     },
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     },
+     {
+      "value": "ntb_sales",
+      "label": "NTB sales",
+      "unit": "inr"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "asin-grid",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "asin"
+  },
+  "title": "Product / ASIN Performance — Grid",
+  "question": "Which products are actually benefiting from advertising?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "asin",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "sales",
+     "orders",
+     "units",
+     "spend",
+     "roas",
+     "acos",
+     "ntb_sales"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "acos",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "units",
+      "label": "Units",
+      "unit": "num"
+     },
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     },
+     {
+      "value": "ntb_sales",
+      "label": "NTB sales",
+      "unit": "inr"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "search-table",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "search"
+  },
+  "title": "Search Term Performance — Table",
+  "question": "Which shopper queries are generating or wasting spend?",
+  "representation": "dataTable",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "search",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "cpc",
+     "spend",
+     "orders",
+     "sales",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "search_term"
+    ],
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "search-rank",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "search"
+  },
+  "title": "Search Term Performance — Ranking",
+  "question": "Which shopper queries are generating or wasting spend?",
+  "representation": "barsHorizontal",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "search",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "cpc",
+     "spend",
+     "orders",
+     "sales",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "search-trend",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "search"
+  },
+  "title": "Search Term Performance — Trend",
+  "question": "Which shopper queries are generating or wasting spend?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "search",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "cpc",
+     "spend",
+     "orders",
+     "sales",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "impressions",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true,
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "search-grid",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "search"
+  },
+  "title": "Search Term Performance — Grid",
+  "question": "Which shopper queries are generating or wasting spend?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "search",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "cpc",
+     "spend",
+     "orders",
+     "sales",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "search_term"
+    ]
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "cpc",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "targeting-table",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "targeting"
+  },
+  "title": "Targeting / Keyword Performance — Table",
+  "question": "Which targets deserve more budget or bid attention?",
+  "representation": "dataTable",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "targeting",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "cpc",
+     "spend",
+     "orders",
+     "sales",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "targeting",
+     "match_type"
+    ],
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "targeting-rank",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "targeting"
+  },
+  "title": "Targeting / Keyword Performance — Ranking",
+  "question": "Which targets deserve more budget or bid attention?",
+  "representation": "barsHorizontal",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "targeting",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "cpc",
+     "spend",
+     "orders",
+     "sales",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "targeting-grid",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "targeting"
+  },
+  "title": "Targeting / Keyword Performance — Grid",
+  "question": "Which targets deserve more budget or bid attention?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "targeting",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "cpc",
+     "spend",
+     "orders",
+     "sales",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "targeting",
+     "match_type"
+    ]
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "cpc",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "placement-table",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "placement"
+  },
+  "title": "Placement Performance — Table",
+  "question": "Where on Amazon are ads performing best?",
+  "representation": "dataTable",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "placement",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "cpc",
+     "spend",
+     "orders",
+     "sales",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "placement"
+    ],
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "placement-bars",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "placement"
+  },
+  "title": "Placement Performance — Comparison",
+  "question": "Where on Amazon are ads performing best?",
+  "representation": "barsVertical",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "placement",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "cpc",
+     "spend",
+     "orders",
+     "sales",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ]
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": false,
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "placement-trend",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "placement"
+  },
+  "title": "Placement Performance — Trend",
+  "question": "Where on Amazon are ads performing best?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "placement",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "cpc",
+     "spend",
+     "orders",
+     "sales",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "impressions",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true,
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "placement-grid",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "placement"
+  },
+  "title": "Placement Performance — Grid",
+  "question": "Where on Amazon are ads performing best?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "placement",
+    "metrics": [
+     "impressions",
+     "clicks",
+     "ctr",
+     "cpc",
+     "spend",
+     "orders",
+     "sales",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "placement"
+    ]
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "cpc",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "budget-table",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "budget"
+  },
+  "title": "Budget & Pacing — Table",
+  "question": "Are campaigns spending at the intended rate?",
+  "representation": "dataTable",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "budget",
+    "metrics": [
+     "daily_budget",
+     "spend",
+     "budget_utilization_pct",
+     "remaining_budget",
+     "impressions",
+     "clicks",
+     "sales",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "daily_budget",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "budget-bars",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "budget"
+  },
+  "title": "Budget & Pacing — Comparison",
+  "question": "Are campaigns spending at the intended rate?",
+  "representation": "barsVertical",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "budget",
+    "metrics": [
+     "daily_budget",
+     "spend",
+     "budget_utilization_pct",
+     "remaining_budget",
+     "impressions",
+     "clicks",
+     "sales",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ]
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": false,
+   "metricSelector": {
+    "value": "daily_budget",
+    "options": [
+     {
+      "value": "daily_budget",
+      "label": "Daily budget",
+      "unit": "inr"
+     },
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "budget_utilization_pct",
+      "label": "Budget utilization %",
+      "unit": "pct"
+     },
+     {
+      "value": "remaining_budget",
+      "label": "Remaining budget",
+      "unit": "inr"
+     },
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "budget-trend",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "budget"
+  },
+  "title": "Budget & Pacing — Trend",
+  "question": "Are campaigns spending at the intended rate?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "budget",
+    "metrics": [
+     "daily_budget",
+     "spend",
+     "budget_utilization_pct",
+     "remaining_budget",
+     "impressions",
+     "clicks",
+     "sales",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "daily_budget",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true,
+   "metricSelector": {
+    "value": "daily_budget",
+    "options": [
+     {
+      "value": "daily_budget",
+      "label": "Daily budget",
+      "unit": "inr"
+     },
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "budget_utilization_pct",
+      "label": "Budget utilization %",
+      "unit": "pct"
+     },
+     {
+      "value": "remaining_budget",
+      "label": "Remaining budget",
+      "unit": "inr"
+     },
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "budget-grid",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "budget"
+  },
+  "title": "Budget & Pacing — Grid",
+  "question": "Are campaigns spending at the intended rate?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "budget",
+    "metrics": [
+     "daily_budget",
+     "spend",
+     "budget_utilization_pct",
+     "remaining_budget",
+     "impressions",
+     "clicks",
+     "sales",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "acos",
+    "options": [
+     {
+      "value": "daily_budget",
+      "label": "Daily budget",
+      "unit": "inr"
+     },
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "budget_utilization_pct",
+      "label": "Budget utilization %",
+      "unit": "pct"
+     },
+     {
+      "value": "remaining_budget",
+      "label": "Remaining budget",
+      "unit": "inr"
+     },
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "time-table",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "time"
+  },
+  "title": "Performance Over Time — Table",
+  "question": "How are spend, CPC and sales efficiency changing over time?",
+  "representation": "dataTable",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "time",
+    "metrics": [
+     "spend",
+     "clicks",
+     "cpc",
+     "impressions",
+     "sales",
+     "orders",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "spend",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "time-trend",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "time"
+  },
+  "title": "Performance Over Time — Trend",
+  "question": "How are spend, CPC and sales efficiency changing over time?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "time",
+    "metrics": [
+     "spend",
+     "clicks",
+     "cpc",
+     "impressions",
+     "sales",
+     "orders",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "spend",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true,
+   "metricSelector": {
+    "value": "spend",
+    "options": [
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "ntb-kpi",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "ntb"
+  },
+  "title": "Brand / New-to-Brand — KPIs",
+  "question": "Is advertising acquiring new customers or mainly driving existing demand?",
+  "representation": "kpiStrip",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "ntb",
+    "metrics": [
+     "ntb_orders",
+     "ntb_sales",
+     "ntb_share",
+     "spend",
+     "sales",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "ntb_orders",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "ntb-bars",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "ntb"
+  },
+  "title": "Brand / New-to-Brand — Comparison",
+  "question": "Is advertising acquiring new customers or mainly driving existing demand?",
+  "representation": "barsVertical",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "ntb",
+    "metrics": [
+     "ntb_orders",
+     "ntb_sales",
+     "ntb_share",
+     "spend",
+     "sales",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ]
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": false,
+   "metricSelector": {
+    "value": "ntb_orders",
+    "options": [
+     {
+      "value": "ntb_orders",
+      "label": "NTB orders",
+      "unit": "num"
+     },
+     {
+      "value": "ntb_sales",
+      "label": "NTB sales",
+      "unit": "inr"
+     },
+     {
+      "value": "ntb_share",
+      "label": "NTB share",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "ntb-trend",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "ntb"
+  },
+  "title": "Brand / New-to-Brand — Trend",
+  "question": "Is advertising acquiring new customers or mainly driving existing demand?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "ntb",
+    "metrics": [
+     "ntb_orders",
+     "ntb_sales",
+     "ntb_share",
+     "spend",
+     "sales",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "ntb_orders",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true,
+   "metricSelector": {
+    "value": "ntb_orders",
+    "options": [
+     {
+      "value": "ntb_orders",
+      "label": "NTB orders",
+      "unit": "num"
+     },
+     {
+      "value": "ntb_sales",
+      "label": "NTB sales",
+      "unit": "inr"
+     },
+     {
+      "value": "ntb_share",
+      "label": "NTB share",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "ntb-grid",
+  "platform": "amazon",
+  "catalogRef": {
+   "platform": "amazon",
+   "reportId": "ntb"
+  },
+  "title": "Brand / New-to-Brand — Grid",
+  "question": "Is advertising acquiring new customers or mainly driving existing demand?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "ntb",
+    "metrics": [
+     "ntb_orders",
+     "ntb_sales",
+     "ntb_share",
+     "spend",
+     "sales",
+     "roas",
+     "acos"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "acos",
+    "options": [
+     {
+      "value": "ntb_orders",
+      "label": "NTB orders",
+      "unit": "num"
+     },
+     {
+      "value": "ntb_sales",
+      "label": "NTB sales",
+      "unit": "inr"
+     },
+     {
+      "value": "ntb_share",
+      "label": "NTB share",
+      "unit": "pct"
+     },
+     {
+      "value": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "value": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "value": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "value": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ }
+]

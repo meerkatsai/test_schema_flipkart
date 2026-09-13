@@ -1,0 +1,6112 @@
+{
+ "version": 1,
+ "build_id": "238c24672fb8",
+ "built": "2026-09-12",
+ "counts": {
+  "metrics": 196,
+  "models": 37,
+  "concepts": 31,
+  "bindings": 71
+ },
+ "concepts": {
+  "spend": {
+   "name": "spend",
+   "says": [
+    "spend",
+    "cost",
+    "ad spend",
+    "invest",
+    "spends"
+   ]
+  },
+  "roas": {
+   "name": "roas",
+   "says": [
+    "roas",
+    "roi",
+    "return",
+    "return on ad spend",
+    "return on investment"
+   ]
+  },
+  "acos": {
+   "name": "acos",
+   "says": [
+    "acos",
+    "advertising cost of sale"
+   ]
+  },
+  "cpm": {
+   "name": "cpm",
+   "says": [
+    "cpm",
+    "cost per mille",
+    "cost per thousand"
+   ]
+  },
+  "cpc": {
+   "name": "cpc",
+   "says": [
+    "cpc",
+    "cost per click"
+   ]
+  },
+  "ctr": {
+   "name": "ctr",
+   "says": [
+    "ctr",
+    "click through rate"
+   ]
+  },
+  "total_sales": {
+   "name": "total_sales",
+   "says": [
+    "total sales",
+    "sales",
+    "revenue",
+    "gmv"
+   ]
+  },
+  "sales": {
+   "name": "sales",
+   "says": [
+    "sales"
+   ]
+  },
+  "conversions": {
+   "name": "conversions",
+   "says": [
+    "conversions",
+    "orders",
+    "purchases",
+    "reported orders",
+    "sales count"
+   ]
+  },
+  "conversion_rate": {
+   "name": "conversion_rate",
+   "says": [
+    "conversion rate",
+    "cvr"
+   ]
+  },
+  "average_order_value": {
+   "name": "average_order_value",
+   "says": [
+    "aov",
+    "average order value",
+    "basket size"
+   ]
+  },
+  "impressions": {
+   "name": "impressions",
+   "says": [
+    "impressions",
+    "views"
+   ]
+  },
+  "clicks": {
+   "name": "clicks",
+   "says": [
+    "clicks",
+    "taps"
+   ]
+  },
+  "frequency": {
+   "name": "frequency",
+   "says": [
+    "frequency",
+    "ad frequency",
+    "how often seen"
+   ]
+  },
+  "reach": {
+   "name": "reach",
+   "says": [
+    "reach",
+    "unique people",
+    "people reached"
+   ]
+  },
+  "add_to_cart": {
+   "name": "add_to_cart",
+   "says": [
+    "add to cart",
+    "atc",
+    "adds to cart",
+    "carts"
+   ]
+  },
+  "checkout": {
+   "name": "checkout",
+   "says": [
+    "checkout",
+    "checkouts",
+    "initiate checkout",
+    "began checkout"
+   ]
+  },
+  "link_clicks": {
+   "name": "link_clicks",
+   "says": [
+    "link clicks",
+    "outbound clicks",
+    "clicks to site"
+   ]
+  },
+  "quality_score": {
+   "name": "quality_score",
+   "says": [
+    "quality score",
+    "qs"
+   ]
+  },
+  "mer": {
+   "name": "mer",
+   "says": [
+    "mer",
+    "marketing efficiency ratio",
+    "blended roas"
+   ]
+  },
+  "tacos": {
+   "name": "tacos",
+   "says": [
+    "tacos",
+    "total acos"
+   ]
+  },
+  "reported_revenue": {
+   "name": "reported_revenue",
+   "says": [
+    "reported revenue",
+    "ad revenue",
+    "platform revenue",
+    "conversion value"
+   ]
+  },
+  "delivered_revenue": {
+   "name": "delivered_revenue",
+   "says": [
+    "delivered revenue",
+    "actual revenue",
+    "real revenue",
+    "money in"
+   ]
+  },
+  "cpi": {
+   "name": "cpi",
+   "says": [
+    "cpi",
+    "cost per install"
+   ],
+   "status": "no_data"
+  },
+  "signups": {
+   "name": "signups",
+   "says": [
+    "signups",
+    "registrations",
+    "sign ups"
+   ],
+   "status": "no_data"
+  },
+  "account_balance": {
+   "name": "account_balance",
+   "says": [
+    "account balance",
+    "balance",
+    "wallet",
+    "runway",
+    "funds left"
+   ],
+   "status": "no_data"
+  },
+  "price": {
+   "name": "price",
+   "says": [
+    "price"
+   ],
+   "status": "no_data"
+  },
+  "competitor_price": {
+   "name": "competitor_price",
+   "says": [
+    "competitor price"
+   ],
+   "status": "no_data"
+  },
+  "rating": {
+   "name": "rating",
+   "says": [
+    "rating"
+   ],
+   "status": "no_data"
+  },
+  "review_count": {
+   "name": "review_count",
+   "says": [
+    "reviews",
+    "review count"
+   ],
+   "status": "no_data"
+  },
+  "search_lost_impression_share_budget": {
+   "name": "search_lost_impression_share_budget",
+   "says": [
+    "lost impression share budget"
+   ],
+   "status": "no_data"
+  }
+ },
+ "grains": {
+  "campaign": {
+   "group_by": "campaign_name"
+  },
+  "keyword": {
+   "group_by": "keyword_text",
+   "by_platform": {
+    "amazon": "search_term",
+    "flipkart": "keyword",
+    "google": "keyword_text"
+   }
+  },
+  "placement": {
+   "group_by": "placement",
+   "by_platform": {
+    "amazon": "placement",
+    "flipkart": "placement_type",
+    "meta": "platform_position"
+   }
+  },
+  "product": {
+   "group_by": "product_title",
+   "by_platform": {
+    "amazon": "advertised_asin",
+    "flipkart": "fsn_id",
+    "shopify": "product_title"
+   }
+  },
+  "account": {
+   "group_by": null
+  },
+  "store": {
+   "group_by": null
+  }
+ },
+ "dimensions": {
+  "date": {
+   "resolves_to": "__time__"
+  },
+  "platform": {
+   "resolves_to": "platform"
+  },
+  "campaign_type": {
+   "resolves_to": "campaign_type"
+  },
+  "status": {
+   "resolves_to": "campaign_status"
+  },
+  "product_name": {
+   "resolves_to": "product_name",
+   "by_platform": {
+    "shopify": "product_title"
+   }
+  },
+  "fsn": {
+   "resolves_to": "fsn_id"
+  },
+  "asin": {
+   "resolves_to": "advertised_asin"
+  },
+  "placement": {
+   "resolves_to": "placement",
+   "by_platform": {
+    "flipkart": "placement_type"
+   }
+  }
+ },
+ "bindings": [
+  {
+   "concept": "spend",
+   "when": {
+    "platform": "amazon",
+    "grain": "product"
+   },
+   "use": "amazon_prod_spend",
+   "priority": 5
+  },
+  {
+   "concept": "spend",
+   "when": {
+    "platform": "amazon",
+    "grain": "keyword"
+   },
+   "use": "amazon_st_spend",
+   "priority": 5,
+   "note": "Amazon keywords carry no metrics; search-term spend is the closest real figure."
+  },
+  {
+   "concept": "spend",
+   "when": {
+    "platform": "amazon",
+    "grain": "placement"
+   },
+   "use": "amazon_plc_spend",
+   "priority": 5
+  },
+  {
+   "concept": "spend",
+   "when": {
+    "platform": "flipkart",
+    "grain": "placement"
+   },
+   "use": "fk_placement_spend",
+   "priority": 5
+  },
+  {
+   "concept": "spend",
+   "when": {
+    "platform": "flipkart",
+    "grain": "keyword"
+   },
+   "use": "fk_keyword_spend",
+   "priority": 5
+  },
+  {
+   "concept": "spend",
+   "when": {
+    "platform": "flipkart",
+    "grain": "product"
+   },
+   "use": "fk_product_spend",
+   "priority": 5
+  },
+  {
+   "concept": "roas",
+   "when": {
+    "platform": "amazon",
+    "grain": "product"
+   },
+   "use": "amazon_prod_roas",
+   "priority": 5
+  },
+  {
+   "concept": "roas",
+   "when": {
+    "platform": "amazon",
+    "grain": "placement"
+   },
+   "use": "amazon_plc_roas",
+   "priority": 5
+  },
+  {
+   "concept": "roas",
+   "when": {
+    "platform": "amazon",
+    "grain": "keyword"
+   },
+   "use": "amazon_st_roas",
+   "priority": 5
+  },
+  {
+   "concept": "roas",
+   "when": {
+    "platform": "flipkart",
+    "grain": "product"
+   },
+   "use": "fk_product_roas",
+   "priority": 5
+  },
+  {
+   "concept": "roas",
+   "when": {
+    "platform": "flipkart",
+    "grain": "placement"
+   },
+   "use": "fk_placement_roas",
+   "priority": 5
+  },
+  {
+   "concept": "roas",
+   "when": {
+    "platform": "flipkart",
+    "grain": "keyword"
+   },
+   "use": "fk_keyword_roas",
+   "priority": 5
+  },
+  {
+   "concept": "acos",
+   "when": {
+    "platform": "flipkart"
+   },
+   "unavailable": "Flipkart does not report ACOS.",
+   "priority": 5
+  },
+  {
+   "concept": "acos",
+   "when": {
+    "platform": "meta"
+   },
+   "unavailable": "Meta does not report ACOS \u2014 use roas.",
+   "priority": 5
+  },
+  {
+   "concept": "acos",
+   "when": {
+    "platform": "google"
+   },
+   "unavailable": "Google does not report ACOS \u2014 use roas.",
+   "priority": 5
+  },
+  {
+   "concept": "total_sales",
+   "when": {
+    "platform": "flipkart",
+    "grain": "product"
+   },
+   "use": "fk_product_revenue",
+   "priority": 5
+  },
+  {
+   "concept": "total_sales",
+   "when": {
+    "platform": "flipkart",
+    "grain": "placement"
+   },
+   "use": "fk_placement_revenue",
+   "priority": 5
+  },
+  {
+   "concept": "total_sales",
+   "when": {
+    "platform": "flipkart",
+    "grain": "keyword"
+   },
+   "use": "fk_keyword_revenue",
+   "priority": 5
+  },
+  {
+   "concept": "total_sales",
+   "when": {
+    "platform": "amazon",
+    "grain": "keyword"
+   },
+   "use": "amazon_st_sales",
+   "priority": 5
+  },
+  {
+   "concept": "total_sales",
+   "when": {
+    "platform": "amazon",
+    "grain": "placement"
+   },
+   "use": "amazon_plc_sales",
+   "priority": 5
+  },
+  {
+   "concept": "total_sales",
+   "when": {
+    "platform": "amazon",
+    "grain": "product"
+   },
+   "use": "amazon_prod_sales",
+   "priority": 5
+  },
+  {
+   "concept": "sales",
+   "when": {
+    "platform": "amazon",
+    "grain": "keyword"
+   },
+   "use": "amazon_st_sales",
+   "priority": 5
+  },
+  {
+   "concept": "sales",
+   "when": {
+    "platform": "amazon",
+    "grain": "placement"
+   },
+   "use": "amazon_plc_sales",
+   "priority": 5
+  },
+  {
+   "concept": "sales",
+   "when": {
+    "platform": "amazon",
+    "grain": "product"
+   },
+   "use": "amazon_prod_sales",
+   "priority": 5
+  },
+  {
+   "concept": "conversions",
+   "when": {
+    "platform": "amazon",
+    "grain": "product"
+   },
+   "use": "amazon_prod_orders",
+   "priority": 5
+  },
+  {
+   "concept": "conversions",
+   "when": {
+    "platform": "amazon",
+    "grain": "keyword"
+   },
+   "use": "amazon_st_orders",
+   "priority": 5
+  },
+  {
+   "concept": "conversions",
+   "when": {
+    "platform": "flipkart",
+    "grain": "keyword"
+   },
+   "use": "fk_keyword_conversions",
+   "priority": 5
+  },
+  {
+   "concept": "spend",
+   "when": {
+    "platform": "amazon"
+   },
+   "use": "amazon_spend",
+   "priority": 10
+  },
+  {
+   "concept": "spend",
+   "when": {
+    "platform": "flipkart"
+   },
+   "use": "fk_campaign_spend",
+   "priority": 10
+  },
+  {
+   "concept": "roas",
+   "when": {
+    "platform": "amazon"
+   },
+   "use": "amazon_roas",
+   "priority": 10
+  },
+  {
+   "concept": "roas",
+   "when": {
+    "platform": "flipkart"
+   },
+   "use": "fk_campaign_roas",
+   "priority": 10
+  },
+  {
+   "concept": "acos",
+   "when": {
+    "platform": "amazon"
+   },
+   "use": "amazon_acos",
+   "priority": 10
+  },
+  {
+   "concept": "ctr",
+   "when": {
+    "platform": "amazon"
+   },
+   "use": "amazon_ctr",
+   "priority": 10
+  },
+  {
+   "concept": "clicks",
+   "when": {
+    "platform": "amazon"
+   },
+   "use": "amazon_clicks",
+   "priority": 10
+  },
+  {
+   "concept": "impressions",
+   "when": {
+    "platform": "amazon"
+   },
+   "use": "amazon_impressions",
+   "priority": 10
+  },
+  {
+   "concept": "total_sales",
+   "when": {
+    "platform": "amazon"
+   },
+   "use": "amazon_sales",
+   "priority": 10
+  },
+  {
+   "concept": "total_sales",
+   "when": {
+    "platform": "flipkart"
+   },
+   "use": "fk_campaign_revenue",
+   "priority": 10
+  },
+  {
+   "concept": "sales",
+   "when": {
+    "platform": "amazon"
+   },
+   "use": "amazon_sales",
+   "priority": 10
+  },
+  {
+   "concept": "frequency",
+   "when": {
+    "grain": "campaign"
+   },
+   "use": "campaign_frequency",
+   "priority": 10,
+   "caveat": "reach_frequency_meta_only"
+  },
+  {
+   "concept": "reported_revenue",
+   "when": {
+    "platform": "amazon"
+   },
+   "use": "amazon_sales",
+   "priority": 10
+  },
+  {
+   "concept": "reported_revenue",
+   "when": {
+    "platform": "flipkart"
+   },
+   "use": "fk_campaign_revenue",
+   "priority": 10
+  },
+  {
+   "concept": "conversions",
+   "when": {
+    "platform": "amazon"
+   },
+   "use": "amazon_orders",
+   "priority": 10
+  },
+  {
+   "concept": "conversions",
+   "when": {
+    "platform": "flipkart"
+   },
+   "use": "fk_campaign_units",
+   "priority": 10
+  },
+  {
+   "concept": "conversion_rate",
+   "when": {
+    "grain": "store"
+   },
+   "use": "cvr",
+   "priority": 10
+  },
+  {
+   "concept": "roas",
+   "when": {
+    "grain": "campaign"
+   },
+   "use": "platform_reported_roas",
+   "priority": 20,
+   "note": "MetricFlow roas spans ad_spend + orders so it groups by time only. platform_reported_roas is single-model and groups by campaign."
+  },
+  {
+   "concept": "roas",
+   "when": {
+    "grouped_by": "platform"
+   },
+   "use": "platform_reported_roas",
+   "priority": 20
+  },
+  {
+   "concept": "total_sales",
+   "when": {
+    "grain": "campaign"
+   },
+   "use": "ad_conversions_value",
+   "priority": 20,
+   "note": "In an ad context total_sales means platform-reported conversion value, not Shopify revenue."
+  },
+  {
+   "concept": "total_sales",
+   "when": {
+    "grouped_by": "platform"
+   },
+   "use": "ad_conversions_value",
+   "priority": 20
+  },
+  {
+   "concept": "spend",
+   "when": {},
+   "use": "total_ad_spend",
+   "priority": 100,
+   "note": "fct_ad_spend is Meta + Google only."
+  },
+  {
+   "concept": "roas",
+   "when": {},
+   "use": "roas",
+   "priority": 100
+  },
+  {
+   "concept": "acos",
+   "when": {},
+   "use": "amazon_acos",
+   "priority": 100,
+   "caveat": "acos_is_amazon_only"
+  },
+  {
+   "concept": "cpm",
+   "when": {},
+   "use": "cpm",
+   "priority": 100,
+   "caveat": "meta_google_only"
+  },
+  {
+   "concept": "cpc",
+   "when": {},
+   "use": "cpc",
+   "priority": 100,
+   "caveat": "meta_google_only"
+  },
+  {
+   "concept": "ctr",
+   "when": {},
+   "use": "ctr",
+   "priority": 100
+  },
+  {
+   "concept": "clicks",
+   "when": {},
+   "use": "total_ad_clicks",
+   "priority": 100
+  },
+  {
+   "concept": "impressions",
+   "when": {},
+   "use": "ad_impressions",
+   "priority": 100
+  },
+  {
+   "concept": "total_sales",
+   "when": {},
+   "use": "total_revenue",
+   "priority": 100
+  },
+  {
+   "concept": "sales",
+   "when": {},
+   "use": "total_revenue",
+   "priority": 100
+  },
+  {
+   "concept": "frequency",
+   "when": {},
+   "use": "avg_frequency",
+   "priority": 100,
+   "caveat": "reach_frequency_meta_only"
+  },
+  {
+   "concept": "reach",
+   "when": {},
+   "use": "meta_adset_reach",
+   "priority": 100,
+   "caveat": "reach_frequency_meta_only"
+  },
+  {
+   "concept": "add_to_cart",
+   "when": {},
+   "use": "ad_add_to_carts",
+   "priority": 100,
+   "note": "Meta pixel events (meta_insights.add_to_carts); rows for other platforms are empty."
+  },
+  {
+   "concept": "checkout",
+   "when": {},
+   "use": "ad_checkouts_initiated",
+   "priority": 100,
+   "note": "Meta pixel events (meta_insights.checkouts_initiated); rows for other platforms are empty."
+  },
+  {
+   "concept": "link_clicks",
+   "when": {},
+   "priority": 100,
+   "unavailable": "Meta's link-click basis (inline_link_clicks) has no MetricFlow metric yet \u2014 MetricFlow clicks is the all-clicks basis. Define it in _metrics.yml first."
+  },
+  {
+   "concept": "quality_score",
+   "when": {},
+   "priority": 100,
+   "unavailable": "quality_score is ingested (fct_google_keywords.quality_score) but no MetricFlow metric exposes it yet. Google-only; never plain-average \u2014 weight by impressions."
+  },
+  {
+   "concept": "mer",
+   "when": {},
+   "priority": 100,
+   "unavailable": "mer = delivered revenue / total ad spend across every platform. No MetricFlow metric defines it yet \u2014 compute from net_revenue and total_ad_spend and always print the formula."
+  },
+  {
+   "concept": "tacos",
+   "when": {},
+   "priority": 100,
+   "unavailable": "tacos = ad spend / total channel revenue (organic + ads). Seller jargon with no MetricFlow metric; needs the marketplace total-revenue join and must always be labelled calculated."
+  },
+  {
+   "concept": "reported_revenue",
+   "when": {},
+   "use": "ad_conversions_value",
+   "priority": 100,
+   "note": "What the platform claims it drove \u2014 not money in the bank. delivered revenue is the Shopify figure."
+  },
+  {
+   "concept": "delivered_revenue",
+   "when": {},
+   "use": "net_revenue",
+   "priority": 100,
+   "note": "Money that actually arrived (fct_orders, net of refunds) \u2014 the honest number to compare platform claims against."
+  },
+  {
+   "concept": "conversions",
+   "when": {},
+   "use": "ad_conversions",
+   "priority": 100
+  },
+  {
+   "concept": "conversion_rate",
+   "when": {},
+   "use": "cvr",
+   "priority": 100
+  },
+  {
+   "concept": "average_order_value",
+   "when": {},
+   "use": "average_order_value",
+   "priority": 100
+  }
+ ],
+ "caveats": {
+  "acos_is_amazon_only": {
+   "id": "acos_is_amazon_only",
+   "severity": "blocker",
+   "text": "ACOS is an Amazon metric (spend / attributed sales). Other platforms do not report it. The number returned is Amazon only."
+  },
+  "meta_google_only": {
+   "id": "meta_google_only",
+   "severity": "warning",
+   "text": "CPM and CPC come from fct_ad_spend, which covers Meta and Google only. Amazon and Flipkart spend is not included."
+  },
+  "reach_frequency_meta_only": {
+   "id": "reach_frequency_meta_only",
+   "severity": "warning",
+   "text": "Reach and frequency are Meta concepts, counted on unique people. Other platforms do not report them, reach cannot be summed across days or levels, and frequency is impressions / reach over the exact period asked for \u2014 never averaged from daily rows."
+  },
+  "cross_platform_totals": {
+   "id": "cross_platform_totals",
+   "severity": "blocker",
+   "text": "Each platform counts sales for a different period after the click \u2014 Amazon 7 days, Google 30, Meta 7-click plus 1-view \u2014 and we do not record which. Spend, impressions and clicks add up safely. Conversions and revenue do not.",
+   "applies_to_concepts": [
+    "roas",
+    "acos",
+    "total_sales",
+    "sales",
+    "conversions"
+   ]
+  },
+  "reported_not_delivered": {
+   "id": "reported_not_delivered",
+   "severity": "warning",
+   "text": "This is what the platform claims it drove, not money received. Shopify order revenue is the delivered figure.",
+   "applies_to_metrics": [
+    "platform_reported_roas",
+    "ad_conversions_value",
+    "ad_conversions",
+    "campaign_reported_roas"
+   ]
+  },
+  "fanout_not_totalled": {
+   "id": "fanout_not_totalled",
+   "severity": "blocker",
+   "text": "This came back as one result per platform because the same product has a different id on each channel (ASIN on Amazon, FSN on Flipkart). They cannot be added together or ranked as one list until a product crosswalk exists."
+  },
+  "month_grain_only": {
+   "id": "month_grain_only",
+   "severity": "blocker",
+   "text": "This model only holds monthly rows. A daily or weekly answer cannot be produced from it."
+  },
+  "deprecated_attribution": {
+   "id": "deprecated_attribution",
+   "severity": "blocker",
+   "text": "Built on the retired session-based attribution. Not maintained \u2014 do not use until it is repointed at platform-reported figures.",
+   "applies_to_metrics": [
+    "real_roas",
+    "roas_gap",
+    "campaign_attributed_revenue",
+    "campaign_attributed_orders"
+   ]
+  },
+  "amazon_no_keys": {
+   "id": "amazon_no_keys",
+   "severity": "warning",
+   "text": "Amazon primary keys are defined in the target schema and added by fixes/migrations/001. Until that migration has run in your environment, no Amazon table enforces uniqueness \u2014 a repeated sync double-counts silently. Once 001 is applied and the ingest uses ON CONFLICT, delete this caveat.",
+   "applies_to_models": [
+    "amazon_campaigns",
+    "amazon_products",
+    "amazon_search_terms",
+    "amazon_placements",
+    "amazon_keywords",
+    "amazon_targeting",
+    "amazon_purchased_products"
+   ]
+  },
+  "google_search_terms_range": {
+   "id": "google_search_terms_range",
+   "severity": "warning",
+   "text": "This model's time dimension is last_seen, the end of a range rather than an event date. A date filter on it does not mean what it appears to mean.",
+   "applies_to_models": [
+    "google_search_terms"
+   ]
+  },
+  "approx_google_keywords": {
+   "id": "approx_google_keywords",
+   "severity": "warning",
+   "text": "Google keyword metrics are the ad group's numbers split evenly across its keywords. Fine for ranking, not for exact per-keyword cost.",
+   "applies_to_models": [
+    "google_keywords"
+   ]
+  }
+ },
+ "metrics": {
+  "total_revenue": {
+   "name": "total_revenue",
+   "label": "Total Revenue",
+   "description": "Gross revenue across orders.",
+   "type": "simple",
+   "served_by": [
+    "orders"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign",
+    "channel",
+    "currency",
+    "financial_status",
+    "fulfillment_status",
+    "payment_method",
+    "pin_tier"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "paid_revenue": {
+   "name": "paid_revenue",
+   "label": "Paid Revenue",
+   "description": "Revenue from paid orders only.",
+   "type": "simple",
+   "served_by": [
+    "orders"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign",
+    "channel",
+    "currency",
+    "financial_status",
+    "fulfillment_status",
+    "payment_method",
+    "pin_tier"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "net_revenue": {
+   "name": "net_revenue",
+   "label": "Net Revenue",
+   "description": "Revenue after refunds (excludes refunded orders).",
+   "type": "simple",
+   "served_by": [
+    "orders"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign",
+    "channel",
+    "currency",
+    "financial_status",
+    "fulfillment_status",
+    "payment_method",
+    "pin_tier"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "order_count": {
+   "name": "order_count",
+   "label": "Orders",
+   "description": "Number of orders.",
+   "type": "simple",
+   "served_by": [
+    "orders"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign",
+    "channel",
+    "currency",
+    "financial_status",
+    "fulfillment_status",
+    "payment_method",
+    "pin_tier"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "average_order_value": {
+   "name": "average_order_value",
+   "label": "Average Order Value",
+   "description": "AOV = revenue / orders.",
+   "type": "ratio",
+   "served_by": [
+    "orders"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign",
+    "channel",
+    "currency",
+    "financial_status",
+    "fulfillment_status",
+    "payment_method",
+    "pin_tier"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "new_customers": {
+   "name": "new_customers",
+   "label": "New Customers",
+   "description": "Orders that are a customer's first (window-based, guarded by lifetime orders_count).",
+   "type": "simple",
+   "served_by": [
+    "orders"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign",
+    "channel",
+    "currency",
+    "financial_status",
+    "fulfillment_status",
+    "payment_method",
+    "pin_tier"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "cac": {
+   "name": "cac",
+   "label": "CAC",
+   "description": "New-customer CAC (window-based) = ad spend / new customers. Cross-model \u2014 group by time only.",
+   "type": "ratio",
+   "served_by": [
+    "ad_spend",
+    "orders"
+   ],
+   "cross_model": true,
+   "groupable_by": [],
+   "time_only": true,
+   "time_dimension": null,
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "gross_profit": {
+   "name": "gross_profit",
+   "label": "Gross Profit",
+   "description": "Net revenue - COGS (Shopify InventoryItem.cost). Missing costs count as 0 \u2014 check cogs coverage.",
+   "type": "simple",
+   "served_by": [
+    "orders"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign",
+    "channel",
+    "currency",
+    "financial_status",
+    "fulfillment_status",
+    "payment_method",
+    "pin_tier"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "gross_margin": {
+   "name": "gross_margin",
+   "label": "Gross Margin",
+   "description": "Gross profit / net revenue.",
+   "type": "ratio",
+   "served_by": [
+    "orders"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign",
+    "channel",
+    "currency",
+    "financial_status",
+    "fulfillment_status",
+    "payment_method",
+    "pin_tier"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "cogs_known_items": {
+   "name": "cogs_known_items",
+   "label": "COGS Known Items",
+   "description": "Line items with a known unit cost (COGS coverage numerator).",
+   "type": "simple",
+   "served_by": [
+    "orders"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign",
+    "channel",
+    "currency",
+    "financial_status",
+    "fulfillment_status",
+    "payment_method",
+    "pin_tier"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "cogs_total_items": {
+   "name": "cogs_total_items",
+   "label": "COGS Total Items",
+   "description": "All line items (COGS coverage denominator).",
+   "type": "simple",
+   "served_by": [
+    "orders"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign",
+    "channel",
+    "currency",
+    "financial_status",
+    "fulfillment_status",
+    "payment_method",
+    "pin_tier"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "refund_amount": {
+   "name": "refund_amount",
+   "label": "Refund Amount",
+   "description": "Total refunded amount (from Shopify refunds).",
+   "type": "simple",
+   "served_by": [
+    "orders"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign",
+    "channel",
+    "currency",
+    "financial_status",
+    "fulfillment_status",
+    "payment_method",
+    "pin_tier"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "total_discounts": {
+   "name": "total_discounts",
+   "label": "Discount",
+   "description": "Total discounts applied across orders (Shopify total_discounts).",
+   "type": "simple",
+   "served_by": [
+    "orders"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign",
+    "channel",
+    "currency",
+    "financial_status",
+    "fulfillment_status",
+    "payment_method",
+    "pin_tier"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "refund_rate": {
+   "name": "refund_rate",
+   "label": "Refund Rate",
+   "description": "Refunded amount / gross revenue (value-based).",
+   "type": "ratio",
+   "served_by": [
+    "orders"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign",
+    "channel",
+    "currency",
+    "financial_status",
+    "fulfillment_status",
+    "payment_method",
+    "pin_tier"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "all_orders": {
+   "name": "all_orders",
+   "label": "All Orders",
+   "description": "All orders INCLUDING cancelled \u2014 denominator for RTO/COD shares.",
+   "type": "simple",
+   "served_by": [
+    "orders"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign",
+    "channel",
+    "currency",
+    "financial_status",
+    "fulfillment_status",
+    "payment_method",
+    "pin_tier"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "rto_orders": {
+   "name": "rto_orders",
+   "label": "RTO Orders",
+   "description": "RTO orders (tags-first: tags ~ 'rto'; fallback COD voided / cancelled post-fulfillment).",
+   "type": "simple",
+   "served_by": [
+    "orders"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign",
+    "channel",
+    "currency",
+    "financial_status",
+    "fulfillment_status",
+    "payment_method",
+    "pin_tier"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "rto_rate": {
+   "name": "rto_rate",
+   "label": "RTO Rate",
+   "description": "RTO orders / all orders.",
+   "type": "ratio",
+   "served_by": [
+    "orders"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign",
+    "channel",
+    "currency",
+    "financial_status",
+    "fulfillment_status",
+    "payment_method",
+    "pin_tier"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "marketplace_orders": {
+   "name": "marketplace_orders",
+   "label": "Marketplace Orders",
+   "description": "Marketplace order count (daily rollup \u2014 no per-order detail).",
+   "type": "simple",
+   "served_by": [
+    "marketplace_daily"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "marketplace_revenue": {
+   "name": "marketplace_revenue",
+   "label": "Marketplace Revenue",
+   "description": "Marketplace total sales (daily rollup).",
+   "type": "simple",
+   "served_by": [
+    "marketplace_daily"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "marketplace_aov": {
+   "name": "marketplace_aov",
+   "label": "Marketplace AOV",
+   "description": "Marketplace AOV = revenue / orders (daily rollup).",
+   "type": "ratio",
+   "served_by": [
+    "marketplace_daily"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "total_ad_spend": {
+   "name": "total_ad_spend",
+   "label": "Ad Spend",
+   "description": "Ad spend across Meta + Google.",
+   "type": "simple",
+   "served_by": [
+    "ad_spend"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_id",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "total_ad_clicks": {
+   "name": "total_ad_clicks",
+   "label": "Ad Clicks",
+   "description": "Ad clicks across platforms.",
+   "type": "simple",
+   "served_by": [
+    "ad_spend"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_id",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "ad_add_to_carts": {
+   "name": "ad_add_to_carts",
+   "label": "Ad Add-to-Carts",
+   "description": "Add-to-carts attributed to ads (Meta).",
+   "type": "simple",
+   "served_by": [
+    "ad_spend"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_id",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "ad_checkouts_initiated": {
+   "name": "ad_checkouts_initiated",
+   "label": "Ad Checkouts Initiated",
+   "description": "Checkouts initiated from ads (Meta).",
+   "type": "simple",
+   "served_by": [
+    "ad_spend"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_id",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "ad_landing_page_views": {
+   "name": "ad_landing_page_views",
+   "label": "Ad Landing Page Views",
+   "description": "Landing-page views from ads (Meta).",
+   "type": "simple",
+   "served_by": [
+    "ad_spend"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_id",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "ad_view_through_conversions": {
+   "name": "ad_view_through_conversions",
+   "label": "Ad View-Through Conversions",
+   "description": "View-through (assisted) conversions from ads (Google).",
+   "type": "simple",
+   "served_by": [
+    "ad_spend"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_id",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "roas": {
+   "name": "roas",
+   "label": "ROAS",
+   "description": "Return On Ad Spend = revenue / ad spend.",
+   "type": "ratio",
+   "served_by": [
+    "ad_spend",
+    "orders"
+   ],
+   "cross_model": true,
+   "groupable_by": [],
+   "time_only": true,
+   "time_dimension": null,
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "ad_impressions": {
+   "name": "ad_impressions",
+   "label": "Impressions",
+   "description": "Ad impressions across platforms.",
+   "type": "simple",
+   "served_by": [
+    "ad_spend"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_id",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "ad_conversions": {
+   "name": "ad_conversions",
+   "label": "Conversions (Purchases)",
+   "description": "Platform-REPORTED conversion COUNT (Meta website purchases / Google conversions) \u2014 the 'Results' number the platform UI shows.",
+   "type": "simple",
+   "served_by": [
+    "ad_spend"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_id",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "reported_not_delivered"
+   ]
+  },
+  "ad_conversions_value": {
+   "name": "ad_conversions_value",
+   "label": "Reported Conv. Value",
+   "description": "Platform-REPORTED conversion value (signal only \u2014 see real_roas for corrected).",
+   "type": "simple",
+   "served_by": [
+    "ad_spend"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_id",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "reported_not_delivered"
+   ]
+  },
+  "platform_reported_roas": {
+   "name": "platform_reported_roas",
+   "label": "Platform ROAS",
+   "description": "Platform-claimed ROAS = reported conv value / spend. Single-model \u2014 groupable by campaign/platform.",
+   "type": "ratio",
+   "served_by": [
+    "ad_spend"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_id",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "reported_not_delivered"
+   ]
+  },
+  "cpm": {
+   "name": "cpm",
+   "label": "CPM",
+   "description": "Cost per 1000 impressions.",
+   "type": "derived",
+   "served_by": [
+    "ad_spend"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_id",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "ctr": {
+   "name": "ctr",
+   "label": "CTR",
+   "description": "Click-through rate = clicks / impressions.",
+   "type": "ratio",
+   "served_by": [
+    "ad_spend"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_id",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "cpc": {
+   "name": "cpc",
+   "label": "CPC",
+   "description": "Cost per click = ad spend / clicks.",
+   "type": "ratio",
+   "served_by": [
+    "ad_spend"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_id",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "cvr": {
+   "name": "cvr",
+   "label": "CVR",
+   "description": "Conversion rate = conversions / clicks (units per click).",
+   "type": "ratio",
+   "served_by": [
+    "ad_spend"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_id",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "ad_freq_x_impressions": {
+   "name": "ad_freq_x_impressions",
+   "label": "Freq \u00d7 Impressions",
+   "description": "Sum(frequency \u00d7 impressions) \u2014 numerator of avg_frequency (internal).",
+   "type": "simple",
+   "served_by": [
+    "ad_spend"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_id",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "avg_frequency": {
+   "name": "avg_frequency",
+   "label": "Avg Frequency",
+   "description": "Impressions-weighted average DAILY frequency (Meta only; approximation \u2014 true multi-day frequency needs range-level reach).",
+   "type": "ratio",
+   "served_by": [
+    "ad_spend"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_id",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "campaign_spend": {
+   "name": "campaign_spend",
+   "label": "Campaign Spend",
+   "description": "Ad spend at campaign grain (fct_campaign_performance).",
+   "type": "simple",
+   "served_by": [
+    "campaign_performance"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "objective",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "campaign_impressions": {
+   "name": "campaign_impressions",
+   "label": "Campaign Impressions",
+   "description": "Impressions at campaign grain.",
+   "type": "simple",
+   "served_by": [
+    "campaign_performance"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "objective",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "campaign_clicks": {
+   "name": "campaign_clicks",
+   "label": "Campaign Clicks",
+   "description": "Clicks at campaign grain.",
+   "type": "simple",
+   "served_by": [
+    "campaign_performance"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "objective",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "campaign_ctr": {
+   "name": "campaign_ctr",
+   "label": "Campaign CTR",
+   "description": "Click-through rate at campaign grain = clicks / impressions.",
+   "type": "ratio",
+   "served_by": [
+    "campaign_performance"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "objective",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "campaign_conversions": {
+   "name": "campaign_conversions",
+   "label": "Campaign Conversions",
+   "description": "Platform-reported conversion COUNT at campaign grain (Meta purchases / Google conversions) \u2014 the 'Results' number per campaign.",
+   "type": "simple",
+   "served_by": [
+    "campaign_performance"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "objective",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "campaign_reported_value": {
+   "name": "campaign_reported_value",
+   "label": "Reported Value",
+   "description": "Platform-claimed conversion value at campaign grain.",
+   "type": "simple",
+   "served_by": [
+    "campaign_performance"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "objective",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "campaign_attributed_revenue": {
+   "name": "campaign_attributed_revenue",
+   "label": "Attributed Revenue",
+   "description": "DEPRECATED \u2014 built on the retired session-based attribution; not maintained. Use platform-reported figures (campaign_reported_roas / campaign_reported_value) until this is repointed. CDP-attributed (delivered) revenue at campaign grain \u2014 the corrected number.",
+   "type": "simple",
+   "served_by": [
+    "campaign_performance"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "objective",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "deprecated",
+   "caveats": [
+    "deprecated_attribution"
+   ]
+  },
+  "campaign_attributed_orders": {
+   "name": "campaign_attributed_orders",
+   "label": "Attributed Orders",
+   "description": "DEPRECATED \u2014 built on the retired session-based attribution; not maintained. Use platform-reported figures (campaign_reported_roas / campaign_reported_value) until this is repointed. CDP-attributed orders at campaign grain.",
+   "type": "simple",
+   "served_by": [
+    "campaign_performance"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "objective",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "deprecated",
+   "caveats": [
+    "deprecated_attribution"
+   ]
+  },
+  "real_roas": {
+   "name": "real_roas",
+   "label": "Real ROAS",
+   "description": "DEPRECATED \u2014 built on the retired session-based attribution; not maintained. Use platform-reported figures (campaign_reported_roas / campaign_reported_value) until this is repointed. Corrected ROAS = CDP-attributed revenue / spend. Groupable by campaign/platform.",
+   "type": "ratio",
+   "served_by": [
+    "campaign_performance"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "objective",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "deprecated",
+   "caveats": [
+    "deprecated_attribution"
+   ]
+  },
+  "campaign_reported_roas": {
+   "name": "campaign_reported_roas",
+   "label": "Campaign Platform ROAS",
+   "description": "Platform-claimed ROAS at campaign grain.",
+   "type": "ratio",
+   "served_by": [
+    "campaign_performance"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "objective",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "reported_not_delivered"
+   ]
+  },
+  "roas_gap": {
+   "name": "roas_gap",
+   "label": "ROAS Gap",
+   "description": "DEPRECATED \u2014 built on the retired session-based attribution; not maintained. Use platform-reported figures (campaign_reported_roas / campaign_reported_value) until this is repointed. Platform-claimed ROAS minus corrected ROAS (positive = platform overstating).",
+   "type": "derived",
+   "served_by": [
+    "campaign_performance"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "objective",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "deprecated",
+   "caveats": [
+    "deprecated_attribution"
+   ]
+  },
+  "campaign_cpm": {
+   "name": "campaign_cpm",
+   "label": "Campaign CPM",
+   "description": "CPM at campaign grain.",
+   "type": "derived",
+   "served_by": [
+    "campaign_performance"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "objective",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "campaign_freq_x_impressions": {
+   "name": "campaign_freq_x_impressions",
+   "label": "Campaign Freq \u00d7 Impr",
+   "description": "Sum(frequency \u00d7 impressions) at campaign grain (internal).",
+   "type": "simple",
+   "served_by": [
+    "campaign_performance"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "objective",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "campaign_frequency": {
+   "name": "campaign_frequency",
+   "label": "Campaign Frequency",
+   "description": "Impressions-weighted average daily frequency at campaign grain (Meta only; approximation).",
+   "type": "ratio",
+   "served_by": [
+    "campaign_performance"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "objective",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "leads": {
+   "name": "leads",
+   "label": "Leads",
+   "description": "Identified persons (has email or phone) = leads.",
+   "type": "simple",
+   "served_by": [
+    "leads"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "acq_campaign",
+    "acq_source",
+    "geo_city",
+    "geo_country",
+    "lifecycle_stage"
+   ],
+   "time_only": false,
+   "time_dimension": "lead_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "lead_conversions": {
+   "name": "lead_conversions",
+   "label": "Conversions",
+   "description": "Leads that became customers (placed an order).",
+   "type": "simple",
+   "served_by": [
+    "leads"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "acq_campaign",
+    "acq_source",
+    "geo_city",
+    "geo_country",
+    "lifecycle_stage"
+   ],
+   "time_only": false,
+   "time_dimension": "lead_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "lead_conversion_rate": {
+   "name": "lead_conversion_rate",
+   "label": "Lead Conversion Rate",
+   "description": "Conversions / leads.",
+   "type": "ratio",
+   "served_by": [
+    "leads"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "acq_campaign",
+    "acq_source",
+    "geo_city",
+    "geo_country",
+    "lifecycle_stage"
+   ],
+   "time_only": false,
+   "time_dimension": "lead_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "cost_per_lead": {
+   "name": "cost_per_lead",
+   "label": "Cost Per Lead",
+   "description": "Ad spend / leads (CPL).",
+   "type": "ratio",
+   "served_by": [
+    "ad_spend",
+    "leads"
+   ],
+   "cross_model": true,
+   "groupable_by": [],
+   "time_only": true,
+   "time_dimension": null,
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "form_conversions": {
+   "name": "form_conversions",
+   "label": "Lead Conversions",
+   "description": "Lead conversions = distinct identified leads who submitted a form (deduped, matches the All Leads count). Groupable by utm_campaign / utm_adgroup / utm_term / utm_source / platform / geo.",
+   "type": "simple",
+   "served_by": [
+    "lead_conversions"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "geo_city",
+    "geo_country",
+    "platform",
+    "utm_adgroup",
+    "utm_campaign",
+    "utm_medium",
+    "utm_source",
+    "utm_term"
+   ],
+   "time_only": false,
+   "time_dimension": "lead_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "form_events": {
+   "name": "form_events",
+   "label": "Form Submissions",
+   "description": "Raw form-submission events including repeat submissions (ad-performance conversion signal, not deduped).",
+   "type": "simple",
+   "served_by": [
+    "lead_conversions"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "geo_city",
+    "geo_country",
+    "platform",
+    "utm_adgroup",
+    "utm_campaign",
+    "utm_medium",
+    "utm_source",
+    "utm_term"
+   ],
+   "time_only": false,
+   "time_dimension": "lead_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "unique_lead_converters": {
+   "name": "unique_lead_converters",
+   "label": "Unique Leads",
+   "description": "Distinct identified leads (deduped by email-then-phone). Same population as form_conversions; use for cross-window distinct rollups.",
+   "type": "simple",
+   "served_by": [
+    "lead_conversions"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "geo_city",
+    "geo_country",
+    "platform",
+    "utm_adgroup",
+    "utm_campaign",
+    "utm_medium",
+    "utm_source",
+    "utm_term"
+   ],
+   "time_only": false,
+   "time_dimension": "lead_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "cost_per_form_conversion": {
+   "name": "cost_per_form_conversion",
+   "label": "Cost Per Lead Conversion",
+   "description": "Ad spend / lead conversions (cost per lead, deduped denominator to match the All Leads count). Groupable by campaign/platform.",
+   "type": "ratio",
+   "served_by": [
+    "ad_spend",
+    "lead_conversions"
+   ],
+   "cross_model": true,
+   "groupable_by": [],
+   "time_only": true,
+   "time_dimension": null,
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "product_count": {
+   "name": "product_count",
+   "label": "Products",
+   "description": "Number of products.",
+   "type": "simple",
+   "served_by": [
+    "product_inventory"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "product_status",
+    "product_title",
+    "product_type",
+    "risk_band",
+    "vendor"
+   ],
+   "time_only": false,
+   "time_dimension": "product_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "at_risk_products": {
+   "name": "at_risk_products",
+   "label": "At-Risk Products",
+   "description": "Products at stock-out risk (<14 days cover, or active w/ 0 stock).",
+   "type": "simple",
+   "served_by": [
+    "product_inventory"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "product_status",
+    "product_title",
+    "product_type",
+    "risk_band",
+    "vendor"
+   ],
+   "time_only": false,
+   "time_dimension": "product_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "total_inventory_units": {
+   "name": "total_inventory_units",
+   "label": "Inventory Units",
+   "description": "Total inventory units on hand.",
+   "type": "simple",
+   "served_by": [
+    "product_inventory"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "product_status",
+    "product_title",
+    "product_type",
+    "risk_band",
+    "vendor"
+   ],
+   "time_only": false,
+   "time_dimension": "product_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "units_sold_30d": {
+   "name": "units_sold_30d",
+   "label": "Units Sold (30d)",
+   "description": "Units sold in the trailing 30 days.",
+   "type": "simple",
+   "served_by": [
+    "product_inventory"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "product_status",
+    "product_title",
+    "product_type",
+    "risk_band",
+    "vendor"
+   ],
+   "time_only": false,
+   "time_dimension": "product_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "ae_spend": {
+   "name": "ae_spend",
+   "label": "Ad Entity Spend",
+   "description": "Ad spend at ad grain (group by campaign_name / adset_name / ad_name).",
+   "type": "simple",
+   "served_by": [
+    "ad_entities"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "ad_name",
+    "adset_name",
+    "campaign_name",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "ae_impressions": {
+   "name": "ae_impressions",
+   "label": "Ad Entity Impressions",
+   "description": "Impressions at ad grain.",
+   "type": "simple",
+   "served_by": [
+    "ad_entities"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "ad_name",
+    "adset_name",
+    "campaign_name",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "ae_clicks": {
+   "name": "ae_clicks",
+   "label": "Ad Entity Clicks",
+   "description": "Clicks at ad grain.",
+   "type": "simple",
+   "served_by": [
+    "ad_entities"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "ad_name",
+    "adset_name",
+    "campaign_name",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "ae_conversions": {
+   "name": "ae_conversions",
+   "label": "Ad Entity Conversions",
+   "description": "Conversions at ad grain.",
+   "type": "simple",
+   "served_by": [
+    "ad_entities"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "ad_name",
+    "adset_name",
+    "campaign_name",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "ae_conversions_value": {
+   "name": "ae_conversions_value",
+   "label": "Ad Entity Conv Value",
+   "description": "Conversion value at ad grain.",
+   "type": "simple",
+   "served_by": [
+    "ad_entities"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "ad_name",
+    "adset_name",
+    "campaign_name",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "ae_ctr": {
+   "name": "ae_ctr",
+   "label": "Ad Entity CTR",
+   "description": "CTR at ad grain = clicks / impressions.",
+   "type": "ratio",
+   "served_by": [
+    "ad_entities"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "ad_name",
+    "adset_name",
+    "campaign_name",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "ae_cpm": {
+   "name": "ae_cpm",
+   "label": "Ad Entity CPM",
+   "description": "CPM at ad grain.",
+   "type": "derived",
+   "served_by": [
+    "ad_entities"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "ad_name",
+    "adset_name",
+    "campaign_name",
+    "platform"
+   ],
+   "time_only": false,
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "product_gross_sales": {
+   "name": "product_gross_sales",
+   "label": "Product Gross Sales",
+   "description": "Gross sales per product (unit price \u00d7 qty), from order line items. Groupable by product_title / product_type / vendor.",
+   "type": "simple",
+   "served_by": [
+    "order_line_items"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "image_url",
+    "product_title",
+    "product_type",
+    "vendor"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "product_net_sales": {
+   "name": "product_net_sales",
+   "label": "Product Net Sales",
+   "description": "Net sales per product (gross \u2212 line discount).",
+   "type": "simple",
+   "served_by": [
+    "order_line_items"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "image_url",
+    "product_title",
+    "product_type",
+    "vendor"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "product_quantity": {
+   "name": "product_quantity",
+   "label": "Product Quantity",
+   "description": "Units sold per product (order line quantity).",
+   "type": "simple",
+   "served_by": [
+    "order_line_items"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "image_url",
+    "product_title",
+    "product_type",
+    "vendor"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "product_order_count": {
+   "name": "product_order_count",
+   "label": "Product Order Count",
+   "description": "Distinct orders a product appears in.",
+   "type": "simple",
+   "served_by": [
+    "order_line_items"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "image_url",
+    "product_title",
+    "product_type",
+    "vendor"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "product_discount": {
+   "name": "product_discount",
+   "label": "Product Discount",
+   "description": "Discount given on a product's line items.",
+   "type": "simple",
+   "served_by": [
+    "order_line_items"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "image_url",
+    "product_title",
+    "product_type",
+    "vendor"
+   ],
+   "time_only": false,
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "rfm_customers": {
+   "name": "rfm_customers",
+   "label": "RFM Customers",
+   "description": "Customers in an RFM loyalty segment. Group by rfm_customer__segment.",
+   "type": "simple",
+   "served_by": [
+    "customer_rfm"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "segment"
+   ],
+   "time_only": false,
+   "time_dimension": "scored_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "rfm_avg_recency": {
+   "name": "rfm_avg_recency",
+   "label": "Avg Recency Score",
+   "description": "Average Recency score (1-5) per segment.",
+   "type": "ratio",
+   "served_by": [
+    "customer_rfm"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "segment"
+   ],
+   "time_only": false,
+   "time_dimension": "scored_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "rfm_avg_frequency": {
+   "name": "rfm_avg_frequency",
+   "label": "Avg Frequency Score",
+   "description": "Average Frequency score (1-5) per segment.",
+   "type": "ratio",
+   "served_by": [
+    "customer_rfm"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "segment"
+   ],
+   "time_only": false,
+   "time_dimension": "scored_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "rfm_avg_monetary": {
+   "name": "rfm_avg_monetary",
+   "label": "Avg Monetary Score",
+   "description": "Average Monetary score (1-5) per segment.",
+   "type": "ratio",
+   "served_by": [
+    "customer_rfm"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "segment"
+   ],
+   "time_only": false,
+   "time_dimension": "scored_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "rfm_r_score_total": {
+   "name": "rfm_r_score_total",
+   "label": "RFM R total",
+   "description": "Sum of R scores (internal \u2014 numerator of rfm_avg_recency).",
+   "type": "simple",
+   "served_by": [
+    "customer_rfm"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "segment"
+   ],
+   "time_only": false,
+   "time_dimension": "scored_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "rfm_f_score_total": {
+   "name": "rfm_f_score_total",
+   "label": "RFM F total",
+   "description": "Sum of F scores (internal).",
+   "type": "simple",
+   "served_by": [
+    "customer_rfm"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "segment"
+   ],
+   "time_only": false,
+   "time_dimension": "scored_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "rfm_m_score_total": {
+   "name": "rfm_m_score_total",
+   "label": "RFM M total",
+   "description": "Sum of M scores (internal).",
+   "type": "simple",
+   "served_by": [
+    "customer_rfm"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "segment"
+   ],
+   "time_only": false,
+   "time_dimension": "scored_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "new_customers_acquired": {
+   "name": "new_customers_acquired",
+   "label": "New Customers (acquired)",
+   "description": "New customers by first-order date \u2014 GROUPABLE BY TIME (customer growth). Distinct from window-based new_customers. Also groupable by acq_customer__acq_product (entry SKU) and acq_customer__acq_discount_tier (first-order discount band).",
+   "type": "simple",
+   "served_by": [
+    "customer_acquisition"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "acq_discount_tier",
+    "acq_product"
+   ],
+   "time_only": false,
+   "time_dimension": "acquired_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "cohort_active_customers": {
+   "name": "cohort_active_customers",
+   "label": "Cohort Active Customers",
+   "description": "Distinct customers from an acquisition cohort who ordered in a given period (months since acquisition). Group by customer_cohort__period_number for the retention curve, customer_cohort__acq_product (retention by entry SKU), or customer_cohort__acq_discount_tier (retention by first-order discount).",
+   "type": "simple",
+   "served_by": [
+    "customer_cohorts"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "acq_discount_tier",
+    "acq_product",
+    "period_number"
+   ],
+   "time_only": false,
+   "time_dimension": "period_date",
+   "finest_grain": "month",
+   "status": "ok",
+   "caveats": []
+  },
+  "cohort_period_revenue": {
+   "name": "cohort_period_revenue",
+   "label": "Cohort Revenue",
+   "description": "Revenue an acquisition cohort produced in a given period (months since acquisition). Same grouping options as cohort_active_customers \u2014 for LTV-by-cohort curves.",
+   "type": "simple",
+   "served_by": [
+    "customer_cohorts"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "acq_discount_tier",
+    "acq_product",
+    "period_number"
+   ],
+   "time_only": false,
+   "time_dimension": "period_date",
+   "finest_grain": "month",
+   "status": "ok",
+   "caveats": []
+  },
+  "basket_pair_orders": {
+   "name": "basket_pair_orders",
+   "label": "Pair Orders",
+   "description": "Total orders containing a product pair (frequently-bought-together). Group by basket_pair__product_a / product_b.",
+   "type": "simple",
+   "served_by": [
+    "basket_pairs"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "image_a",
+    "image_b",
+    "product_a",
+    "product_b"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "basket_pair_new_orders": {
+   "name": "basket_pair_new_orders",
+   "label": "Pair New Orders",
+   "description": "Product-pair orders from FIRST-TIME customers (new).",
+   "type": "simple",
+   "served_by": [
+    "basket_pairs"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "image_a",
+    "image_b",
+    "product_a",
+    "product_b"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "basket_pair_returning_orders": {
+   "name": "basket_pair_returning_orders",
+   "label": "Pair Returning Orders",
+   "description": "Product-pair orders from REPEAT customers (returning).",
+   "type": "simple",
+   "served_by": [
+    "basket_pairs"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "image_a",
+    "image_b",
+    "product_a",
+    "product_b"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "basket_pair_sales": {
+   "name": "basket_pair_sales",
+   "label": "Pair Sales",
+   "description": "Gross sales for a co-purchased product pair.",
+   "type": "simple",
+   "served_by": [
+    "basket_pairs"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "image_a",
+    "image_b",
+    "product_a",
+    "product_b"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "basket_pair_new_sales": {
+   "name": "basket_pair_new_sales",
+   "label": "Pair New Sales",
+   "description": "Sales for a product pair from first-time customers (new).",
+   "type": "simple",
+   "served_by": [
+    "basket_pairs"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "image_a",
+    "image_b",
+    "product_a",
+    "product_b"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_search_spend": {
+   "name": "fk_search_spend",
+   "label": "FK Search Spend",
+   "description": "Flipkart search-query ad spend.",
+   "type": "simple",
+   "served_by": [
+    "flipkart_search_terms"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "query",
+    "search_intent"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_search_revenue": {
+   "name": "fk_search_revenue",
+   "label": "FK Search Revenue",
+   "description": "Flipkart search-query attributed revenue (direct + indirect).",
+   "type": "simple",
+   "served_by": [
+    "flipkart_search_terms"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "query",
+    "search_intent"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_search_clicks": {
+   "name": "fk_search_clicks",
+   "label": "FK Search Clicks",
+   "description": "Flipkart search-query clicks.",
+   "type": "simple",
+   "served_by": [
+    "flipkart_search_terms"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "query",
+    "search_intent"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_search_conversions": {
+   "name": "fk_search_conversions",
+   "label": "FK Search Conversions",
+   "description": "Flipkart search-query converted units.",
+   "type": "simple",
+   "served_by": [
+    "flipkart_search_terms"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "query",
+    "search_intent"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_search_roas": {
+   "name": "fk_search_roas",
+   "label": "FK Search ROAS",
+   "description": "Flipkart search-query ROAS = revenue / spend. Groupable by search_intent / query.",
+   "type": "ratio",
+   "served_by": [
+    "flipkart_search_terms"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "query",
+    "search_intent"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_placement_spend": {
+   "name": "fk_placement_spend",
+   "label": "FK Placement Spend",
+   "description": "Flipkart ad spend by placement.",
+   "type": "simple",
+   "served_by": [
+    "flipkart_placements"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "placement_type"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_placement_revenue": {
+   "name": "fk_placement_revenue",
+   "label": "FK Placement Revenue",
+   "description": "Flipkart attributed revenue by placement (direct + indirect).",
+   "type": "simple",
+   "served_by": [
+    "flipkart_placements"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "placement_type"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_placement_clicks": {
+   "name": "fk_placement_clicks",
+   "label": "FK Placement Clicks",
+   "description": "Flipkart clicks by placement.",
+   "type": "simple",
+   "served_by": [
+    "flipkart_placements"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "placement_type"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_placement_roas": {
+   "name": "fk_placement_roas",
+   "label": "FK Placement ROAS",
+   "description": "Flipkart ROAS by placement = revenue / spend.",
+   "type": "ratio",
+   "served_by": [
+    "flipkart_placements"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "placement_type"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_keyword_spend": {
+   "name": "fk_keyword_spend",
+   "label": "FK Keyword Spend",
+   "description": "Flipkart bid-keyword ad spend.",
+   "type": "simple",
+   "served_by": [
+    "flipkart_keywords"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "keyword",
+    "match_type"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_keyword_revenue": {
+   "name": "fk_keyword_revenue",
+   "label": "FK Keyword Revenue",
+   "description": "Flipkart bid-keyword attributed revenue (direct + indirect).",
+   "type": "simple",
+   "served_by": [
+    "flipkart_keywords"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "keyword",
+    "match_type"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_keyword_clicks": {
+   "name": "fk_keyword_clicks",
+   "label": "FK Keyword Clicks",
+   "description": "Flipkart bid-keyword clicks.",
+   "type": "simple",
+   "served_by": [
+    "flipkart_keywords"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "keyword",
+    "match_type"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_keyword_conversions": {
+   "name": "fk_keyword_conversions",
+   "label": "FK Keyword Conversions",
+   "description": "Flipkart bid-keyword converted units (orders signal).",
+   "type": "simple",
+   "served_by": [
+    "flipkart_keywords"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "keyword",
+    "match_type"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_keyword_roas": {
+   "name": "fk_keyword_roas",
+   "label": "FK Keyword ROAS",
+   "description": "Flipkart bid-keyword ROAS = revenue / spend. Groupable by keyword / match_type.",
+   "type": "ratio",
+   "served_by": [
+    "flipkart_keywords"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "keyword",
+    "match_type"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_product_spend": {
+   "name": "fk_product_spend",
+   "label": "FK Product Spend",
+   "description": "Flipkart per-product ad spend.",
+   "type": "simple",
+   "served_by": [
+    "flipkart_products"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "fsn_id",
+    "product_name"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_product_revenue": {
+   "name": "fk_product_revenue",
+   "label": "FK Product Revenue",
+   "description": "Flipkart per-product attributed revenue.",
+   "type": "simple",
+   "served_by": [
+    "flipkart_products"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "fsn_id",
+    "product_name"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_product_clicks": {
+   "name": "fk_product_clicks",
+   "label": "FK Product Clicks",
+   "description": "Flipkart per-product clicks.",
+   "type": "simple",
+   "served_by": [
+    "flipkart_products"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "fsn_id",
+    "product_name"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_product_roas": {
+   "name": "fk_product_roas",
+   "label": "FK Product ROAS",
+   "description": "Flipkart per-product ROAS = revenue / spend. Groupable by product / campaign.",
+   "type": "ratio",
+   "served_by": [
+    "flipkart_products"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "fsn_id",
+    "product_name"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_demo_spend": {
+   "name": "meta_demo_spend",
+   "label": "Meta Demo Spend",
+   "description": "Meta ad spend by age/gender. Groupable by age, gender, campaign_name.",
+   "type": "simple",
+   "served_by": [
+    "meta_demographics"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "age",
+    "campaign_name",
+    "gender"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_demo_impressions": {
+   "name": "meta_demo_impressions",
+   "label": "Meta Demo Impressions",
+   "description": "Meta impressions by age/gender.",
+   "type": "simple",
+   "served_by": [
+    "meta_demographics"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "age",
+    "campaign_name",
+    "gender"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_demo_clicks": {
+   "name": "meta_demo_clicks",
+   "label": "Meta Demo Clicks",
+   "description": "Meta clicks by age/gender.",
+   "type": "simple",
+   "served_by": [
+    "meta_demographics"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "age",
+    "campaign_name",
+    "gender"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_demo_conversions": {
+   "name": "meta_demo_conversions",
+   "label": "Meta Demo Conversions",
+   "description": "Meta platform-reported purchases by age/gender (directional signal).",
+   "type": "simple",
+   "served_by": [
+    "meta_demographics"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "age",
+    "campaign_name",
+    "gender"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_demo_revenue": {
+   "name": "meta_demo_revenue",
+   "label": "Meta Demo Revenue",
+   "description": "Meta platform-reported purchase value by age/gender (directional signal).",
+   "type": "simple",
+   "served_by": [
+    "meta_demographics"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "age",
+    "campaign_name",
+    "gender"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_demo_roas": {
+   "name": "meta_demo_roas",
+   "label": "Meta Demo ROAS",
+   "description": "Meta reported ROAS by age/gender = revenue / spend. Groupable by age, gender.",
+   "type": "ratio",
+   "served_by": [
+    "meta_demographics"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "age",
+    "campaign_name",
+    "gender"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_demo_freq_x_impressions": {
+   "name": "meta_demo_freq_x_impressions",
+   "label": "Meta Demo Freq\u00d7Impr",
+   "description": "Sum(frequency \u00d7 impressions) by age/gender \u2014 numerator of meta_demo_avg_frequency (internal).",
+   "type": "simple",
+   "served_by": [
+    "meta_demographics"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "age",
+    "campaign_name",
+    "gender"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_demo_avg_frequency": {
+   "name": "meta_demo_avg_frequency",
+   "label": "Meta Demo Avg Frequency",
+   "description": "Impressions-weighted average frequency by age/gender (NON-additive; served as sum(freq*imp)/sum(imp)).",
+   "type": "ratio",
+   "served_by": [
+    "meta_demographics"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "age",
+    "campaign_name",
+    "gender"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_placement_spend": {
+   "name": "meta_placement_spend",
+   "label": "Meta Placement Spend",
+   "description": "Meta ad spend by placement/device. Groupable by publisher_platform, platform_position, impression_device, campaign_name.",
+   "type": "simple",
+   "served_by": [
+    "meta_placements"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "impression_device",
+    "platform_position",
+    "publisher_platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_placement_impressions": {
+   "name": "meta_placement_impressions",
+   "label": "Meta Placement Impressions",
+   "description": "Meta impressions by placement/device.",
+   "type": "simple",
+   "served_by": [
+    "meta_placements"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "impression_device",
+    "platform_position",
+    "publisher_platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_placement_clicks": {
+   "name": "meta_placement_clicks",
+   "label": "Meta Placement Clicks",
+   "description": "Meta clicks by placement/device.",
+   "type": "simple",
+   "served_by": [
+    "meta_placements"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "impression_device",
+    "platform_position",
+    "publisher_platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_placement_conversions": {
+   "name": "meta_placement_conversions",
+   "label": "Meta Placement Conversions",
+   "description": "Meta platform-reported purchases by placement/device (directional signal).",
+   "type": "simple",
+   "served_by": [
+    "meta_placements"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "impression_device",
+    "platform_position",
+    "publisher_platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_placement_revenue": {
+   "name": "meta_placement_revenue",
+   "label": "Meta Placement Revenue",
+   "description": "Meta platform-reported purchase value by placement/device (directional signal).",
+   "type": "simple",
+   "served_by": [
+    "meta_placements"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "impression_device",
+    "platform_position",
+    "publisher_platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_placement_roas": {
+   "name": "meta_placement_roas",
+   "label": "Meta Placement ROAS",
+   "description": "Meta reported ROAS by placement/device = revenue / spend.",
+   "type": "ratio",
+   "served_by": [
+    "meta_placements"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "impression_device",
+    "platform_position",
+    "publisher_platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_placement_freq_x_impressions": {
+   "name": "meta_placement_freq_x_impressions",
+   "label": "Meta Placement Freq\u00d7Impr",
+   "description": "Sum(frequency \u00d7 impressions) by placement/device \u2014 numerator of meta_placement_avg_frequency (internal).",
+   "type": "simple",
+   "served_by": [
+    "meta_placements"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "impression_device",
+    "platform_position",
+    "publisher_platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_placement_avg_frequency": {
+   "name": "meta_placement_avg_frequency",
+   "label": "Meta Placement Avg Frequency",
+   "description": "Impressions-weighted average frequency by placement/device (NON-additive).",
+   "type": "ratio",
+   "served_by": [
+    "meta_placements"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "impression_device",
+    "platform_position",
+    "publisher_platform"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_geo_spend": {
+   "name": "meta_geo_spend",
+   "label": "Meta Geo Spend",
+   "description": "Meta ad spend by geography. Groupable by geo_level, country, region. Filter geo_level to one level before summing.",
+   "type": "simple",
+   "served_by": [
+    "meta_geo"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "country",
+    "geo_level",
+    "region"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_geo_impressions": {
+   "name": "meta_geo_impressions",
+   "label": "Meta Geo Impressions",
+   "description": "Meta impressions by geography.",
+   "type": "simple",
+   "served_by": [
+    "meta_geo"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "country",
+    "geo_level",
+    "region"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_geo_clicks": {
+   "name": "meta_geo_clicks",
+   "label": "Meta Geo Clicks",
+   "description": "Meta clicks by geography.",
+   "type": "simple",
+   "served_by": [
+    "meta_geo"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "country",
+    "geo_level",
+    "region"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_geo_conversions": {
+   "name": "meta_geo_conversions",
+   "label": "Meta Geo Conversions",
+   "description": "Meta platform-reported purchases by geography (directional; off-Meta conversions under-reported under geo breakdowns per spec \u00a75).",
+   "type": "simple",
+   "served_by": [
+    "meta_geo"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "country",
+    "geo_level",
+    "region"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_geo_revenue": {
+   "name": "meta_geo_revenue",
+   "label": "Meta Geo Revenue",
+   "description": "Meta platform-reported purchase value by geography (directional).",
+   "type": "simple",
+   "served_by": [
+    "meta_geo"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "country",
+    "geo_level",
+    "region"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_geo_roas": {
+   "name": "meta_geo_roas",
+   "label": "Meta Geo ROAS",
+   "description": "Meta reported ROAS by geography = revenue / spend. Filter geo_level first.",
+   "type": "ratio",
+   "served_by": [
+    "meta_geo"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "country",
+    "geo_level",
+    "region"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_hourly_spend": {
+   "name": "meta_hourly_spend",
+   "label": "Meta Hourly Spend",
+   "description": "Meta ad spend by hour-of-day (advertiser time zone). Groupable by hour, campaign_name.",
+   "type": "simple",
+   "served_by": [
+    "meta_hourly"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "hour_of_day"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_hourly_impressions": {
+   "name": "meta_hourly_impressions",
+   "label": "Meta Hourly Impressions",
+   "description": "Meta impressions by hour-of-day.",
+   "type": "simple",
+   "served_by": [
+    "meta_hourly"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "hour_of_day"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_hourly_clicks": {
+   "name": "meta_hourly_clicks",
+   "label": "Meta Hourly Clicks",
+   "description": "Meta clicks by hour-of-day.",
+   "type": "simple",
+   "served_by": [
+    "meta_hourly"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "hour_of_day"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_hourly_conversions": {
+   "name": "meta_hourly_conversions",
+   "label": "Meta Hourly Conversions",
+   "description": "Meta platform-reported purchases by hour-of-day (directional signal).",
+   "type": "simple",
+   "served_by": [
+    "meta_hourly"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "hour_of_day"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_hourly_revenue": {
+   "name": "meta_hourly_revenue",
+   "label": "Meta Hourly Revenue",
+   "description": "Meta platform-reported purchase value by hour-of-day (directional signal).",
+   "type": "simple",
+   "served_by": [
+    "meta_hourly"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "hour_of_day"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_hourly_roas": {
+   "name": "meta_hourly_roas",
+   "label": "Meta Hourly ROAS",
+   "description": "Meta reported ROAS by hour-of-day = revenue / spend. Best-time-to-run analysis.",
+   "type": "ratio",
+   "served_by": [
+    "meta_hourly"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "hour_of_day"
+   ],
+   "time_only": false,
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "google_st_spend": {
+   "name": "google_st_spend",
+   "label": "Google Search-Term Spend",
+   "description": "Google search-term spend. Group by google_search_terms \u2192 search_term / campaign_name / term_status. For the PRUNE LIST filter spend>0 and google_st_conversions=0.",
+   "type": "simple",
+   "served_by": [
+    "google_search_terms"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "platform",
+    "search_term",
+    "term_status"
+   ],
+   "time_only": false,
+   "time_dimension": "last_seen",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "google_search_terms_range"
+   ]
+  },
+  "google_st_impressions": {
+   "name": "google_st_impressions",
+   "label": "Google Search-Term Impressions",
+   "description": "Google search-term impressions. For EMERGING terms filter term_status='NONE' and order by this.",
+   "type": "simple",
+   "served_by": [
+    "google_search_terms"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "platform",
+    "search_term",
+    "term_status"
+   ],
+   "time_only": false,
+   "time_dimension": "last_seen",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "google_search_terms_range"
+   ]
+  },
+  "google_st_clicks": {
+   "name": "google_st_clicks",
+   "label": "Google Search-Term Clicks",
+   "description": "Google search-term clicks.",
+   "type": "simple",
+   "served_by": [
+    "google_search_terms"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "platform",
+    "search_term",
+    "term_status"
+   ],
+   "time_only": false,
+   "time_dimension": "last_seen",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "google_search_terms_range"
+   ]
+  },
+  "google_st_conversions": {
+   "name": "google_st_conversions",
+   "label": "Google Search-Term Conversions",
+   "description": "Google search-term conversions. Zero here + spend>0 = prune candidate.",
+   "type": "simple",
+   "served_by": [
+    "google_search_terms"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "platform",
+    "search_term",
+    "term_status"
+   ],
+   "time_only": false,
+   "time_dimension": "last_seen",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "google_search_terms_range"
+   ]
+  },
+  "google_st_conversions_value": {
+   "name": "google_st_conversions_value",
+   "label": "Google Search-Term Conv Value",
+   "description": "Google search-term conversion value.",
+   "type": "simple",
+   "served_by": [
+    "google_search_terms"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "platform",
+    "search_term",
+    "term_status"
+   ],
+   "time_only": false,
+   "time_dimension": "last_seen",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "google_search_terms_range"
+   ]
+  },
+  "google_kw_spend": {
+   "name": "google_kw_spend",
+   "label": "Google Keyword Spend (approx)",
+   "description": "Google keyword spend (APPROX \u2014 ad-group metrics split evenly across keywords). Group by google_keywords \u2192 keyword_text / brand_class / match_type. Not true per-keyword cost.",
+   "type": "simple",
+   "served_by": [
+    "google_keywords"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_name",
+    "brand_class",
+    "campaign_id",
+    "keyword_status",
+    "keyword_text",
+    "match_type"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "approx_google_keywords"
+   ]
+  },
+  "google_kw_clicks": {
+   "name": "google_kw_clicks",
+   "label": "Google Keyword Clicks (approx)",
+   "description": "Google keyword clicks (APPROX, ad-group-attributed).",
+   "type": "simple",
+   "served_by": [
+    "google_keywords"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_name",
+    "brand_class",
+    "campaign_id",
+    "keyword_status",
+    "keyword_text",
+    "match_type"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "approx_google_keywords"
+   ]
+  },
+  "google_kw_conversions": {
+   "name": "google_kw_conversions",
+   "label": "Google Keyword Conversions (approx)",
+   "description": "Google keyword conversions (APPROX, ad-group-attributed).",
+   "type": "simple",
+   "served_by": [
+    "google_keywords"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_name",
+    "brand_class",
+    "campaign_id",
+    "keyword_status",
+    "keyword_text",
+    "match_type"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "approx_google_keywords"
+   ]
+  },
+  "google_kw_conversions_value": {
+   "name": "google_kw_conversions_value",
+   "label": "Google Keyword Conv Value (approx)",
+   "description": "Google keyword conversion value (APPROX, ad-group-attributed).",
+   "type": "simple",
+   "served_by": [
+    "google_keywords"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adgroup_name",
+    "brand_class",
+    "campaign_id",
+    "keyword_status",
+    "keyword_text",
+    "match_type"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "approx_google_keywords"
+   ]
+  },
+  "google_campaign_count": {
+   "name": "google_campaign_count",
+   "label": "Google Campaign Count",
+   "description": "Count of Google campaigns. Group by google_campaigns_dim \u2192 campaign_status (ENABLED/PAUSED), channel_type (SEARCH/PERFORMANCE_MAX), bidding_strategy. Answers 'which campaigns are enabled vs paused, on what bidding/channel' (#2).",
+   "type": "simple",
+   "served_by": [
+    "google_campaigns_dim"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "bidding_strategy",
+    "campaign_name",
+    "campaign_status",
+    "channel_type"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "google_campaign_budget": {
+   "name": "google_campaign_budget",
+   "label": "Google Campaign Budget",
+   "description": "Sum of Google campaign daily budgets. Group by campaign_status / channel_type.",
+   "type": "simple",
+   "served_by": [
+    "google_campaigns_dim"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "bidding_strategy",
+    "campaign_name",
+    "campaign_status",
+    "channel_type"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "lifecycle_customers": {
+   "name": "lifecycle_customers",
+   "label": "Lifecycle Customers",
+   "description": "Count of customers by lifecycle band. Group by customer_lifecycle \u2192 lifecycle_band (active/overdue/at_risk/one_time/new) to size the churn/win-back opportunity (#Q90/#Q130).",
+   "type": "simple",
+   "served_by": [
+    "customer_lifecycle"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "lifecycle_band"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "lifecycle_ltv": {
+   "name": "lifecycle_ltv",
+   "label": "Lifecycle LTV",
+   "description": "Total lifetime revenue of customers in a lifecycle band \u2014 the revenue AT RISK in at_risk/overdue bands.",
+   "type": "simple",
+   "served_by": [
+    "customer_lifecycle"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "lifecycle_band"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "pde_units": {
+   "name": "pde_units",
+   "label": "Units by Discount Band",
+   "description": "Units sold per product at a discount-depth band. Group by product_discount_elasticity \u2192 product_title + discount_band to see if a SKU sells more when discounted (sensitive) or steady (insensitive) \u2014 #A5.",
+   "type": "simple",
+   "served_by": [
+    "product_discount_elasticity"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "discount_band",
+    "product_title",
+    "product_type"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "pde_orders": {
+   "name": "pde_orders",
+   "label": "Orders by Discount Band",
+   "description": "Orders per product at a discount-depth band (discount sensitivity).",
+   "type": "simple",
+   "served_by": [
+    "product_discount_elasticity"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "discount_band",
+    "product_title",
+    "product_type"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "pde_net_sales": {
+   "name": "pde_net_sales",
+   "label": "Net Sales by Discount Band",
+   "description": "Net sales per product at a discount-depth band.",
+   "type": "simple",
+   "served_by": [
+    "product_discount_elasticity"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "discount_band",
+    "product_title",
+    "product_type"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_adset_reach": {
+   "name": "meta_adset_reach",
+   "label": "Meta Ad-set Reach",
+   "description": "Meta ad-set monthly reach. Group by meta_adset_saturation \u2192 adset_id + month. Reach FALLING while avg frequency RISES month-over-month = a saturated audience (#Q21).",
+   "type": "simple",
+   "served_by": [
+    "meta_adset_saturation"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adset_id",
+    "campaign_id"
+   ],
+   "time_only": false,
+   "time_dimension": "saturation_month",
+   "finest_grain": "month",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_adset_spend": {
+   "name": "meta_adset_spend",
+   "label": "Meta Ad-set Spend",
+   "description": "Meta ad-set monthly spend (saturation context).",
+   "type": "simple",
+   "served_by": [
+    "meta_adset_saturation"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adset_id",
+    "campaign_id"
+   ],
+   "time_only": false,
+   "time_dimension": "saturation_month",
+   "finest_grain": "month",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_adset_avg_frequency": {
+   "name": "meta_adset_avg_frequency",
+   "label": "Meta Ad-set Avg Frequency",
+   "description": "Meta ad-set impressions-weighted average frequency per month = freq_x_impr / impressions. RISING month-over-month with flat/falling reach = saturation (#Q21).",
+   "type": "ratio",
+   "served_by": [
+    "meta_adset_saturation"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adset_id",
+    "campaign_id"
+   ],
+   "time_only": false,
+   "time_dimension": "saturation_month",
+   "finest_grain": "month",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_adset_freq_x_impr": {
+   "name": "meta_adset_freq_x_impr",
+   "label": "Meta Ad-set Freq x Impr",
+   "description": "Sum(frequency x impressions) at ad-set/month (internal \u2014 numerator of meta_adset_avg_frequency).",
+   "type": "simple",
+   "served_by": [
+    "meta_adset_saturation"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adset_id",
+    "campaign_id"
+   ],
+   "time_only": false,
+   "time_dimension": "saturation_month",
+   "finest_grain": "month",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_adset_impressions": {
+   "name": "meta_adset_impressions",
+   "label": "Meta Ad-set Impressions",
+   "description": "Meta ad-set monthly impressions (denominator of avg frequency).",
+   "type": "simple",
+   "served_by": [
+    "meta_adset_saturation"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "adset_id",
+    "campaign_id"
+   ],
+   "time_only": false,
+   "time_dimension": "saturation_month",
+   "finest_grain": "month",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_creative_spend": {
+   "name": "meta_creative_spend",
+   "label": "Meta Creative Spend",
+   "description": "Meta creative (ad) spend. Group by meta_creatives \u2192 funnel_stage (prospecting/retargeting) + creative_name to compare which creatives work for cold prospecting vs retargeting (#Q36).",
+   "type": "simple",
+   "served_by": [
+    "meta_creatives"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_id",
+    "creative_name",
+    "funnel_stage"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_creative_clicks": {
+   "name": "meta_creative_clicks",
+   "label": "Meta Creative Clicks",
+   "description": "Meta creative clicks (for CTR by funnel stage).",
+   "type": "simple",
+   "served_by": [
+    "meta_creatives"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_id",
+    "creative_name",
+    "funnel_stage"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_creative_impressions": {
+   "name": "meta_creative_impressions",
+   "label": "Meta Creative Impressions",
+   "description": "Meta creative impressions.",
+   "type": "simple",
+   "served_by": [
+    "meta_creatives"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_id",
+    "creative_name",
+    "funnel_stage"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "meta_creative_ctr": {
+   "name": "meta_creative_ctr",
+   "label": "Meta Creative CTR",
+   "description": "Meta creative CTR = clicks / impressions. Group by funnel_stage to compare prospecting vs retargeting creative efficiency (#Q36).",
+   "type": "ratio",
+   "served_by": [
+    "meta_creatives"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_id",
+    "creative_name",
+    "funnel_stage"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_campaign_spend": {
+   "name": "fk_campaign_spend",
+   "label": "FK Campaign Spend",
+   "description": "Flipkart PLA campaign spend. Group by flipkart_campaigns \u2192 campaign_name / campaign_status (LIVE/PAUSED/\u2026) / campaign_type.",
+   "type": "simple",
+   "served_by": [
+    "flipkart_campaigns"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "budgeting_type",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_campaign_revenue": {
+   "name": "fk_campaign_revenue",
+   "label": "FK Campaign Revenue",
+   "description": "Flipkart PLA campaign attributed revenue.",
+   "type": "simple",
+   "served_by": [
+    "flipkart_campaigns"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "budgeting_type",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_campaign_clicks": {
+   "name": "fk_campaign_clicks",
+   "label": "FK Campaign Clicks",
+   "description": "Flipkart PLA campaign clicks.",
+   "type": "simple",
+   "served_by": [
+    "flipkart_campaigns"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "budgeting_type",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_campaign_units": {
+   "name": "fk_campaign_units",
+   "label": "FK Campaign Units",
+   "description": "Flipkart PLA campaign converted units.",
+   "type": "simple",
+   "served_by": [
+    "flipkart_campaigns"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "budgeting_type",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_campaign_count": {
+   "name": "fk_campaign_count",
+   "label": "FK Campaign Count",
+   "description": "Count of Flipkart campaigns. Group by campaign_status to see LIVE vs PAUSED vs DRAFT counts.",
+   "type": "simple",
+   "served_by": [
+    "flipkart_campaigns"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "budgeting_type",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "fk_campaign_roas": {
+   "name": "fk_campaign_roas",
+   "label": "FK Campaign ROAS",
+   "description": "Flipkart PLA campaign ROAS = revenue / spend. Group by campaign_name / campaign_status. The real efficiency metric for Flipkart campaigns.",
+   "type": "ratio",
+   "served_by": [
+    "flipkart_campaigns"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "budgeting_type",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": []
+  },
+  "amazon_spend": {
+   "name": "amazon_spend",
+   "label": "Amazon Spend",
+   "description": "Amazon Ads spend (cost). Group by amazon_campaigns \u2192 ad_product (SPONSORED_PRODUCTS/BRANDS/DISPLAY) / campaign_name / marketplace.",
+   "type": "simple",
+   "served_by": [
+    "amazon_campaigns"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "ad_product",
+    "campaign_name",
+    "marketplace"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_sales": {
+   "name": "amazon_sales",
+   "label": "Amazon Attributed Sales",
+   "description": "Amazon Ads ATTRIBUTED sales (SP=7-day window). Real conversion revenue \u2014 Amazon gives attribution, so this is trustworthy.",
+   "type": "simple",
+   "served_by": [
+    "amazon_campaigns"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "ad_product",
+    "campaign_name",
+    "marketplace"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_orders": {
+   "name": "amazon_orders",
+   "label": "Amazon Attributed Orders",
+   "description": "Amazon Ads attributed orders/purchases.",
+   "type": "simple",
+   "served_by": [
+    "amazon_campaigns"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "ad_product",
+    "campaign_name",
+    "marketplace"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_clicks": {
+   "name": "amazon_clicks",
+   "label": "Amazon Clicks",
+   "description": "Amazon Ads clicks.",
+   "type": "simple",
+   "served_by": [
+    "amazon_campaigns"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "ad_product",
+    "campaign_name",
+    "marketplace"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_impressions": {
+   "name": "amazon_impressions",
+   "label": "Amazon Impressions",
+   "description": "Amazon Ads impressions.",
+   "type": "simple",
+   "served_by": [
+    "amazon_campaigns"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "ad_product",
+    "campaign_name",
+    "marketplace"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_roas": {
+   "name": "amazon_roas",
+   "label": "Amazon ROAS",
+   "description": "Amazon ROAS = attributed sales / spend. REAL (Amazon-attributed, not platform-claimed). Group by ad_product to compare SP vs SB vs SD, or by campaign_name.",
+   "type": "ratio",
+   "served_by": [
+    "amazon_campaigns"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "ad_product",
+    "campaign_name",
+    "marketplace"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_acos": {
+   "name": "amazon_acos",
+   "label": "Amazon ACOS",
+   "description": "Amazon ACOS = spend / attributed sales (%). The inverse of ROAS \u2014 lower is better. The standard Amazon efficiency metric. Group by ad_product / campaign_name.",
+   "type": "ratio",
+   "served_by": [
+    "amazon_campaigns"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "ad_product",
+    "campaign_name",
+    "marketplace"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_ctr": {
+   "name": "amazon_ctr",
+   "label": "Amazon CTR",
+   "description": "Amazon CTR = clicks / impressions.",
+   "type": "ratio",
+   "served_by": [
+    "amazon_campaigns"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "ad_product",
+    "campaign_name",
+    "marketplace"
+   ],
+   "time_only": false,
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_kw_count": {
+   "name": "amazon_kw_count",
+   "label": "Amazon Keyword Count",
+   "description": "Count of Amazon keywords. Group by amazon_keywords \u2192 match_type / keyword_status / campaign_name. For keyword inventory / how many enabled vs paused. Per-keyword ROAS is NOT available (Amazon parity schema has no keyword metrics \u2014 use amazon_st_* search terms for query performance).",
+   "type": "simple",
+   "served_by": [
+    "amazon_keywords"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "keyword_status",
+    "keyword_text",
+    "match_type"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_kw_avg_bid": {
+   "name": "amazon_kw_avg_bid",
+   "label": "Amazon Keyword Bid Total",
+   "description": "Total keyword bid (group by match_type for avg-bid analysis).",
+   "type": "simple",
+   "served_by": [
+    "amazon_keywords"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "keyword_status",
+    "keyword_text",
+    "match_type"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_st_spend": {
+   "name": "amazon_st_spend",
+   "label": "Amazon ST Spend",
+   "description": "Amazon search-term spend. Group by amazon_search_terms \u2192 search_term. PRUNE = spend>0 & amazon_st_orders=0.",
+   "type": "simple",
+   "served_by": [
+    "amazon_search_terms"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "match_type",
+    "search_term"
+   ],
+   "time_only": false,
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_st_sales": {
+   "name": "amazon_st_sales",
+   "label": "Amazon ST Sales",
+   "description": "Amazon search-term attributed sales.",
+   "type": "simple",
+   "served_by": [
+    "amazon_search_terms"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "match_type",
+    "search_term"
+   ],
+   "time_only": false,
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_st_orders": {
+   "name": "amazon_st_orders",
+   "label": "Amazon ST Orders",
+   "description": "Amazon search-term attributed orders. Zero + spend>0 = prune candidate.",
+   "type": "simple",
+   "served_by": [
+    "amazon_search_terms"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "match_type",
+    "search_term"
+   ],
+   "time_only": false,
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_st_clicks": {
+   "name": "amazon_st_clicks",
+   "label": "Amazon ST Clicks",
+   "description": "Amazon search-term clicks.",
+   "type": "simple",
+   "served_by": [
+    "amazon_search_terms"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "match_type",
+    "search_term"
+   ],
+   "time_only": false,
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_st_roas": {
+   "name": "amazon_st_roas",
+   "label": "Amazon ST ROAS",
+   "description": "Amazon search-term ROAS = sales / spend. Group by search_term to find high-ROAS terms to harvest as keywords.",
+   "type": "ratio",
+   "served_by": [
+    "amazon_search_terms"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "match_type",
+    "search_term"
+   ],
+   "time_only": false,
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_tgt_count": {
+   "name": "amazon_tgt_count",
+   "label": "Amazon Target Count",
+   "description": "Count of Amazon targets. Group by amazon_targeting \u2192 targeting_type / target_status / campaign_name. Target inventory. Per-target ROAS not available in the parity schema.",
+   "type": "simple",
+   "served_by": [
+    "amazon_targeting"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "target_status",
+    "targeting_expression",
+    "targeting_type"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_tgt_bid_total": {
+   "name": "amazon_tgt_bid_total",
+   "label": "Amazon Target Bid Total",
+   "description": "Total target bid (group by targeting_type for avg-bid analysis).",
+   "type": "simple",
+   "served_by": [
+    "amazon_targeting"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "target_status",
+    "targeting_expression",
+    "targeting_type"
+   ],
+   "time_only": false,
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_prod_spend": {
+   "name": "amazon_prod_spend",
+   "label": "Amazon Product Spend",
+   "description": "Amazon advertised-product (ASIN) spend. Group by amazon_products \u2192 advertised_asin / advertised_sku.",
+   "type": "simple",
+   "served_by": [
+    "amazon_products"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "advertised_asin",
+    "advertised_sku",
+    "campaign_name"
+   ],
+   "time_only": false,
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_prod_sales": {
+   "name": "amazon_prod_sales",
+   "label": "Amazon Product Sales",
+   "description": "Amazon advertised-product attributed sales. Top ASINs by sales; dead SKU = impressions>0 & sales=0.",
+   "type": "simple",
+   "served_by": [
+    "amazon_products"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "advertised_asin",
+    "advertised_sku",
+    "campaign_name"
+   ],
+   "time_only": false,
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_prod_orders": {
+   "name": "amazon_prod_orders",
+   "label": "Amazon Product Orders",
+   "description": "Amazon advertised-product attributed orders.",
+   "type": "simple",
+   "served_by": [
+    "amazon_products"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "advertised_asin",
+    "advertised_sku",
+    "campaign_name"
+   ],
+   "time_only": false,
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_prod_units": {
+   "name": "amazon_prod_units",
+   "label": "Amazon Product Units",
+   "description": "Amazon advertised-product units sold.",
+   "type": "simple",
+   "served_by": [
+    "amazon_products"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "advertised_asin",
+    "advertised_sku",
+    "campaign_name"
+   ],
+   "time_only": false,
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_prod_impressions": {
+   "name": "amazon_prod_impressions",
+   "label": "Amazon Product Impressions",
+   "description": "Amazon advertised-product impressions (for dead-SKU detection).",
+   "type": "simple",
+   "served_by": [
+    "amazon_products"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "advertised_asin",
+    "advertised_sku",
+    "campaign_name"
+   ],
+   "time_only": false,
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_prod_roas": {
+   "name": "amazon_prod_roas",
+   "label": "Amazon Product ROAS",
+   "description": "Amazon per-ASIN ROAS = sales / spend. Which advertised products are efficient. Group by advertised_asin.",
+   "type": "ratio",
+   "served_by": [
+    "amazon_products"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "advertised_asin",
+    "advertised_sku",
+    "campaign_name"
+   ],
+   "time_only": false,
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_halo_sales": {
+   "name": "amazon_halo_sales",
+   "label": "Amazon Halo Sales",
+   "description": "Amazon purchased-product sales. Group by amazon_purchased_products \u2192 purchased_asin + is_halo. is_halo=true = a DIFFERENT product the ad drove (cross-sell/halo).",
+   "type": "simple",
+   "served_by": [
+    "amazon_purchased_products"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "advertised_asin",
+    "is_halo",
+    "purchased_asin"
+   ],
+   "time_only": false,
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_halo_orders": {
+   "name": "amazon_halo_orders",
+   "label": "Amazon Halo Orders",
+   "description": "Amazon purchased-product orders (halo/cross-sell).",
+   "type": "simple",
+   "served_by": [
+    "amazon_purchased_products"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "advertised_asin",
+    "is_halo",
+    "purchased_asin"
+   ],
+   "time_only": false,
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_plc_spend": {
+   "name": "amazon_plc_spend",
+   "label": "Amazon Placement Spend",
+   "description": "Amazon placement spend. Group by amazon_placements \u2192 placement (Top of Search / Product Pages / Rest of Search).",
+   "type": "simple",
+   "served_by": [
+    "amazon_placements"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "placement"
+   ],
+   "time_only": false,
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_plc_sales": {
+   "name": "amazon_plc_sales",
+   "label": "Amazon Placement Sales",
+   "description": "Amazon placement attributed sales.",
+   "type": "simple",
+   "served_by": [
+    "amazon_placements"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "placement"
+   ],
+   "time_only": false,
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_plc_clicks": {
+   "name": "amazon_plc_clicks",
+   "label": "Amazon Placement Clicks",
+   "description": "Amazon placement clicks.",
+   "type": "simple",
+   "served_by": [
+    "amazon_placements"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "placement"
+   ],
+   "time_only": false,
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  },
+  "amazon_plc_roas": {
+   "name": "amazon_plc_roas",
+   "label": "Amazon Placement ROAS",
+   "description": "Amazon placement ROAS = sales / spend. Group by placement to see if Top-of-Search justifies its premium.",
+   "type": "ratio",
+   "served_by": [
+    "amazon_placements"
+   ],
+   "cross_model": false,
+   "groupable_by": [
+    "campaign_name",
+    "placement"
+   ],
+   "time_only": false,
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "status": "ok",
+   "caveats": [
+    "amazon_no_keys"
+   ]
+  }
+ },
+ "models": {
+  "orders": {
+   "name": "orders",
+   "table": "analytics_marts.fct_orders",
+   "description": "One row per Shopify order (from cdp.shopify_orders).",
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "campaign",
+    "channel",
+    "currency",
+    "financial_status",
+    "fulfillment_status",
+    "order_date",
+    "payment_method",
+    "pin_tier"
+   ],
+   "categorical_dimensions": [
+    "campaign",
+    "channel",
+    "currency",
+    "financial_status",
+    "fulfillment_status",
+    "payment_method",
+    "pin_tier"
+   ],
+   "measures": [
+    "all_order_count",
+    "cogs_amount",
+    "cogs_known_items_count",
+    "cogs_total_items_count",
+    "discount_amount",
+    "distinct_customers",
+    "gross_profit_amount",
+    "net_revenue_amount",
+    "new_customer_count",
+    "order_count",
+    "order_total_amount",
+    "paid_revenue_amount",
+    "refunded_amount",
+    "rto_order_count"
+   ],
+   "status": "ok"
+  },
+  "customers": {
+   "name": "customers",
+   "table": "analytics_marts.dim_customers",
+   "description": "One row per customer (from cdp.shopify_customers).",
+   "time_dimension": null,
+   "finest_grain": null,
+   "dimensions": [
+    "city",
+    "country",
+    "province"
+   ],
+   "categorical_dimensions": [
+    "city",
+    "country",
+    "province"
+   ],
+   "measures": [],
+   "status": "ok"
+  },
+  "ad_spend": {
+   "name": "ad_spend",
+   "table": "analytics_marts.fct_ad_spend",
+   "description": "Daily ad performance across Meta + Google (from cdp.*_insights).",
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "adgroup_id",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type",
+    "platform",
+    "spend_date"
+   ],
+   "categorical_dimensions": [
+    "adgroup_id",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type",
+    "platform"
+   ],
+   "measures": [
+    "ad_add_to_carts",
+    "ad_checkouts_initiated",
+    "ad_clicks",
+    "ad_conversions",
+    "ad_conversions_value",
+    "ad_freq_x_impressions",
+    "ad_impressions",
+    "ad_landing_page_views",
+    "ad_spend_amount",
+    "ad_view_through_conversions"
+   ],
+   "status": "ok"
+  },
+  "campaign_performance": {
+   "name": "campaign_performance",
+   "table": "analytics_marts.fct_campaign_performance",
+   "description": "Campaign-day: platform-reported spend/value vs CDP-attributed (delivered) revenue.",
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "campaign_name",
+    "objective",
+    "perf_date",
+    "platform"
+   ],
+   "categorical_dimensions": [
+    "campaign_name",
+    "objective",
+    "platform"
+   ],
+   "measures": [
+    "cp_attributed_orders",
+    "cp_attributed_revenue",
+    "cp_clicks",
+    "cp_freq_x_impressions",
+    "cp_impressions",
+    "cp_rep_conv_value",
+    "cp_rep_conversions",
+    "cp_spend"
+   ],
+   "status": "ok"
+  },
+  "marketplace_daily": {
+   "name": "marketplace_daily",
+   "table": "analytics_marts.fct_marketplace_daily",
+   "description": "Daily marketplace order/revenue rollup. Flipkart: orders+revenue from cdp.flipkart_orders (real per-order ad report), clicks+ad_spend from cdp.flipkart_insights.",
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "order_date",
+    "platform"
+   ],
+   "categorical_dimensions": [
+    "platform"
+   ],
+   "measures": [
+    "marketplace_ad_spend_amount",
+    "marketplace_clicks",
+    "marketplace_order_count",
+    "marketplace_revenue_amount"
+   ],
+   "status": "ok"
+  },
+  "leads": {
+   "name": "leads",
+   "table": "analytics_marts.fct_leads",
+   "description": "One row per person (from cdp.persons). Leadgen funnel base.",
+   "time_dimension": "lead_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "acq_campaign",
+    "acq_source",
+    "geo_city",
+    "geo_country",
+    "lead_date",
+    "lifecycle_stage"
+   ],
+   "categorical_dimensions": [
+    "acq_campaign",
+    "acq_source",
+    "geo_city",
+    "geo_country",
+    "lifecycle_stage"
+   ],
+   "measures": [
+    "converted_count",
+    "identified_count",
+    "lead_revenue_amount",
+    "person_count"
+   ],
+   "status": "ok"
+  },
+  "product_inventory": {
+   "name": "product_inventory",
+   "table": "analytics_marts.fct_product_inventory",
+   "description": "One row per product: inventory, 30d units sold, days-of-cover, risk band.",
+   "time_dimension": "product_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "product_date",
+    "product_status",
+    "product_title",
+    "product_type",
+    "risk_band",
+    "vendor"
+   ],
+   "categorical_dimensions": [
+    "product_status",
+    "product_title",
+    "product_type",
+    "risk_band",
+    "vendor"
+   ],
+   "measures": [
+    "at_risk_product_count",
+    "product_count",
+    "total_inventory_units",
+    "units_sold_30d_total"
+   ],
+   "status": "ok"
+  },
+  "ad_entities": {
+   "name": "ad_entities",
+   "table": "analytics_marts.fct_ad_entities",
+   "description": "Ad-grain performance with campaign/adset/ad hierarchy (Meta + Google).",
+   "time_dimension": "perf_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "ad_name",
+    "adset_name",
+    "campaign_name",
+    "perf_date",
+    "platform"
+   ],
+   "categorical_dimensions": [
+    "ad_name",
+    "adset_name",
+    "campaign_name",
+    "platform"
+   ],
+   "measures": [
+    "ae_clicks",
+    "ae_conversions",
+    "ae_conversions_value",
+    "ae_impressions",
+    "ae_spend"
+   ],
+   "status": "ok"
+  },
+  "order_line_items": {
+   "name": "order_line_items",
+   "table": "analytics_marts.fct_order_line_items",
+   "description": "One row per order line item (from cdp.shopify_orders line_items JSONB). Product-grain sales.",
+   "time_dimension": "order_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "image_url",
+    "order_date",
+    "product_title",
+    "product_type",
+    "vendor"
+   ],
+   "categorical_dimensions": [
+    "image_url",
+    "product_title",
+    "product_type",
+    "vendor"
+   ],
+   "measures": [
+    "line_discount_amount",
+    "line_gross_sales",
+    "line_net_sales",
+    "line_order_count",
+    "line_quantity"
+   ],
+   "status": "ok"
+  },
+  "customer_rfm": {
+   "name": "customer_rfm",
+   "table": "analytics_marts.dim_customer_rfm",
+   "description": "One row per customer with R/F/M quintile scores + loyalty segment (from order history).",
+   "time_dimension": "scored_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "scored_date",
+    "segment"
+   ],
+   "categorical_dimensions": [
+    "segment"
+   ],
+   "measures": [
+    "rfm_customer_count",
+    "rfm_f_sum",
+    "rfm_m_sum",
+    "rfm_r_sum"
+   ],
+   "status": "ok"
+  },
+  "customer_acquisition": {
+   "name": "customer_acquisition",
+   "table": "analytics_marts.dim_customer_acquisition",
+   "description": "One row per customer at first-order date (customer growth over time).",
+   "time_dimension": "acquired_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "acq_discount_tier",
+    "acq_product",
+    "acquired_date"
+   ],
+   "categorical_dimensions": [
+    "acq_discount_tier",
+    "acq_product"
+   ],
+   "measures": [
+    "acq_discount_total",
+    "acquired_customer_count"
+   ],
+   "status": "ok"
+  },
+  "customer_cohorts": {
+   "name": "customer_cohorts",
+   "table": "analytics_marts.fct_customer_cohorts",
+   "description": "Retention matrix: cohort month \u00d7 months-since-acquisition, with entry SKU and discount tier.",
+   "time_dimension": "period_date",
+   "finest_grain": "month",
+   "dimensions": [
+    "acq_discount_tier",
+    "acq_product",
+    "cohort_month",
+    "period_date",
+    "period_number"
+   ],
+   "categorical_dimensions": [
+    "acq_discount_tier",
+    "acq_product",
+    "period_number"
+   ],
+   "measures": [
+    "cohort_active_customers",
+    "cohort_period_revenue"
+   ],
+   "status": "ok"
+  },
+  "basket_pairs": {
+   "name": "basket_pairs",
+   "table": "analytics_marts.fct_basket_pairs",
+   "description": "Product pairs bought together in the same order (from line_items).",
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "computed_date",
+    "image_a",
+    "image_b",
+    "product_a",
+    "product_b"
+   ],
+   "categorical_dimensions": [
+    "image_a",
+    "image_b",
+    "product_a",
+    "product_b"
+   ],
+   "measures": [
+    "pair_gross_sales",
+    "pair_new_orders",
+    "pair_new_sales",
+    "pair_order_count",
+    "pair_returning_orders"
+   ],
+   "status": "ok"
+  },
+  "flipkart_search_terms": {
+   "name": "flipkart_search_terms",
+   "table": "analytics_marts.fct_flipkart_search_terms",
+   "description": "Flipkart PLA search-query performance + intent (from cdp.flipkart_search_terms).",
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "campaign_name",
+    "query",
+    "report_date",
+    "search_intent"
+   ],
+   "categorical_dimensions": [
+    "campaign_name",
+    "query",
+    "search_intent"
+   ],
+   "measures": [
+    "fk_search_clicks_amount",
+    "fk_search_conversions_amount",
+    "fk_search_impressions_amount",
+    "fk_search_revenue_amount",
+    "fk_search_spend_amount"
+   ],
+   "status": "ok"
+  },
+  "flipkart_placements": {
+   "name": "flipkart_placements",
+   "table": "analytics_marts.fct_flipkart_placements",
+   "description": "Flipkart PLA performance by placement (from cdp.flipkart_placements).",
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "campaign_name",
+    "placement_type",
+    "report_date"
+   ],
+   "categorical_dimensions": [
+    "campaign_name",
+    "placement_type"
+   ],
+   "measures": [
+    "fk_placement_clicks_amount",
+    "fk_placement_conversions_amount",
+    "fk_placement_impressions_amount",
+    "fk_placement_revenue_amount",
+    "fk_placement_spend_amount"
+   ],
+   "status": "ok"
+  },
+  "flipkart_keywords": {
+   "name": "flipkart_keywords",
+   "table": "analytics_marts.fct_flipkart_keywords",
+   "description": "Flipkart PLA bid-keyword performance (from cdp.flipkart_keywords).",
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "campaign_name",
+    "keyword",
+    "match_type",
+    "report_date"
+   ],
+   "categorical_dimensions": [
+    "campaign_name",
+    "keyword",
+    "match_type"
+   ],
+   "measures": [
+    "fk_keyword_clicks_amount",
+    "fk_keyword_conversions_amount",
+    "fk_keyword_impressions_amount",
+    "fk_keyword_revenue_amount",
+    "fk_keyword_spend_amount"
+   ],
+   "status": "ok"
+  },
+  "flipkart_products": {
+   "name": "flipkart_products",
+   "table": "analytics_marts.fct_flipkart_products",
+   "description": "Flipkart PLA performance per product (FSN) \u00d7 campaign (from cdp.flipkart_fsn_performance).",
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "campaign_name",
+    "fsn_id",
+    "product_name",
+    "report_date"
+   ],
+   "categorical_dimensions": [
+    "campaign_name",
+    "fsn_id",
+    "product_name"
+   ],
+   "measures": [
+    "fk_product_clicks_amount",
+    "fk_product_revenue_amount",
+    "fk_product_spend_amount"
+   ],
+   "status": "ok"
+  },
+  "meta_demographics": {
+   "name": "meta_demographics",
+   "table": "analytics_marts.fct_meta_demographics",
+   "description": "Meta ad performance by age \u00d7 gender (from cdp.meta_insights_by_demographic).",
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "age",
+    "campaign_name",
+    "gender",
+    "spend_date"
+   ],
+   "categorical_dimensions": [
+    "age",
+    "campaign_name",
+    "gender"
+   ],
+   "measures": [
+    "meta_demo_clicks_amount",
+    "meta_demo_conversions_amount",
+    "meta_demo_freq_x_impressions_amount",
+    "meta_demo_impressions_amount",
+    "meta_demo_revenue_amount",
+    "meta_demo_spend_amount"
+   ],
+   "status": "ok"
+  },
+  "meta_placements": {
+   "name": "meta_placements",
+   "table": "analytics_marts.fct_meta_placements",
+   "description": "Meta ad performance by placement \u00d7 device (from cdp.meta_insights_by_placement).",
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "campaign_name",
+    "impression_device",
+    "platform_position",
+    "publisher_platform",
+    "spend_date"
+   ],
+   "categorical_dimensions": [
+    "campaign_name",
+    "impression_device",
+    "platform_position",
+    "publisher_platform"
+   ],
+   "measures": [
+    "meta_placement_clicks_amount",
+    "meta_placement_conversions_amount",
+    "meta_placement_freq_x_impressions_amount",
+    "meta_placement_impressions_amount",
+    "meta_placement_revenue_amount",
+    "meta_placement_spend_amount"
+   ],
+   "status": "ok"
+  },
+  "meta_geo": {
+   "name": "meta_geo",
+   "table": "analytics_marts.fct_meta_geo",
+   "description": "Meta ad performance by geography (from cdp.meta_insights_by_geo). Filter geo_level to one level before summing.",
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "campaign_name",
+    "country",
+    "geo_level",
+    "region",
+    "spend_date"
+   ],
+   "categorical_dimensions": [
+    "campaign_name",
+    "country",
+    "geo_level",
+    "region"
+   ],
+   "measures": [
+    "meta_geo_clicks_amount",
+    "meta_geo_conversions_amount",
+    "meta_geo_impressions_amount",
+    "meta_geo_revenue_amount",
+    "meta_geo_spend_amount"
+   ],
+   "status": "ok"
+  },
+  "meta_hourly": {
+   "name": "meta_hourly",
+   "table": "analytics_marts.fct_meta_hourly",
+   "description": "Meta ad performance by hour-of-day (from cdp.meta_insights_by_hourly). Advertiser time zone.",
+   "time_dimension": "spend_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "campaign_name",
+    "hour_of_day",
+    "spend_date"
+   ],
+   "categorical_dimensions": [
+    "campaign_name",
+    "hour_of_day"
+   ],
+   "measures": [
+    "meta_hourly_clicks_amount",
+    "meta_hourly_conversions_amount",
+    "meta_hourly_impressions_amount",
+    "meta_hourly_revenue_amount",
+    "meta_hourly_spend_amount"
+   ],
+   "status": "ok"
+  },
+  "lead_conversions": {
+   "name": "lead_conversions",
+   "table": "analytics_marts.fct_lead_conversions",
+   "description": "One row per form-submission event (leadgen conversion), from cdp.mk_events.",
+   "time_dimension": "lead_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "geo_city",
+    "geo_country",
+    "lead_date",
+    "platform",
+    "utm_adgroup",
+    "utm_campaign",
+    "utm_medium",
+    "utm_source",
+    "utm_term"
+   ],
+   "categorical_dimensions": [
+    "geo_city",
+    "geo_country",
+    "platform",
+    "utm_adgroup",
+    "utm_campaign",
+    "utm_medium",
+    "utm_source",
+    "utm_term"
+   ],
+   "measures": [
+    "lead_conversion_count",
+    "lead_converter_count",
+    "lead_event_count"
+   ],
+   "status": "ok"
+  },
+  "google_search_terms": {
+   "name": "google_search_terms",
+   "table": "analytics_marts.fct_google_search_terms",
+   "description": "Google Ads search-term performance (prune list + emerging terms).",
+   "time_dimension": "last_seen",
+   "finest_grain": "day",
+   "dimensions": [
+    "campaign_name",
+    "last_seen",
+    "platform",
+    "search_term",
+    "term_status"
+   ],
+   "categorical_dimensions": [
+    "campaign_name",
+    "platform",
+    "search_term",
+    "term_status"
+   ],
+   "measures": [
+    "gst_clicks",
+    "gst_conversions",
+    "gst_conversions_value",
+    "gst_impressions",
+    "gst_spend"
+   ],
+   "status": "ok"
+  },
+  "google_keywords": {
+   "name": "google_keywords",
+   "table": "analytics_marts.fct_google_keywords",
+   "description": "Google Ads keywords with AD-GROUP-attributed (approximate) metrics + branded classification.",
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "adgroup_name",
+    "brand_class",
+    "campaign_id",
+    "computed_date",
+    "keyword_status",
+    "keyword_text",
+    "match_type"
+   ],
+   "categorical_dimensions": [
+    "adgroup_name",
+    "brand_class",
+    "campaign_id",
+    "keyword_status",
+    "keyword_text",
+    "match_type"
+   ],
+   "measures": [
+    "gkw_clicks",
+    "gkw_conversions",
+    "gkw_conversions_value",
+    "gkw_impressions",
+    "gkw_spend"
+   ],
+   "status": "ok"
+  },
+  "google_campaigns_dim": {
+   "name": "google_campaigns_dim",
+   "table": "analytics_marts.dim_google_campaigns",
+   "description": "Google Ads campaign config: status, channel type, bidding strategy, budget.",
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "bidding_strategy",
+    "campaign_name",
+    "campaign_status",
+    "channel_type",
+    "computed_date"
+   ],
+   "categorical_dimensions": [
+    "bidding_strategy",
+    "campaign_name",
+    "campaign_status",
+    "channel_type"
+   ],
+   "measures": [
+    "gcamp_budget_total",
+    "gcamp_count"
+   ],
+   "status": "ok"
+  },
+  "customer_lifecycle": {
+   "name": "customer_lifecycle",
+   "table": "analytics_marts.dim_customer_lifecycle",
+   "description": "Per-customer churn signals: recency, order-gap cadence, overdue ratio, lifecycle band.",
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "computed_date",
+    "lifecycle_band"
+   ],
+   "categorical_dimensions": [
+    "lifecycle_band"
+   ],
+   "measures": [
+    "lifecycle_customer_count",
+    "lifecycle_ltv_total",
+    "lifecycle_recency_total"
+   ],
+   "status": "ok"
+  },
+  "product_discount_elasticity": {
+   "name": "product_discount_elasticity",
+   "table": "analytics_marts.fct_product_discount_elasticity",
+   "description": "Per-product sales by discount-depth band \u2014 for discount sensitivity.",
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "computed_date",
+    "discount_band",
+    "product_title",
+    "product_type"
+   ],
+   "categorical_dimensions": [
+    "discount_band",
+    "product_title",
+    "product_type"
+   ],
+   "measures": [
+    "pde_discount_given",
+    "pde_net_sales",
+    "pde_orders",
+    "pde_units"
+   ],
+   "status": "ok"
+  },
+  "meta_adset_saturation": {
+   "name": "meta_adset_saturation",
+   "table": "analytics_marts.fct_meta_adset_saturation",
+   "description": "Meta ad-set reach + impressions-weighted avg frequency per month (audience saturation trend).",
+   "time_dimension": "saturation_month",
+   "finest_grain": "month",
+   "dimensions": [
+    "adset_id",
+    "campaign_id",
+    "saturation_month"
+   ],
+   "categorical_dimensions": [
+    "adset_id",
+    "campaign_id"
+   ],
+   "measures": [
+    "msat_freq_x_impr",
+    "msat_impressions",
+    "msat_reach",
+    "msat_spend"
+   ],
+   "status": "ok"
+  },
+  "meta_creatives": {
+   "name": "meta_creatives",
+   "table": "analytics_marts.fct_meta_creatives",
+   "description": "Meta creative (ad) performance with funnel stage (prospecting/retargeting) inferred from ad-set name.",
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "campaign_id",
+    "computed_date",
+    "creative_name",
+    "funnel_stage"
+   ],
+   "categorical_dimensions": [
+    "campaign_id",
+    "creative_name",
+    "funnel_stage"
+   ],
+   "measures": [
+    "mcre_clicks",
+    "mcre_impressions",
+    "mcre_reach",
+    "mcre_spend"
+   ],
+   "status": "ok"
+  },
+  "flipkart_campaigns": {
+   "name": "flipkart_campaigns",
+   "table": "analytics_marts.fct_flipkart_campaigns",
+   "description": "Flipkart PLA campaign performance + config (status, budget, spend, revenue, ROI).",
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "budgeting_type",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type",
+    "report_date"
+   ],
+   "categorical_dimensions": [
+    "budgeting_type",
+    "campaign_name",
+    "campaign_status",
+    "campaign_type"
+   ],
+   "measures": [
+    "fkcamp_clicks",
+    "fkcamp_count",
+    "fkcamp_impressions",
+    "fkcamp_revenue",
+    "fkcamp_spend",
+    "fkcamp_units"
+   ],
+   "status": "ok"
+  },
+  "amazon_campaigns": {
+   "name": "amazon_campaigns",
+   "table": "analytics_marts.fct_amazon_campaigns",
+   "description": "Amazon Ads campaign performance (SP/SB/SD) with attributed sales \u2014 real ROAS + ACOS.",
+   "time_dimension": "report_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "ad_product",
+    "campaign_name",
+    "marketplace",
+    "report_date"
+   ],
+   "categorical_dimensions": [
+    "ad_product",
+    "campaign_name",
+    "marketplace"
+   ],
+   "measures": [
+    "amz_clicks",
+    "amz_impressions",
+    "amz_orders",
+    "amz_sales",
+    "amz_spend"
+   ],
+   "status": "ok"
+  },
+  "amazon_keywords": {
+   "name": "amazon_keywords",
+   "table": "analytics_marts.fct_amazon_keywords",
+   "description": "Amazon keyword ENTITY (config: match type, status, bid). No per-keyword metrics in the parity schema \u2014 use search terms for query performance.",
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "campaign_name",
+    "computed_date",
+    "keyword_status",
+    "keyword_text",
+    "match_type"
+   ],
+   "categorical_dimensions": [
+    "campaign_name",
+    "keyword_status",
+    "keyword_text",
+    "match_type"
+   ],
+   "measures": [
+    "amzkw_bid_total",
+    "amzkw_count"
+   ],
+   "status": "ok"
+  },
+  "amazon_search_terms": {
+   "name": "amazon_search_terms",
+   "table": "analytics_marts.fct_amazon_search_terms",
+   "description": "Amazon customer search terms (spSearchTerm) \u2014 prune list + harvesting.",
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "campaign_name",
+    "match_type",
+    "search_term",
+    "stat_date"
+   ],
+   "categorical_dimensions": [
+    "campaign_name",
+    "match_type",
+    "search_term"
+   ],
+   "measures": [
+    "amzst_clicks",
+    "amzst_impressions",
+    "amzst_orders",
+    "amzst_sales",
+    "amzst_spend"
+   ],
+   "status": "ok"
+  },
+  "amazon_targeting": {
+   "name": "amazon_targeting",
+   "table": "analytics_marts.fct_amazon_targeting",
+   "description": "Amazon targeting ENTITY (config: expression, type, status, bid). No per-target metrics in the parity schema.",
+   "time_dimension": "computed_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "campaign_name",
+    "computed_date",
+    "target_status",
+    "targeting_expression",
+    "targeting_type"
+   ],
+   "categorical_dimensions": [
+    "campaign_name",
+    "target_status",
+    "targeting_expression",
+    "targeting_type"
+   ],
+   "measures": [
+    "amztgt_bid_total",
+    "amztgt_count"
+   ],
+   "status": "ok"
+  },
+  "amazon_products": {
+   "name": "amazon_products",
+   "table": "analytics_marts.fct_amazon_products",
+   "description": "Amazon advertised ASIN/SKU performance (spAdvertisedProduct) \u2014 top ASINs, dead SKUs.",
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "advertised_asin",
+    "advertised_sku",
+    "campaign_name",
+    "stat_date"
+   ],
+   "categorical_dimensions": [
+    "advertised_asin",
+    "advertised_sku",
+    "campaign_name"
+   ],
+   "measures": [
+    "amzprod_clicks",
+    "amzprod_impressions",
+    "amzprod_orders",
+    "amzprod_sales",
+    "amzprod_spend",
+    "amzprod_units"
+   ],
+   "status": "ok"
+  },
+  "amazon_purchased_products": {
+   "name": "amazon_purchased_products",
+   "table": "analytics_marts.fct_amazon_purchased_products",
+   "description": "Amazon halo/cross-sell (spPurchasedProduct) \u2014 other ASINs buyers also bought.",
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "advertised_asin",
+    "is_halo",
+    "purchased_asin",
+    "stat_date"
+   ],
+   "categorical_dimensions": [
+    "advertised_asin",
+    "is_halo",
+    "purchased_asin"
+   ],
+   "measures": [
+    "amzpur_orders",
+    "amzpur_sales",
+    "amzpur_units"
+   ],
+   "status": "ok"
+  },
+  "amazon_placements": {
+   "name": "amazon_placements",
+   "table": "analytics_marts.fct_amazon_placements",
+   "description": "Amazon placement performance (Top of Search / Product Pages / Rest of Search).",
+   "time_dimension": "stat_date",
+   "finest_grain": "day",
+   "dimensions": [
+    "campaign_name",
+    "placement",
+    "stat_date"
+   ],
+   "categorical_dimensions": [
+    "campaign_name",
+    "placement"
+   ],
+   "measures": [
+    "amzplc_clicks",
+    "amzplc_impressions",
+    "amzplc_orders",
+    "amzplc_sales",
+    "amzplc_spend"
+   ],
+   "status": "ok"
+  }
+ },
+ "integrity": {
+  "problems": [],
+  "broken_models": []
+ }
+}

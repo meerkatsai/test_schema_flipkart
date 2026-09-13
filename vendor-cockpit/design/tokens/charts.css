@@ -1,0 +1,40 @@
+:root{
+  /* Series — standard RGBY categorical palette. Order: blue, red, yellow, green, then purple, teal, pink, brown. No orange, no brand ember in data. */
+  --series-1: #4285F4;   /* blue */
+  --series-2: #EA4335;   /* red */
+  --series-3: #FBBC04;   /* yellow */
+  --series-4: #34A853;   /* green */
+  --series-5: #7E57C2;   /* purple */
+  --series-6: #00ACC1;   /* teal */
+  --series-7: #E91E63;   /* pink */
+  --series-8: #8D6E63;   /* brown */
+  --series-compare: #8A8A92;  /* previous period / target — dashed grey */
+  --series-dim: #D4D4D7;      /* non-hovered series, unselected bars */
+
+  /* Bars */
+  --bar-neutral:  #D4D4D7;
+  --bar-active:   #4285F4;
+  --bar-track:    #F4F4F2;
+
+  /* Heatmap — sequential blues, 5 steps, value text always shown */
+  --heat-0: #FFFFFF;
+  --heat-1: #E8F0FE;
+  --heat-2: #AECBFA;
+  --heat-3: #669DF6;
+  --heat-4: #1A73E8;
+  --heat-5: #174EA6;
+  --heat-text-dark: #0B0B0C;
+  --heat-text-light: #FFFFFF;
+
+  --select-tint: #E8F0FE;
+
+  /* Chart chrome */
+  --chart-grid:     #EFEFEC;
+  --chart-axis:     #8A8A92;
+  --chart-crosshair:#0B0B0C;
+  --chart-stroke:   2px;
+  --chart-stroke-compare: 1.5px;
+  --chart-point-r:  4px;
+  --chart-h:        240px;
+  --spark-h:        28px;
+}

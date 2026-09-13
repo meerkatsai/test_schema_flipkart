@@ -1,0 +1,6 @@
+html,body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--font-ui);font-size:var(--fs-body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased;}
+*{box-sizing:border-box;}
+a{color:var(--accent);text-decoration:none;}
+a:hover{color:var(--accent-hover);text-decoration:underline;}
+button,input,select{font:inherit;color:inherit;}
+.num{font-variant-numeric:tabular-nums;font-feature-settings:var(--tnum);}

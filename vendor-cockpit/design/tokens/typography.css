@@ -1,0 +1,23 @@
+:root{
+  --font-ui:      'Geist', system-ui, -apple-system, sans-serif;
+  --font-mono:    'Geist Mono', ui-monospace, monospace;
+  --font-display: 'Instrument Serif', Georgia, serif;
+
+  /* Scale (px) */
+  --fs-title:  26px;  /* dashboard title — display serif */
+  --fs-kpi:    28px;  /* KPI value */
+  --fs-card:   15px;  /* card title */
+  --fs-body:   13px;  /* table cells, controls */
+  --fs-label:  12px;  /* metric labels, axis */
+  --fs-micro:  11px;  /* mono metadata, deltas */
+
+  --lh-tight: 1.15;
+  --lh-body:  1.45;
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold: 600;
+
+  --tracking-caps: 0.06em;  /* uppercase mono labels */
+  --tnum: "tnum" 1, "ss01" 1; /* tabular figures on every number */
+}

@@ -1,0 +1,2177 @@
+[
+ {
+  "id": "daily-kpi",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "daily"
+  },
+  "title": "Daily Performance — KPIs",
+  "question": "What changed in paid-media performance day by day?",
+  "representation": "kpiStrip",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "account",
+    "metrics": [
+     "impressions",
+     "reach",
+     "frequency",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc",
+     "ctr",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "impressions",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true
+  },
+  "pinned": true,
+  "csvDownload": true
+ },
+ {
+  "id": "daily-bars",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "daily"
+  },
+  "title": "Daily Performance — Comparison",
+  "question": "What changed in paid-media performance day by day?",
+  "representation": "barsVertical",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "account",
+    "metrics": [
+     "impressions",
+     "reach",
+     "frequency",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc",
+     "ctr",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ]
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": false,
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "value": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "value": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "value": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "value": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "value": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "value": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "daily-trend",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "daily"
+  },
+  "title": "Daily Performance — Trend",
+  "question": "What changed in paid-media performance day by day?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "account",
+    "metrics": [
+     "impressions",
+     "reach",
+     "frequency",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc",
+     "ctr",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "impressions",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true,
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "value": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "value": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "value": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "value": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "value": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "value": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     }
+    ]
+   }
+  },
+  "pinned": true,
+  "csvDownload": true
+ },
+ {
+  "id": "weekly-kpi",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "weekly"
+  },
+  "title": "Weekly Performance — KPIs",
+  "question": "What is the smoothed weekly trend?",
+  "representation": "kpiStrip",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "account",
+    "metrics": [
+     "impressions",
+     "reach",
+     "frequency",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc",
+     "ctr",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "week"
+    ],
+    "comparison": {
+     "metric": "impressions",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "W",
+   "compare": true
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "weekly-trend",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "weekly"
+  },
+  "title": "Weekly Performance — Trend",
+  "question": "What is the smoothed weekly trend?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "account",
+    "metrics": [
+     "impressions",
+     "reach",
+     "frequency",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc",
+     "ctr",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "week"
+    ],
+    "comparison": {
+     "metric": "impressions",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "W",
+   "compare": true,
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "value": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "value": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "value": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "value": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "value": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "value": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "monthly-kpi",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "monthly"
+  },
+  "title": "Monthly Performance — KPIs",
+  "question": "How are we pacing against the monthly plan?",
+  "representation": "kpiStrip",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "account",
+    "metrics": [
+     "impressions",
+     "reach",
+     "frequency",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc",
+     "ctr",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "month"
+    ],
+    "comparison": {
+     "metric": "impressions",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "M",
+   "compare": true
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "monthly-bars",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "monthly"
+  },
+  "title": "Monthly Performance — Comparison",
+  "question": "How are we pacing against the monthly plan?",
+  "representation": "barsVertical",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "account",
+    "metrics": [
+     "impressions",
+     "reach",
+     "frequency",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc",
+     "ctr",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "month"
+    ]
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "M",
+   "compare": false,
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "value": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "value": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "value": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "value": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "value": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "value": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "monthly-trend",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "monthly"
+  },
+  "title": "Monthly Performance — Trend",
+  "question": "How are we pacing against the monthly plan?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "account",
+    "metrics": [
+     "impressions",
+     "reach",
+     "frequency",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc",
+     "ctr",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "month"
+    ],
+    "comparison": {
+     "metric": "impressions",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "M",
+   "compare": true,
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "value": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "value": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "value": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "value": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "value": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "value": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "campaign-table",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "campaign"
+  },
+  "title": "Campaign Budget Allocation — Table",
+  "question": "Where is budget being allocated and how efficiently?",
+  "representation": "dataTable",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "campaign",
+    "metrics": [
+     "spend_share",
+     "impressions",
+     "reach",
+     "frequency",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc",
+     "ctr",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "spend_share",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "campaign-rank",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "campaign"
+  },
+  "title": "Campaign Budget Allocation — Ranking",
+  "question": "Where is budget being allocated and how efficiently?",
+  "representation": "barsHorizontal",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "campaign",
+    "metrics": [
+     "spend_share",
+     "impressions",
+     "reach",
+     "frequency",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc",
+     "ctr",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "spend_share",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "spend_share",
+    "options": [
+     {
+      "value": "spend_share",
+      "label": "Spend share %",
+      "unit": "pct"
+     },
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "value": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "value": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "value": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "value": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "value": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "value": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "campaign-grid",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "campaign"
+  },
+  "title": "Campaign Budget Allocation — Grid",
+  "question": "Where is budget being allocated and how efficiently?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "campaign",
+    "metrics": [
+     "spend_share",
+     "impressions",
+     "reach",
+     "frequency",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc",
+     "ctr",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "cpi",
+    "options": [
+     {
+      "value": "spend_share",
+      "label": "Spend share %",
+      "unit": "pct"
+     },
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "value": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "value": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "value": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "value": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "value": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "value": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "channel-table",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "channel"
+  },
+  "title": "Channel Budget Allocation — Table",
+  "question": "How is spend distributed across channels?",
+  "representation": "dataTable",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "channel",
+    "metrics": [
+     "spend_share",
+     "impressions",
+     "reach",
+     "frequency",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc",
+     "ctr",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "spend_share",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "channel-rank",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "channel"
+  },
+  "title": "Channel Budget Allocation — Ranking",
+  "question": "How is spend distributed across channels?",
+  "representation": "barsHorizontal",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "channel",
+    "metrics": [
+     "spend_share",
+     "impressions",
+     "reach",
+     "frequency",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc",
+     "ctr",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "spend_share",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "spend_share",
+    "options": [
+     {
+      "value": "spend_share",
+      "label": "Spend share %",
+      "unit": "pct"
+     },
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "value": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "value": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "value": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "value": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "value": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "value": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "creative-table",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "creative"
+  },
+  "title": "Creative Performance — Table",
+  "question": "Which creatives are winners/losers and which show fatigue?",
+  "representation": "dataTable",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "creative",
+    "metrics": [
+     "frequency",
+     "ctr",
+     "cvr",
+     "impressions",
+     "reach",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "frequency",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "creative-rank",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "creative"
+  },
+  "title": "Creative Performance — Ranking",
+  "question": "Which creatives are winners/losers and which show fatigue?",
+  "representation": "barsHorizontal",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "creative",
+    "metrics": [
+     "frequency",
+     "ctr",
+     "cvr",
+     "impressions",
+     "reach",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "frequency",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "frequency",
+    "options": [
+     {
+      "value": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     },
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "value": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "value": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "value": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "value": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "value": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "creative-trend",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "creative"
+  },
+  "title": "Creative Performance — Trend",
+  "question": "Which creatives are winners/losers and which show fatigue?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "creative",
+    "metrics": [
+     "frequency",
+     "ctr",
+     "cvr",
+     "impressions",
+     "reach",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "frequency",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true,
+   "metricSelector": {
+    "value": "frequency",
+    "options": [
+     {
+      "value": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     },
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "value": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "value": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "value": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "value": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "value": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "creative-grid",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "creative"
+  },
+  "title": "Creative Performance — Grid",
+  "question": "Which creatives are winners/losers and which show fatigue?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "creative",
+    "metrics": [
+     "frequency",
+     "ctr",
+     "cvr",
+     "impressions",
+     "reach",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "cpi",
+    "options": [
+     {
+      "value": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     },
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "value": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "value": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "value": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "value": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "value": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "location-table",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "location"
+  },
+  "title": "Location Performance — Table",
+  "question": "Which locations are more or less efficient?",
+  "representation": "dataTable",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "location",
+    "metrics": [
+     "impressions",
+     "reach",
+     "frequency",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc",
+     "ctr",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "location-rank",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "location"
+  },
+  "title": "Location Performance — Ranking",
+  "question": "Which locations are more or less efficient?",
+  "representation": "barsHorizontal",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "location",
+    "metrics": [
+     "impressions",
+     "reach",
+     "frequency",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc",
+     "ctr",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "impressions",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "impressions",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "value": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "value": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "value": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "value": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "value": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "value": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "location-grid",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "location"
+  },
+  "title": "Location Performance — Grid",
+  "question": "Which locations are more or less efficient?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "location",
+    "metrics": [
+     "impressions",
+     "reach",
+     "frequency",
+     "cpi",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc",
+     "ctr",
+     "cvr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "cpi",
+    "options": [
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "value": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "value": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "value": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "value": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "value": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "value": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "value": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "os-table",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "os"
+  },
+  "title": "Android vs iOS — Table",
+  "question": "Is there a meaningful CPI/CVR gap between operating systems?",
+  "representation": "dataTable",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "os",
+    "metrics": [
+     "cpi",
+     "cvr",
+     "impressions",
+     "reach",
+     "frequency",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc",
+     "ctr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "cpi",
+     "direction": "asc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "os-bars",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "os"
+  },
+  "title": "Android vs iOS — Comparison",
+  "question": "Is there a meaningful CPI/CVR gap between operating systems?",
+  "representation": "barsVertical",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "os",
+    "metrics": [
+     "cpi",
+     "cvr",
+     "impressions",
+     "reach",
+     "frequency",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc",
+     "ctr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ]
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": false,
+   "metricSelector": {
+    "value": "cpi",
+    "options": [
+     {
+      "value": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     },
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "value": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "value": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "value": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "value": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "value": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "value": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "os-grid",
+  "platform": "meta",
+  "catalogRef": {
+   "platform": "meta",
+   "reportId": "os"
+  },
+  "title": "Android vs iOS — Grid",
+  "question": "Is there a meaningful CPI/CVR gap between operating systems?",
+  "representation": "heatmap",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "os",
+    "metrics": [
+     "cpi",
+     "cvr",
+     "impressions",
+     "reach",
+     "frequency",
+     "adds_to_cart",
+     "checkouts_initiated",
+     "purchases",
+     "signups",
+     "cpm",
+     "cpc",
+     "ctr"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "cpi",
+    "options": [
+     {
+      "value": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     },
+     {
+      "value": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "value": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "value": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "value": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "value": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "value": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "value": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "value": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "value": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ }
+]

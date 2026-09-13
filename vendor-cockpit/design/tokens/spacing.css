@@ -1,0 +1,35 @@
+:root{
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-12: 48px;
+
+  /* Card anatomy */
+  --card-pad-x: 20px;
+  --card-pad-y: 16px;
+  --card-gap:   16px;   /* vertical gap between stacked full-width cards */
+  --card-header-h: 48px;
+  --page-pad:   24px;   /* dashboard canvas padding */
+  --page-max-w: 1440px;
+
+  /* Radii — near-square, structural */
+  --radius-card: 6px;
+  --radius-ctl:  4px;
+  --radius-pill: 999px;
+
+  /* Borders */
+  --border-hair:   1px;
+  --border-strong: 1.5px;
+
+  /* Elevation — cards rely on the hairline; shadow only on floating layers */
+  --shadow-card:  none;
+  --shadow-float: 0 4px 16px rgba(11,11,12,.10), 0 0 0 1px rgba(11,11,12,.06);
+
+  /* Controls */
+  --ctl-h:    32px;
+  --ctl-h-sm: 26px;
+  --row-h:    40px;
+
+  /* Motion */
+  --ease: cubic-bezier(.2,.7,.2,1);
+  --dur-fast: 120ms;
+  --dur:      200ms;
+}

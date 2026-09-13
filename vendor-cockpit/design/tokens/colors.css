@@ -1,0 +1,39 @@
+:root{
+  /* Surfaces */
+  --surface-page:   #FAFAF9;   /* app canvas behind cards */
+  --surface-card:   #FFFFFF;   /* every report card */
+  --surface-sunken: #F4F4F2;   /* table header, hover rows, segmented track */
+  --surface-tint:   #FFF7F2;   /* ember tint — selected row / pinned state only */
+
+  /* Ink */
+  --ink-900: #0B0B0C;   /* KPI values, headings */
+  --ink-700: #2A2A2E;   /* body, table cells */
+  --ink-500: #5C5C63;   /* labels, secondary */
+  --ink-400: #8A8A92;   /* metadata, axis labels */
+  --ink-300: #B4B4BA;   /* disabled, placeholder */
+
+  /* Rules */
+  --rule:        #E4E4E7;   /* hairline card border, table dividers */
+  --rule-strong: #111113;   /* 1.5px structural rule under card header */
+  --rule-grid:   #EFEFEC;   /* the ONE horizontal gridline style in charts */
+
+  /* Accent */
+  --accent:       #EA580C;
+  --accent-hover: #C2410C;
+  --accent-soft:  #FDBA74;
+  --accent-tint:  #FFF7F2;
+
+  /* Status — good/bad only, used sparingly */
+  --good:    #15803D;
+  --good-bg: #ECFDF3;
+  --bad:     #B91C1C;
+  --bad-bg:  #FEF2F2;
+
+  /* Semantic aliases */
+  --text-heading:   var(--ink-900);
+  --text-body:      var(--ink-700);
+  --text-label:     var(--ink-500);
+  --text-muted:     var(--ink-400);
+  --text-on-accent: #FFFFFF;
+  --focus-ring:     0 0 0 3px rgba(234,88,12,.25);
+}

@@ -1,0 +1,90 @@
+# MetricFlow COMPILE SHIM for the test warehouse (Flipkart_ads_test @ Neon).
+#
+# In production this step is dbt/MetricFlow: the catalog resolver hands back a
+# MetricFlow metric name (plans[].metrics[].use) and MetricFlow compiles it to SQL
+# over analytics_marts. This harness has no dbt runtime, so THIS file is the
+# compile step — SAME metric names, SAME measures, SAME aggregations as
+# 2-semantic-catalog/inputs/_metrics.yml + _semantic_models.yml (cited per entry),
+# compiled against the test warehouse tables instead of analytics_marts.
+# Nothing upstream changes: router -> contracts -> catalog resolve.mjs are the
+# real artifacts, verbatim.
+
+semantic_models:
+  # _semantic_models.yml: flipkart_campaigns -> ref('fct_flipkart_campaigns'), agg_time report_date
+  flipkart_campaigns:
+    prod_table: analytics_marts.fct_flipkart_campaigns
+    test_table: gold_flipkart_campaign_daily
+    time_dimension: {prod: report_date, test: day}
+    dimension_map: {campaign_name: campaign_name, campaign_status: status, campaign_type: campaign_type, __time__: day}
+  flipkart_keywords:
+    prod_table: cdp.flipkart_keywords
+    test_table: bronze_flipkart_keyword_daily
+    time_dimension: {prod: report_date, test: day}
+    dimension_map: {keyword: keyword, match_type: match_type, __time__: day}
+  flipkart_placements:
+    prod_table: analytics_marts.fct_flipkart_placements
+    test_table: bronze_flipkart_placement_daily
+    time_dimension: {prod: report_date, test: day}
+    dimension_map: {placement_type: placement, __time__: day}
+  flipkart_products:
+    prod_table: cdp.flipkart_fsn_performance
+    test_table: bronze_flipkart_fsn_daily
+    time_dimension: {prod: report_date, test: day}
+    dimension_map: {fsn_id: fsn, product_name: product_name, __time__: day}
+
+metrics:
+  # ---------- FLIPKART CAMPAIGNS (_metrics.yml lines: "FLIPKART CAMPAIGNS") ----------
+  fk_campaign_spend:
+    mf: {type: simple, measure: fkcamp_spend, agg: sum, expr: spend, label: "FK Campaign Spend"}
+    model: flipkart_campaigns
+    compiled: "sum(spend)"
+    unit: inr
+    display_label: "Ad Spend"   # native Flipkart term (dictionary pack); MF label kept in mf.label
+  fk_campaign_revenue:
+    mf: {type: simple, measure: fkcamp_revenue, agg: sum, expr: revenue, label: "FK Campaign Revenue"}
+    model: flipkart_campaigns
+    compiled: "sum(direct_revenue)+sum(indirect_revenue)"
+    compile_note: "prod fct has a single `revenue` column; the test gold keeps the direct/indirect split — compiled as the sum of both"
+    unit: inr
+    display_label: "Revenue"
+  fk_campaign_roas:
+    mf: {type: ratio, numerator: fk_campaign_revenue, denominator: fk_campaign_spend, label: "FK Campaign ROAS"}
+    model: flipkart_campaigns
+    compiled: "(sum(direct_revenue)+sum(indirect_revenue))/nullif(sum(spend),0)"
+    unit: x
+    display_label: "ROI"        # Flipkart-facing surfaces display ROI, never ROAS (dictionary rule)
+    companion: fk_campaign_direct_roi
+  fk_campaign_direct_roi:
+    mf: {type: ratio, note: "test-side companion — the direct/indirect honesty split (dictionary: never pre-collapse)"}
+    model: flipkart_campaigns
+    compiled: "sum(direct_revenue)/nullif(sum(spend),0)"
+    unit: x
+    display_label: "Direct ROI"
+  fk_campaign_units:
+    mf: {type: simple, measure: fkcamp_units, agg: sum, label: "FK Campaign Units"}
+    model: flipkart_campaigns
+    compiled: "sum(direct_units)+sum(indirect_units)"
+    unit: num
+    display_label: "Units"
+  fk_campaign_clicks:
+    mf: {type: simple, measure: fkcamp_count, agg: sum, label: "FK Campaign Clicks"}
+    model: flipkart_campaigns
+    compiled: "sum(clicks)"
+    unit: num
+    display_label: "Clicks"
+
+  # ---------- FLIPKART KEYWORDS ----------
+  fk_keyword_spend:    {model: flipkart_keywords, compiled: "sum(spend)", unit: inr, display_label: "Ad Spend", mf: {type: simple, agg: sum}}
+  fk_keyword_revenue:  {model: flipkart_keywords, compiled: "sum(direct_revenue)+sum(indirect_revenue)", unit: inr, display_label: "Revenue", mf: {type: simple, agg: sum}}
+  fk_keyword_roas:     {model: flipkart_keywords, compiled: "(sum(direct_revenue)+sum(indirect_revenue))/nullif(sum(spend),0)", unit: x, display_label: "ROI", mf: {type: ratio}}
+  fk_keyword_conversions: {model: flipkart_keywords, compiled: "sum(orders)", unit: num, display_label: "Orders", mf: {type: simple, agg: sum}}
+
+  # ---------- FLIPKART PLACEMENTS ----------
+  fk_placement_spend:   {model: flipkart_placements, compiled: "sum(spend)", unit: inr, display_label: "Ad Spend", mf: {type: simple, agg: sum}}
+  fk_placement_revenue: {model: flipkart_placements, compiled: "sum(direct_revenue)+sum(indirect_revenue)", unit: inr, display_label: "Revenue", mf: {type: simple, agg: sum}}
+  fk_placement_roas:    {model: flipkart_placements, compiled: "(sum(direct_revenue)+sum(indirect_revenue))/nullif(sum(spend),0)", unit: x, display_label: "ROI", mf: {type: ratio}}
+
+  # ---------- FLIPKART PRODUCTS (FSN) ----------
+  fk_product_spend:   {model: flipkart_products, compiled: "sum(spend)", unit: inr, display_label: "Ad Spend", mf: {type: simple, agg: sum}}
+  fk_product_revenue: {model: flipkart_products, compiled: "sum(direct_revenue)+sum(indirect_revenue)", unit: inr, display_label: "Revenue", mf: {type: simple, agg: sum}}
+  fk_product_roas:    {model: flipkart_products, compiled: "(sum(direct_revenue)+sum(indirect_revenue))/nullif(sum(spend),0)", unit: x, display_label: "ROI", mf: {type: ratio}}

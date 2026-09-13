@@ -1,0 +1,2441 @@
+{
+ "amazon": {
+  "name": "Amazon Ads",
+  "currencyNote": "Sales/Spend in INR; ACOS = Spend/Sales",
+  "reports": [
+   {
+    "id": "exec",
+    "title": "Account / Executive Performance",
+    "level": "Day / week / month",
+    "question": "How is Amazon advertising performing overall and is spend translating into sales?",
+    "metrics": [
+     {
+      "key": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "key": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "key": "units",
+      "label": "Units",
+      "unit": "num"
+     },
+     {
+      "key": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "key": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     },
+     {
+      "key": "cvr",
+      "label": "Conversion rate",
+      "unit": "pct"
+     },
+     {
+      "key": "ntb_sales",
+      "label": "New-to-brand",
+      "unit": "inr"
+     }
+    ],
+    "representation": "KPI strip + trend lines (Spend, Sales, ROAS/ACOS); vertical bars for period comparison",
+    "grid": false,
+    "entity": "account",
+    "source": "gold"
+   },
+   {
+    "id": "campaign",
+    "title": "Campaign Performance",
+    "level": "Campaign",
+    "question": "Which campaigns are driving sales efficiently?",
+    "metrics": [
+     {
+      "key": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "key": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "key": "units",
+      "label": "Units",
+      "unit": "num"
+     },
+     {
+      "key": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "key": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     },
+     {
+      "key": "cvr",
+      "label": "Conversion rate",
+      "unit": "pct"
+     }
+    ],
+    "representation": "Campaign table + horizontal bars ranked by ROAS / Sales / Spend; trend line when a campaign is selected",
+    "grid": true,
+    "gridAxes": "Rows = campaigns; columns = selected KPI",
+    "entity": "campaign",
+    "source": "gold"
+   },
+   {
+    "id": "asin",
+    "title": "Product / ASIN Performance",
+    "level": "Advertised product / ASIN",
+    "question": "Which products are actually benefiting from advertising?",
+    "metrics": [
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "key": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "key": "units",
+      "label": "Units",
+      "unit": "num"
+     },
+     {
+      "key": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "key": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "key": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     },
+     {
+      "key": "ntb_sales",
+      "label": "NTB sales",
+      "unit": "inr"
+     }
+    ],
+    "representation": "Product table + horizontal bar ranking by Sales or ROAS; trend line for selected ASIN",
+    "grid": true,
+    "gridAxes": "Rows = ASINs; columns = ROAS / ACOS / Sales / Spend",
+    "entity": "asin",
+    "source": "gold"
+   },
+   {
+    "id": "search",
+    "title": "Search Term Performance",
+    "level": "Search term",
+    "question": "Which shopper queries are generating or wasting spend?",
+    "metrics": [
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "key": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "key": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "key": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "key": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ],
+    "representation": "Search-term table + horizontal bars for Sales / Spend / ROAS; trend line for selected term",
+    "grid": true,
+    "gridAxes": "Rows = search terms; columns = CTR / CPC / ACOS / ROAS",
+    "dimensions": [
+     {
+      "key": "search_term",
+      "label": "Search term"
+     }
+    ],
+    "entity": "search",
+    "source": "bronze"
+   },
+   {
+    "id": "targeting",
+    "title": "Targeting / Keyword Performance",
+    "level": "Keyword / product target",
+    "question": "Which targets deserve more budget or bid attention?",
+    "metrics": [
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "key": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "key": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "key": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "key": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ],
+    "representation": "Targeting table + horizontal ranking bars; grid for target efficiency",
+    "grid": true,
+    "gridAxes": "Rows = targets; columns = Spend, Sales, ROAS, ACOS",
+    "dimensions": [
+     {
+      "key": "targeting",
+      "label": "Target"
+     },
+     {
+      "key": "match_type",
+      "label": "Match type"
+     }
+    ],
+    "entity": "targeting",
+    "source": "gold"
+   },
+   {
+    "id": "placement",
+    "title": "Placement Performance",
+    "level": "Placement",
+    "question": "Where on Amazon are ads performing best?",
+    "metrics": [
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "key": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "key": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "key": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "key": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ],
+    "representation": "Placement table + vertical bars for Sales/ROAS; trend line by placement",
+    "grid": true,
+    "gridAxes": "Rows = campaigns; columns = placements (top of search / rest of search / product pages); cells = ROAS or ACOS",
+    "dimensions": [
+     {
+      "key": "placement",
+      "label": "Placement"
+     }
+    ],
+    "entity": "placement",
+    "source": "bronze"
+   },
+   {
+    "id": "budget",
+    "title": "Budget & Pacing",
+    "level": "Campaign / day",
+    "question": "Are campaigns spending at the intended rate?",
+    "metrics": [
+     {
+      "key": "daily_budget",
+      "label": "Daily budget",
+      "unit": "inr"
+     },
+     {
+      "key": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "key": "budget_utilization_pct",
+      "label": "Budget utilization %",
+      "unit": "pct"
+     },
+     {
+      "key": "remaining_budget",
+      "label": "Remaining budget",
+      "unit": "inr"
+     },
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "key": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "key": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ],
+    "representation": "Daily trend lines for spend vs budget; campaign table; vertical bars for budget utilization",
+    "grid": true,
+    "gridAxes": "Rows = campaigns; columns = dates; cells = spend-to-budget %",
+    "entity": "budget",
+    "source": "gold"
+   },
+   {
+    "id": "time",
+    "title": "Performance Over Time",
+    "level": "Day / week / month",
+    "question": "How are spend, CPC and sales efficiency changing over time?",
+    "metrics": [
+     {
+      "key": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "key": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "key": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "key": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ],
+    "representation": "Trend lines primary; KPI table below",
+    "grid": false,
+    "entity": "time",
+    "source": "gold"
+   },
+   {
+    "id": "ntb",
+    "title": "Brand / New-to-Brand",
+    "level": "Campaign / brand / period",
+    "question": "Is advertising acquiring new customers or mainly driving existing demand?",
+    "metrics": [
+     {
+      "key": "ntb_orders",
+      "label": "NTB orders",
+      "unit": "num"
+     },
+     {
+      "key": "ntb_sales",
+      "label": "NTB sales",
+      "unit": "inr"
+     },
+     {
+      "key": "ntb_share",
+      "label": "NTB share",
+      "unit": "pct"
+     },
+     {
+      "key": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "key": "sales",
+      "label": "Sales",
+      "unit": "inr"
+     },
+     {
+      "key": "roas",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "key": "acos",
+      "label": "ACOS",
+      "unit": "pct",
+      "invert": true
+     }
+    ],
+    "representation": "KPI strip + vertical bars NTB vs non-NTB; trend line for NTB share",
+    "grid": true,
+    "gridAxes": "Rows = campaigns/periods; columns = NTB metrics",
+    "entity": "ntb",
+    "source": "gold"
+   }
+  ]
+ },
+ "flipkart": {
+  "name": "Flipkart Ads",
+  "currencyNote": "Revenue split into Direct / Indirect; PPV = product page views",
+  "reports": [
+   {
+    "id": "exec",
+    "title": "Account / Executive Performance",
+    "level": "Day / week / month",
+    "question": "How is retail-media spend translating into traffic and sales?",
+    "metrics": [
+     {
+      "key": "spend",
+      "label": "Ad Spend",
+      "unit": "inr"
+     },
+     {
+      "key": "views",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "ppv",
+      "label": "PPV",
+      "unit": "num"
+     },
+     {
+      "key": "atc",
+      "label": "ATC",
+      "unit": "num"
+     },
+     {
+      "key": "orders",
+      "label": "Orders/Units",
+      "unit": "num"
+     },
+     {
+      "key": "revenue",
+      "label": "Revenue",
+      "unit": "inr"
+     },
+     {
+      "key": "roi",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "key": "direct_revenue",
+      "label": "Direct Revenue",
+      "unit": "inr"
+     },
+     {
+      "key": "indirect_revenue",
+      "label": "Indirect Revenue",
+      "unit": "inr"
+     }
+    ],
+    "representation": "KPI strip + trend lines (Spend, Revenue, ROAS); vertical bars for period comparison",
+    "grid": false,
+    "entity": "account",
+    "source": "gold"
+   },
+   {
+    "id": "campaign",
+    "title": "Campaign Performance",
+    "level": "Campaign",
+    "question": "Which campaigns are driving efficient sales?",
+    "metrics": [
+     {
+      "key": "spend",
+      "label": "Ad Spend",
+      "unit": "inr"
+     },
+     {
+      "key": "views",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "ppv",
+      "label": "PPV",
+      "unit": "num"
+     },
+     {
+      "key": "atc",
+      "label": "ATC",
+      "unit": "num"
+     },
+     {
+      "key": "orders",
+      "label": "Orders/Units",
+      "unit": "num"
+     },
+     {
+      "key": "revenue",
+      "label": "Revenue",
+      "unit": "inr"
+     },
+     {
+      "key": "roi",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "key": "direct_revenue",
+      "label": "Direct Revenue",
+      "unit": "inr"
+     },
+     {
+      "key": "indirect_revenue",
+      "label": "Indirect Revenue",
+      "unit": "inr"
+     }
+    ],
+    "representation": "Campaign table + horizontal bars ranked by Revenue / ROAS / Spend; trend line for selected campaign",
+    "grid": true,
+    "entity": "campaign",
+    "source": "gold",
+    "gridAxes": "optional"
+   },
+   {
+    "id": "adgroup",
+    "title": "Ad Group / Targeting Performance",
+    "level": "Ad group / targeting",
+    "question": "Which targeting and bidding groups are working?",
+    "metrics": [
+     {
+      "key": "views",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "ppv",
+      "label": "PPV",
+      "unit": "num"
+     },
+     {
+      "key": "atc",
+      "label": "ATC",
+      "unit": "num"
+     },
+     {
+      "key": "orders",
+      "label": "Orders/Units",
+      "unit": "num"
+     },
+     {
+      "key": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "key": "revenue",
+      "label": "Revenue",
+      "unit": "inr"
+     },
+     {
+      "key": "roi",
+      "label": "ROAS",
+      "unit": "x"
+     }
+    ],
+    "representation": "Table + horizontal bars; grid for efficiency comparison",
+    "grid": true,
+    "gridAxes": "Rows = ad groups; columns = ROAS / CTR / CPC / conversion",
+    "entity": "adgroup",
+    "source": "gold"
+   },
+   {
+    "id": "search",
+    "title": "Search Term Performance",
+    "level": "Actual search query",
+    "question": "Which search queries are creating efficient demand?",
+    "metrics": [
+     {
+      "key": "views",
+      "label": "Views",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "ppv",
+      "label": "PPV",
+      "unit": "num"
+     },
+     {
+      "key": "atc",
+      "label": "ATC",
+      "unit": "num"
+     },
+     {
+      "key": "orders",
+      "label": "Orders/Units",
+      "unit": "num"
+     },
+     {
+      "key": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "key": "revenue",
+      "label": "Revenue",
+      "unit": "inr"
+     },
+     {
+      "key": "roi",
+      "label": "ROAS",
+      "unit": "x"
+     }
+    ],
+    "representation": "Search-term table + horizontal bars; grid for search-term efficiency",
+    "grid": true,
+    "gridAxes": "Rows = search terms; columns = CTR / ROAS / Orders / Spend",
+    "dimensions": [
+     {
+      "key": "search_term",
+      "label": "Search term"
+     }
+    ],
+    "entity": "search",
+    "source": "bronze"
+   },
+   {
+    "id": "keyword",
+    "title": "Keyword Performance",
+    "level": "Keyword + match type",
+    "question": "Which targeted keywords are performing and which need attention?",
+    "metrics": [
+     {
+      "key": "views",
+      "label": "Impressions/Views",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "key": "ppv",
+      "label": "PPV",
+      "unit": "num"
+     },
+     {
+      "key": "atc",
+      "label": "ATC",
+      "unit": "num"
+     },
+     {
+      "key": "orders",
+      "label": "Orders/Units",
+      "unit": "num"
+     },
+     {
+      "key": "revenue",
+      "label": "Revenue",
+      "unit": "inr"
+     },
+     {
+      "key": "roi",
+      "label": "ROAS",
+      "unit": "x"
+     }
+    ],
+    "representation": "Keyword table + horizontal bars; grid by match type and performance",
+    "grid": true,
+    "gridAxes": "Rows = keywords; columns = match types or KPIs",
+    "dimensions": [
+     {
+      "key": "keyword",
+      "label": "Keyword"
+     },
+     {
+      "key": "match_type",
+      "label": "Match type"
+     }
+    ],
+    "entity": "keyword",
+    "source": "bronze"
+   },
+   {
+    "id": "placement",
+    "title": "Placement Performance",
+    "level": "Placement / page type",
+    "question": "Which retail-media placements are most effective?",
+    "metrics": [
+     {
+      "key": "views",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "ppv",
+      "label": "PPV",
+      "unit": "num"
+     },
+     {
+      "key": "atc",
+      "label": "ATC",
+      "unit": "num"
+     },
+     {
+      "key": "orders",
+      "label": "Orders/Units",
+      "unit": "num"
+     },
+     {
+      "key": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "key": "revenue",
+      "label": "Revenue",
+      "unit": "inr"
+     },
+     {
+      "key": "roi",
+      "label": "ROAS",
+      "unit": "x"
+     }
+    ],
+    "representation": "Placement table + vertical bars; placement grid",
+    "grid": true,
+    "gridAxes": "Rows = campaigns/ad groups; columns = Search / Browse / PDP / Homepage; cells = ROAS / CTR / Revenue",
+    "dimensions": [
+     {
+      "key": "placement",
+      "label": "Placement"
+     }
+    ],
+    "entity": "placement",
+    "source": "bronze"
+   },
+   {
+    "id": "sku",
+    "title": "Product / SKU Performance",
+    "level": "Product / SKU / listing",
+    "question": "Which advertised products are driving sales and where is spend inefficient?",
+    "metrics": [
+     {
+      "key": "views",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "key": "ppv",
+      "label": "PPV",
+      "unit": "num"
+     },
+     {
+      "key": "atc",
+      "label": "ATC",
+      "unit": "num"
+     },
+     {
+      "key": "orders",
+      "label": "Orders/Units",
+      "unit": "num"
+     },
+     {
+      "key": "revenue",
+      "label": "Revenue",
+      "unit": "inr"
+     },
+     {
+      "key": "roi",
+      "label": "ROAS",
+      "unit": "x"
+     }
+    ],
+    "representation": "Product table + horizontal bars for Revenue / ROAS; grid for product × campaign efficiency",
+    "grid": true,
+    "gridAxes": "Rows = products/SKUs; columns = campaigns or KPIs",
+    "dimensions": [
+     {
+      "key": "sku_status",
+      "label": "SKU status"
+     }
+    ],
+    "entity": "sku",
+    "source": "bronze"
+   },
+   {
+    "id": "adproduct",
+    "title": "Channel / Ad Product Performance",
+    "level": "Ad product",
+    "question": "Which ad product is contributing to the business?",
+    "metrics": [
+     {
+      "key": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "key": "views",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "revenue",
+      "label": "Revenue",
+      "unit": "inr"
+     },
+     {
+      "key": "orders",
+      "label": "Orders/Units",
+      "unit": "num"
+     },
+     {
+      "key": "roi",
+      "label": "ROAS",
+      "unit": "x"
+     },
+     {
+      "key": "direct_revenue",
+      "label": "Direct Revenue",
+      "unit": "inr"
+     },
+     {
+      "key": "indirect_revenue",
+      "label": "Indirect Revenue",
+      "unit": "inr"
+     }
+    ],
+    "representation": "Vertical bars comparing Display / Sponsored Product / Product Contextual + KPI table",
+    "grid": false,
+    "entity": "adproduct",
+    "source": "gold"
+   },
+   {
+    "id": "budget",
+    "title": "Budget & Wallet / Pacing",
+    "level": "Campaign / ad account / day",
+    "question": "Are campaigns pacing correctly and is available wallet funding sufficient?",
+    "metrics": [
+     {
+      "key": "budget",
+      "label": "Budget",
+      "unit": "inr"
+     },
+     {
+      "key": "spend",
+      "label": "Spend",
+      "unit": "inr"
+     },
+     {
+      "key": "budget_utilization_pct",
+      "label": "Budget utilization",
+      "unit": "pct"
+     },
+     {
+      "key": "wallet_balance",
+      "label": "Wallet balance",
+      "unit": "inr"
+     },
+     {
+      "key": "blocked_funds",
+      "label": "Blocked funds",
+      "unit": "inr"
+     },
+     {
+      "key": "redeemed_spend",
+      "label": "Redeemed spend",
+      "unit": "inr"
+     },
+     {
+      "key": "released_funds",
+      "label": "Released funds",
+      "unit": "inr"
+     },
+     {
+      "key": "expiring_funds",
+      "label": "Expiring funds",
+      "unit": "inr"
+     }
+    ],
+    "representation": "Trend line spend vs budget + vertical bars for utilization + wallet table",
+    "grid": true,
+    "gridAxes": "Rows = campaigns; columns = dates; cells = pacing status",
+    "entity": "budget",
+    "source": "gold"
+   }
+  ]
+ },
+ "google": {
+  "name": "Google Ads",
+  "currencyNote": "Conv. value / cost is the ROAS proxy; Cost / conversion lower-is-better",
+  "reports": [
+   {
+    "id": "exec",
+    "title": "Account / Executive Performance",
+    "level": "Day / week / month",
+    "question": "How is paid-search / paid-media investment translating into conversions and value?",
+    "metrics": [
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "key": "avg_cpc",
+      "label": "Avg CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "key": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "key": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     },
+     {
+      "key": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     }
+    ],
+    "representation": "KPI strip + trend lines (Cost, Conversions, Conv. value/cost); vertical bars for period comparison",
+    "grid": false,
+    "entity": "account",
+    "source": "gold"
+   },
+   {
+    "id": "campaign",
+    "title": "Campaign Performance",
+    "level": "Campaign",
+    "question": "Which campaigns are driving the most valuable conversions efficiently?",
+    "metrics": [
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "key": "avg_cpc",
+      "label": "Avg CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "key": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "key": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "conv_value",
+      "label": "Conv. value",
+      "unit": "inr"
+     },
+     {
+      "key": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     }
+    ],
+    "representation": "Campaign table + horizontal bars ranked by conversions / value / ROAS proxy; trend line for selected campaign",
+    "grid": true,
+    "entity": "campaign",
+    "source": "gold",
+    "gridAxes": "optional"
+   },
+   {
+    "id": "adgroup",
+    "title": "Ad Group / Asset Group Performance",
+    "level": "Ad group / asset group",
+    "question": "Which groups of ads/assets are contributing to performance?",
+    "metrics": [
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "key": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "key": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     }
+    ],
+    "representation": "Table + horizontal bars; grid for efficiency comparison",
+    "grid": true,
+    "gridAxes": "Rows = groups; columns = Cost / Conversions / Conv. value / ROAS proxy",
+    "entity": "adgroup",
+    "source": "gold"
+   },
+   {
+    "id": "search",
+    "title": "Search Terms / Queries",
+    "level": "Search term",
+    "question": "Which actual queries are driving conversions and spend?",
+    "metrics": [
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "key": "avg_cpc",
+      "label": "Avg CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "key": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "key": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     }
+    ],
+    "representation": "Search-term table + horizontal bars for spend/value; grid for query efficiency",
+    "grid": true,
+    "gridAxes": "Rows = queries; columns = CTR / CPC / Conv. rate / Cost per conversion",
+    "dimensions": [
+     {
+      "key": "search_term",
+      "label": "Search term"
+     }
+    ],
+    "entity": "search",
+    "source": "bronze"
+   },
+   {
+    "id": "keyword",
+    "title": "Keyword Performance",
+    "level": "Keyword",
+    "question": "Which keywords are driving efficient traffic and conversions?",
+    "metrics": [
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "key": "avg_cpc",
+      "label": "Avg CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "key": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "key": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     }
+    ],
+    "representation": "Keyword table + horizontal bars; trend line for selected keyword",
+    "grid": true,
+    "gridAxes": "Rows = keywords; columns = match type or KPI",
+    "dimensions": [
+     {
+      "key": "keyword",
+      "label": "Keyword"
+     },
+     {
+      "key": "match_type",
+      "label": "Match type"
+     }
+    ],
+    "entity": "keyword",
+    "source": "bronze"
+   },
+   {
+    "id": "device",
+    "title": "Device Performance",
+    "level": "Device platform",
+    "question": "Are mobile, desktop and tablet users behaving differently?",
+    "metrics": [
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "key": "avg_cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "key": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "key": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     }
+    ],
+    "representation": "Vertical bars for conversion rate / cost per conversion; trend line by device",
+    "grid": true,
+    "gridAxes": "Rows = campaigns; columns = Mobile / Desktop / Tablet; cells = selected KPI",
+    "entity": "device",
+    "source": "gold"
+   },
+   {
+    "id": "location",
+    "title": "Location Performance",
+    "level": "Country / region / city",
+    "question": "Which geographies are driving efficient conversions?",
+    "metrics": [
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "key": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "key": "conv_rate",
+      "label": "Conv. rate",
+      "unit": "pct"
+     },
+     {
+      "key": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     }
+    ],
+    "representation": "Location table + horizontal bars ranked by conversions / value / cost per conversion",
+    "grid": true,
+    "entity": "location",
+    "source": "gold",
+    "gridAxes": "optional"
+   },
+   {
+    "id": "asset",
+    "title": "Ad / Asset Performance",
+    "level": "Ad / asset",
+    "question": "Which creative assets are contributing to conversions and value?",
+    "metrics": [
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "clicks",
+      "label": "Clicks",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "key": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "key": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     },
+     {
+      "key": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     }
+    ],
+    "representation": "Asset table + horizontal bars; trend line for selected asset",
+    "grid": true,
+    "gridAxes": "Rows = assets; columns = performance KPIs",
+    "entity": "asset",
+    "source": "gold"
+   },
+   {
+    "id": "goal",
+    "title": "Conversion Action / Goal Performance",
+    "level": "Conversion action / goal",
+    "question": "Which business outcomes are being generated and at what cost/value?",
+    "metrics": [
+     {
+      "key": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "key": "conv_rate",
+      "label": "Conversion rate",
+      "unit": "pct"
+     },
+     {
+      "key": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     },
+     {
+      "key": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     },
+     {
+      "key": "all_conversions",
+      "label": "All conversions",
+      "unit": "num"
+     }
+    ],
+    "representation": "KPI strip + vertical bars by conversion goal; trend lines for conversion volume/value",
+    "grid": true,
+    "entity": "goal",
+    "source": "gold",
+    "gridAxes": "optional"
+   },
+   {
+    "id": "budget",
+    "title": "Budget & Pacing",
+    "level": "Campaign / day",
+    "question": "Are campaigns spending as planned and producing enough conversion value?",
+    "metrics": [
+     {
+      "key": "budget",
+      "label": "Budget",
+      "unit": "inr"
+     },
+     {
+      "key": "spend",
+      "label": "Cost",
+      "unit": "inr"
+     },
+     {
+      "key": "budget_utilization_pct",
+      "label": "Budget utilization",
+      "unit": "pct"
+     },
+     {
+      "key": "conversions",
+      "label": "Conversions",
+      "unit": "num"
+     },
+     {
+      "key": "conv_value",
+      "label": "Conversion value",
+      "unit": "inr"
+     },
+     {
+      "key": "cost_per_conv",
+      "label": "Cost / conversion",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "conv_value_per_cost",
+      "label": "Conv. value / cost",
+      "unit": "x"
+     }
+    ],
+    "representation": "Trend line cost vs budget + vertical bars for utilization",
+    "grid": true,
+    "gridAxes": "Rows = campaigns; columns = dates; cells = pacing %",
+    "entity": "budget",
+    "source": "gold"
+   }
+  ]
+ },
+ "meta": {
+  "name": "Meta Ads",
+  "currencyNote": "Full metric catalog: Impressions, Reach, Frequency, CPI, ATC, Checkout, Purchase, Signups, CPM, CPC, CTR, CVR",
+  "reports": [
+   {
+    "id": "daily",
+    "title": "Daily Performance",
+    "level": "Date",
+    "question": "What changed in paid-media performance day by day?",
+    "metrics": [
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "key": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "key": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "key": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "key": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "key": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "key": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     }
+    ],
+    "representation": "KPI strip + trend lines for cost/efficiency metrics; vertical bars for funnel volumes",
+    "grid": false,
+    "entity": "account",
+    "source": "gold"
+   },
+   {
+    "id": "weekly",
+    "title": "Weekly Performance",
+    "level": "ISO week",
+    "question": "What is the smoothed weekly trend?",
+    "metrics": [
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "key": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "key": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "key": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "key": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "key": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "key": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     }
+    ],
+    "representation": "KPI strip + trend lines",
+    "grid": false,
+    "entity": "account",
+    "source": "gold"
+   },
+   {
+    "id": "monthly",
+    "title": "Monthly Performance",
+    "level": "Month",
+    "question": "How are we pacing against the monthly plan?",
+    "metrics": [
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "key": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "key": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "key": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "key": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "key": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "key": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     }
+    ],
+    "representation": "KPI strip + trend lines; vertical bars for month comparisons",
+    "grid": false,
+    "entity": "account",
+    "source": "gold"
+   },
+   {
+    "id": "campaign",
+    "title": "Campaign Budget Allocation",
+    "level": "Campaign + % of spend",
+    "question": "Where is budget being allocated and how efficiently?",
+    "metrics": [
+     {
+      "key": "spend_share",
+      "label": "Spend share %",
+      "unit": "pct"
+     },
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "key": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "key": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "key": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "key": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "key": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "key": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     }
+    ],
+    "representation": "Campaign table + horizontal bars for spend share and selected KPI",
+    "grid": true,
+    "gridAxes": "Rows = campaigns; columns = spend share / efficiency KPI",
+    "entity": "campaign",
+    "source": "gold"
+   },
+   {
+    "id": "channel",
+    "title": "Channel Budget Allocation",
+    "level": "Channel + % of spend",
+    "question": "How is spend distributed across channels?",
+    "metrics": [
+     {
+      "key": "spend_share",
+      "label": "Spend share %",
+      "unit": "pct"
+     },
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "key": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "key": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "key": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "key": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "key": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "key": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     }
+    ],
+    "representation": "Channel table + horizontal bars for spend share",
+    "grid": false,
+    "entity": "channel",
+    "source": "gold"
+   },
+   {
+    "id": "creative",
+    "title": "Creative Performance",
+    "level": "Creative / Ad",
+    "question": "Which creatives are winners/losers and which show fatigue?",
+    "metrics": [
+     {
+      "key": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     },
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "key": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "key": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "key": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "key": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "key": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     }
+    ],
+    "representation": "Creative table + horizontal bars for selected KPI + trend lines for CTR/CVR/Frequency",
+    "grid": true,
+    "gridAxes": "Rows = creatives; columns = Frequency / CTR / CVR",
+    "entity": "creative",
+    "source": "bronze"
+   },
+   {
+    "id": "location",
+    "title": "Location Performance",
+    "level": "Geo",
+    "question": "Which locations are more or less efficient?",
+    "metrics": [
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "key": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "key": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "key": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "key": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "key": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "key": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     },
+     {
+      "key": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     }
+    ],
+    "representation": "Location table + horizontal bars for selected efficiency/cost metric",
+    "grid": true,
+    "gridAxes": "Rows = geographies; columns = selected KPI",
+    "entity": "location",
+    "source": "gold"
+   },
+   {
+    "id": "os",
+    "title": "Android vs iOS",
+    "level": "Platform",
+    "question": "Is there a meaningful CPI/CVR gap between operating systems?",
+    "metrics": [
+     {
+      "key": "cpi",
+      "label": "CPI",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "cvr",
+      "label": "CVR",
+      "unit": "pct"
+     },
+     {
+      "key": "impressions",
+      "label": "Impressions",
+      "unit": "num"
+     },
+     {
+      "key": "reach",
+      "label": "Reach",
+      "unit": "num"
+     },
+     {
+      "key": "frequency",
+      "label": "Frequency",
+      "unit": "num"
+     },
+     {
+      "key": "adds_to_cart",
+      "label": "Add to Cart",
+      "unit": "num"
+     },
+     {
+      "key": "checkouts_initiated",
+      "label": "Checkout",
+      "unit": "num"
+     },
+     {
+      "key": "purchases",
+      "label": "Purchase",
+      "unit": "num"
+     },
+     {
+      "key": "signups",
+      "label": "Signups",
+      "unit": "num"
+     },
+     {
+      "key": "cpm",
+      "label": "CPM",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "cpc",
+      "label": "CPC",
+      "unit": "inr",
+      "invert": true
+     },
+     {
+      "key": "ctr",
+      "label": "CTR",
+      "unit": "pct"
+     }
+    ],
+    "representation": "Side-by-side vertical bars for CPI and CVR + comparison table",
+    "grid": true,
+    "gridAxes": "Rows = campaigns; columns = Android / iOS; cells = CPI or CVR",
+    "entity": "os",
+    "source": "gold"
+   }
+  ]
+ },
+ "legend": {
+  "representations": {
+   "table": "Exact values, full metric sets, rankings and operational drill-down.",
+   "trend": "Time-series movement: daily/weekly/monthly trends, pacing, selected-entity history.",
+   "barsVertical": "Small number of discrete categories or side-by-side comparisons such as Android vs iOS.",
+   "barsHorizontal": "Rankings with many named categories: campaigns, products, keywords, locations, search terms.",
+   "heatmap": "Two-dimensional comparison where rows and columns are entities/dimensions and cell intensity makes outliers easy to spot."
+  },
+  "gridPrinciple": "Use grids for Campaign × Placement, Product × Campaign, Keyword × KPI, Creative × KPI, or Campaign × Device rather than forcing every dimension into a chart.",
+  "metricNormalization": "Keep native metric names per platform; map them to common semantic categories (spend, volume, efficiency, outcome) rather than renaming.",
+  "noAlerts": "Dashboards are for reporting only. Alert automations live elsewhere.",
+  "keys": "metric.key / dimension.key are CANONICAL — they resolve through contracts/config/primitives.yaml metric_sources (basic repo) and are the ONLY values that appear in a card's query.task.metrics/dimensions. label is the platform-native display word and renders verbatim (never rename to force parity). source=gold reads gold_<p>_campaign_daily/account_daily; source=bronze grains (keyword/search-term/placement/product) read DM/bronze fact tables (grain rule)."
+ },
+ "shopify": {
+  "name": "Shopify (store)",
+  "currencyNote": "Store truth: gross minus discounts AOV; CVR is sessions-based — never compared to ad-platform CVRs",
+  "reports": [
+   {
+    "id": "exec",
+    "title": "Store Performance",
+    "level": "Day / week / month",
+    "question": "How is the store performing on sales, orders and conversion?",
+    "metrics": [
+     {
+      "key": "total_sales",
+      "label": "Total sales",
+      "unit": "inr"
+     },
+     {
+      "key": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "key": "aov",
+      "label": "AOV",
+      "unit": "inr"
+     },
+     {
+      "key": "cvr",
+      "label": "Conversion rate",
+      "unit": "pct"
+     },
+     {
+      "key": "sessions",
+      "label": "Sessions",
+      "unit": "num"
+     },
+     {
+      "key": "sales_reversals",
+      "label": "Sales reversals",
+      "unit": "inr",
+      "invert": true
+     }
+    ],
+    "representation": "KPI strip + trend lines (Total sales, Orders, CVR); vertical bars for period comparison",
+    "grid": false,
+    "entity": "store",
+    "source": "gold",
+    "note": "CVR blocked until sessions ingestion lands (phase-1 #8)"
+   },
+   {
+    "id": "channel",
+    "title": "Sales by Channel",
+    "level": "Channel",
+    "question": "Which sales channels drive revenue and at what AOV?",
+    "metrics": [
+     {
+      "key": "total_sales",
+      "label": "Total sales",
+      "unit": "inr"
+     },
+     {
+      "key": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "key": "aov",
+      "label": "AOV",
+      "unit": "inr"
+     }
+    ],
+    "dimensions": [
+     {
+      "key": "channel",
+      "label": "Sales channel"
+     }
+    ],
+    "representation": "Horizontal bars (ranked) + data table",
+    "grid": false,
+    "entity": "store",
+    "source": "gold"
+   }
+  ]
+ }
+}

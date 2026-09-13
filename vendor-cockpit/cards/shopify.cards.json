@@ -1,0 +1,317 @@
+[
+ {
+  "id": "exec-kpi",
+  "platform": "shopify",
+  "catalogRef": {
+   "platform": "shopify",
+   "reportId": "exec"
+  },
+  "title": "Store Performance — KPIs",
+  "question": "How is the store performing on sales, orders and conversion?",
+  "representation": "kpiStrip",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "store",
+    "metrics": [
+     "total_sales",
+     "orders",
+     "aov",
+     "cvr",
+     "sessions",
+     "sales_reversals"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "total_sales",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true
+  },
+  "pinned": true,
+  "csvDownload": true,
+  "note": "CVR blocked until sessions ingestion lands (phase-1 #8)"
+ },
+ {
+  "id": "exec-bars",
+  "platform": "shopify",
+  "catalogRef": {
+   "platform": "shopify",
+   "reportId": "exec"
+  },
+  "title": "Store Performance — Comparison",
+  "question": "How is the store performing on sales, orders and conversion?",
+  "representation": "barsVertical",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "store",
+    "metrics": [
+     "total_sales",
+     "orders",
+     "aov",
+     "cvr",
+     "sessions",
+     "sales_reversals"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ]
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": false,
+   "metricSelector": {
+    "value": "total_sales",
+    "options": [
+     {
+      "value": "total_sales",
+      "label": "Total sales",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "aov",
+      "label": "AOV",
+      "unit": "inr"
+     },
+     {
+      "value": "cvr",
+      "label": "Conversion rate",
+      "unit": "pct"
+     },
+     {
+      "value": "sessions",
+      "label": "Sessions",
+      "unit": "num"
+     },
+     {
+      "value": "sales_reversals",
+      "label": "Sales reversals",
+      "unit": "inr",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true,
+  "note": "CVR blocked until sessions ingestion lands (phase-1 #8)"
+ },
+ {
+  "id": "exec-trend",
+  "platform": "shopify",
+  "catalogRef": {
+   "platform": "shopify",
+   "reportId": "exec"
+  },
+  "title": "Store Performance — Trend",
+  "question": "How is the store performing on sales, orders and conversion?",
+  "representation": "trendLine",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "store",
+    "metrics": [
+     "total_sales",
+     "orders",
+     "aov",
+     "cvr",
+     "sessions",
+     "sales_reversals"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "date"
+    ],
+    "comparison": {
+     "metric": "total_sales",
+     "baseline": "previous_period"
+    }
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "period": "D",
+   "compare": true,
+   "metricSelector": {
+    "value": "total_sales",
+    "options": [
+     {
+      "value": "total_sales",
+      "label": "Total sales",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "aov",
+      "label": "AOV",
+      "unit": "inr"
+     },
+     {
+      "value": "cvr",
+      "label": "Conversion rate",
+      "unit": "pct"
+     },
+     {
+      "value": "sessions",
+      "label": "Sessions",
+      "unit": "num"
+     },
+     {
+      "value": "sales_reversals",
+      "label": "Sales reversals",
+      "unit": "inr",
+      "invert": true
+     }
+    ]
+   }
+  },
+  "pinned": true,
+  "csvDownload": true,
+  "note": "CVR blocked until sessions ingestion lands (phase-1 #8)"
+ },
+ {
+  "id": "channel-table",
+  "platform": "shopify",
+  "catalogRef": {
+   "platform": "shopify",
+   "reportId": "channel"
+  },
+  "title": "Sales by Channel — Table",
+  "question": "Which sales channels drive revenue and at what AOV?",
+  "representation": "dataTable",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "store",
+    "metrics": [
+     "total_sales",
+     "orders",
+     "aov"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "dimensions": [
+     "channel"
+    ],
+    "sort": {
+     "metric": "total_sales",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ },
+ {
+  "id": "channel-rank",
+  "platform": "shopify",
+  "catalogRef": {
+   "platform": "shopify",
+   "reportId": "channel"
+  },
+  "title": "Sales by Channel — Ranking",
+  "question": "Which sales channels drive revenue and at what AOV?",
+  "representation": "barsHorizontal",
+  "query": {
+   "version": "1.0",
+   "task_type": "query",
+   "task": {
+    "entity": "store",
+    "metrics": [
+     "total_sales",
+     "orders",
+     "aov"
+    ],
+    "time_range": {
+     "type": "relative",
+     "value": 30,
+     "unit": "day"
+    },
+    "sort": {
+     "metric": "total_sales",
+     "direction": "desc"
+    },
+    "limit": 10
+   }
+  },
+  "controls": {
+   "dateRange": {
+    "preset": "30d"
+   },
+   "metricSelector": {
+    "value": "total_sales",
+    "options": [
+     {
+      "value": "total_sales",
+      "label": "Total sales",
+      "unit": "inr"
+     },
+     {
+      "value": "orders",
+      "label": "Orders",
+      "unit": "num"
+     },
+     {
+      "value": "aov",
+      "label": "AOV",
+      "unit": "inr"
+     }
+    ]
+   }
+  },
+  "pinned": false,
+  "csvDownload": true
+ }
+]
