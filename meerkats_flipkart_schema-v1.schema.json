@@ -1,0 +1,999 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meerkats.ai/schemas/meerkats_flipkart_schema/v1.json",
+  "title": "Meerkats Flipkart Ads Schema v1 — the complete Flipkart-only platform contract",
+  "description": "One document that contracts everything the platform layer knows about Flipkart Ads (FCC), consolidating the four platform_heuristics pack files (dictionary, structure, capabilities, diagnostics) and the warehouse contract (DM bronze/gold) into a single Flipkart-scoped schema. Unlike the generic platform-* contracts, Flipkart's invariants are enforced STRUCTURALLY here: the platform is const flipkart; the headline efficiency concept is roas DISPLAYED as 'ROI' (never ROAS/ACOS in Flipkart-facing UI); campaign operations are const [] because Flipkart ads have NO PUBLIC API (Seller Hub UI only) — every campaign.* binding fails closed and ads automations are ALERT-ONLY; the one mutable surface is listing.set_price (Marketplace Seller API v3, batch max 10); every ads simulation lever is availability=unavailable so recommendations touching ads are kind=advisory by construction. NAME AUTHORITY unchanged: metric/dimension names are catalog keys (meerkats-catalog); native labels live in metric_terms; computation routes via primitives.yaml metric_sources — this file never becomes a formula source for the engine. Cross-file $refs: none — this contract is self-contained and validated standalone.",
+  "type": "object",
+  "additionalProperties": false,
+  "patternProperties": {
+    "^_": {}
+  },
+  "$comment": "underscore-prefixed keys (_doc, _source) are format-mirror metadata (ci/mirror.py) — permitted, ignored",
+  "required": [
+    "meta",
+    "dictionary",
+    "structure",
+    "capabilities",
+    "diagnostics",
+    "warehouse"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "platform",
+        "tier",
+        "name_authority",
+        "attribution",
+        "settlement"
+      ],
+      "properties": {
+        "platform": {
+          "const": "flipkart"
+        },
+        "tier": {
+          "const": "advanced"
+        },
+        "name_authority": {
+          "const": "catalog"
+        },
+        "compiled": {
+          "type": "string",
+          "format": "date"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "attribution": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "basis",
+            "click_window_days",
+            "view_window_days"
+          ],
+          "description": "The invisible ruleset every Flipkart number is read through. Overlapping PLA+PCA campaigns credit the same sale to the last click — cross-campaign ROI is NOT additive.",
+          "properties": {
+            "basis": {
+              "const": "last_touch"
+            },
+            "click_window_days": {
+              "const": 28
+            },
+            "view_window_days": {
+              "const": 7
+            },
+            "note": {
+              "type": "string"
+            }
+          }
+        },
+        "settlement": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "backfill_days",
+            "provisional_flag",
+            "verdict_earliest_day"
+          ],
+          "description": "T+28 settlement: intraday figures settle ~3x/day and the trailing window backfills. Rows inside the window carry is_settled=false and are excluded from verdicts, rankings, and alert evaluation.",
+          "properties": {
+            "backfill_days": {
+              "const": 28
+            },
+            "provisional_flag": {
+              "const": "is_settled"
+            },
+            "verdict_earliest_day": {
+              "const": 14,
+              "description": "ROI verdicts only at T+14 or later"
+            }
+          }
+        }
+      }
+    },
+    "dictionary": {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^_": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "metric_terms",
+        "display_traps"
+      ],
+      "description": "Flipkart platform semantics and display traps — what the semantic registry cannot know. CARDINAL FACT: Flipkart's flagship efficiency metric is ROI (a MULTIPLIER), not ROAS/ACOS. Official FCC formula verbatim: 'ROI – Total Revenue (clicks and views attributed) / Total spend.'",
+      "properties": {
+        "metric_terms": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "oneOf": [
+              {
+                "type": "object",
+                "minProperties": 1,
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "description": "a term's facts: ui_label, status (native|jargon|structural), formula, api, registry, basis, trap, surfaces, note — all string-valued"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "required": [
+            "roi",
+            "direct_indirect",
+            "attribution",
+            "spend",
+            "views",
+            "clicks",
+            "ctr",
+            "cpc",
+            "cvr",
+            "orders_units",
+            "campaign_status",
+            "campaign_types",
+            "placements",
+            "reports",
+            "absent"
+          ],
+          "properties": {
+            "roi": {
+              "type": "object",
+              "required": [
+                "ui_label",
+                "status",
+                "trap"
+              ],
+              "properties": {
+                "ui_label": {
+                  "const": "ROI"
+                },
+                "status": {
+                  "const": "native"
+                }
+              },
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "headline ROI blends INDIRECT (halo) revenue — always show Direct vs Total separately; NEVER label it ROAS/ACOS in Flipkart-facing UI"
+            },
+            "cvr": {
+              "type": "object",
+              "required": [
+                "ui_label",
+                "status",
+                "formula",
+                "trap"
+              ],
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "OFFICIAL (FCC verbatim): total ORDERS (clicks AND views attributed) / total CLICKS — view-orders over click-denominator, inflated vs pure click-CVR BY DESIGN. Replicate to match Ads Manager, or compute click-only and LABEL it."
+            },
+            "views": {
+              "type": "object",
+              "required": [
+                "ui_label",
+                "status",
+                "trap"
+              ],
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "SELLER reports use Views ≈ impressions(served); FCC spec defines Views as VIEWABILITY-FILTERED (≥50% ≥1s) — never reconcile the two as equal across report types"
+            },
+            "absent": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              },
+              "required": [
+                "quality_score",
+                "impression_share",
+                "auction_insights",
+                "change_log",
+                "hourly_ad_metrics"
+              ],
+              "description": "explicitly ABSENT on Flipkart — dashboards must not fake these; also never render ACOS, and CPM does not exist (CPC-billed only). Lives INSIDE metric_terms, exactly where dictionary.yaml puts it."
+            }
+          }
+        },
+        "display_traps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          },
+          "description": "must include at minimum: T+28 settlement (last ~3 days provisional; ROI verdicts at T+14+) and ROI-includes-indirect (show Direct ROI beside it)"
+        }
+      }
+    },
+    "structure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hierarchy",
+        "setting_location_rules",
+        "inheritance_and_blast_radius",
+        "shared_account_assets",
+        "cross_refs"
+      ],
+      "description": "Flipkart account anatomy. The advertised unit IS the catalog listing: listing quality, price, stock, buy-box live on the SELLER side but gate AD serving — structure points diagnostics at seller-side objects.",
+      "properties": {
+        "hierarchy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "account",
+            "campaign",
+            "ad_group",
+            "fsn"
+          ],
+          "properties": {
+            "account": {
+              "$ref": "#/$defs/hierarchy_level"
+            },
+            "campaign": {
+              "$ref": "#/$defs/hierarchy_level"
+            },
+            "ad_group": {
+              "$ref": "#/$defs/hierarchy_level"
+            },
+            "fsn": {
+              "$ref": "#/$defs/hierarchy_level"
+            }
+          }
+        },
+        "setting_location_rules": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "string"
+          },
+          "required": [
+            "budget",
+            "targeting",
+            "the_real_levers"
+          ],
+          "description": "budget lives on campaign (DAILY_BUDGET_MET is a STATUS, not a config); targeting: PLA auto = platform-controlled, PLA keyword = ad_group keywords, PCA = audience segments; many outcomes are controlled OUTSIDE ads (price band, stock, listing content, buy-box)"
+        },
+        "inheritance_and_blast_radius": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          },
+          "description": "e.g. FSN out-of-stock / buy-box lost -> its ads stop converting regardless of ad settings; platform events (BBD) reprice ALL auctions simultaneously"
+        },
+        "shared_account_assets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "brand_store (PCA landing), seller rating/ODR (gates ad delivery), fulfillment mode (FBF)"
+        },
+        "cross_refs": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "patternProperties": {
+        "^_": {
+          "type": "string"
+        }
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entities",
+        "operations",
+        "automation_guards",
+        "alert_notes"
+      ],
+      "description": "The automation surface. Informative mirror of registry operation_bindings.flipkart — the registry stays authoritative. Flipkart's shape is fixed: campaign is READ/ALERT-ONLY (no public ads API; FCC is closed), listing is the one mutable surface.",
+      "properties": {
+        "entities": {
+          "type": "array",
+          "const": [
+            "campaign",
+            "listing"
+          ]
+        },
+        "operations": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "campaign",
+            "listing"
+          ],
+          "properties": {
+            "campaign": {
+              "type": "array",
+              "maxItems": 0,
+              "description": "structurally empty: the entity exists but has ZERO bindable operations — every campaign.* binding FAILS CLOSED at config creation; the human acts in Seller Hub"
+            },
+            "listing": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "const": "set_price"
+              },
+              "description": "Marketplace Seller API v3 update/price — batch MAX 10 SKUs, per-SKU errors in the response; selling_price <= MRP always"
+            }
+          }
+        },
+        "automation_guards": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          },
+          "description": "when an operation is LEGAL AND WISE — enforced by the binder at config creation. Must carry: alert-only campaigns; set_price batch/floor rules; is_settled exclusion for alert evaluation; poor_performer judged on ROI vs target ROI with direct_roi shown beside it"
+        },
+        "alert_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "price_undercut is the flagship detector (weekly post-scrape, suppressed on PARTIAL runs); wallet balance IS modeled so balance_runway works today"
+        }
+      },
+      "patternProperties": {
+        "^_": {
+          "type": "string"
+        }
+      }
+    },
+    "diagnostics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "efficiency",
+        "driver_graphs",
+        "localization",
+        "data_artifacts",
+        "simulation_levers"
+      ],
+      "description": "Feeds diagnose_and_recommend: driver_graphs = legal factor decompositions (decomposition.method=factor); localization = dimensional splits (method=dimensional); data_artifacts = the machine-checkable data_quality.checks run BEFORE causes are asserted; simulation_levers source assumptions (source=platform_heuristic, ref='flipkart/diagnostics#<path>').",
+      "properties": {
+        "efficiency": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "primary",
+            "display_label",
+            "invert"
+          ],
+          "properties": {
+            "primary": {
+              "const": "roas",
+              "description": "the catalog concept (says: roi); Flipkart-facing surfaces DISPLAY 'ROI', never 'ROAS'/'ACOS' — ACOS does not exist here and the catalog refuses it"
+            },
+            "display_label": {
+              "const": "ROI"
+            },
+            "invert": {
+              "const": false
+            },
+            "notes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "driver_graphs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "metric",
+              "identity",
+              "terms"
+            ],
+            "description": "A multiplicative identity the diagnosis planner may decompose along (cause_node.decomposition = {method: factor, additive: false} — attribute via LMDI/log). All factor terms must come from ONE report basis or the identity does not hold; split direct vs indirect BEFORE factor work.",
+            "properties": {
+              "metric": {
+                "type": "string",
+                "description": "catalog concept being decomposed"
+              },
+              "identity": {
+                "type": "string"
+              },
+              "terms": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "concept"
+                  ],
+                  "properties": {
+                    "concept": {
+                      "type": "string"
+                    },
+                    "not_in_catalog": {
+                      "const": true
+                    },
+                    "note": {
+                      "type": "string"
+                    }
+                  },
+                  "if": {
+                    "required": [
+                      "not_in_catalog"
+                    ]
+                  },
+                  "then": {
+                    "required": [
+                      "note"
+                    ]
+                  }
+                }
+              },
+              "notes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "localization": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "dims",
+            "drill_order"
+          ],
+          "properties": {
+            "dims": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "name",
+                  "kind"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "enum": [
+                      "campaign",
+                      "placement",
+                      "keyword",
+                      "product",
+                      "campaign_type"
+                    ]
+                  },
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "grain",
+                      "dimension"
+                    ]
+                  },
+                  "not_in_catalog": {
+                    "const": true
+                  },
+                  "note": {
+                    "type": "string"
+                  }
+                },
+                "if": {
+                  "required": [
+                    "not_in_catalog"
+                  ]
+                },
+                "then": {
+                  "required": [
+                    "note"
+                  ]
+                }
+              }
+            },
+            "drill_order": {
+              "type": "array",
+              "const": [
+                "campaign_type",
+                "campaign",
+                "placement",
+                "product",
+                "keyword"
+              ],
+              "description": "PLA vs PCA splits FIRST: PCA is consideration-stage, judged on engagement+indirect — its ROI dilutes any blend"
+            }
+          }
+        },
+        "data_artifacts": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "check",
+              "mimics",
+              "applies_to",
+              "rule",
+              "severity"
+            ],
+            "description": "Pipeline/platform artifacts that mimic real movements. `check` values are the vocabulary of diagnosis_result.data_quality.checks[].name.",
+            "properties": {
+              "check": {
+                "type": "string",
+                "enum": [
+                  "settlement_provisional",
+                  "budget_capped",
+                  "cross_campaign_attribution_overlap",
+                  "halo_composition_shift"
+                ]
+              },
+              "mimics": {
+                "type": "string"
+              },
+              "applies_to": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "rule": {
+                "type": "string"
+              },
+              "severity": {
+                "type": "string",
+                "enum": [
+                  "blocker",
+                  "warn"
+                ]
+              },
+              "guidance": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "external_factors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "signal"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "signal": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string"
+              },
+              "parked_concepts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "description": "platform_sale_event (BBD), competitor_price_undercut (scrape listing_snapshots), listing_health — real-world causes, cause_node.kind=external"
+        },
+        "structure_checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "check",
+              "blast_radius"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "check": {
+                "type": "string"
+              },
+              "blast_radius": {
+                "type": "string"
+              }
+            }
+          },
+          "description": "pla_placement_claim (PLA has no placement targeting — any placement-level cause on PLA is structurally suspect) and smartroi_bidding (spend movements on SmartROI are the bidder working, not an anomaly)"
+        },
+        "simulation_levers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "operation",
+              "entity",
+              "availability",
+              "response"
+            ],
+            "properties": {
+              "operation": {
+                "type": "string",
+                "enum": [
+                  "pause",
+                  "resume",
+                  "set_budget",
+                  "increase_budget",
+                  "adjust_bid",
+                  "set_price"
+                ]
+              },
+              "entity": {
+                "type": "string",
+                "enum": [
+                  "campaign",
+                  "keyword",
+                  "listing"
+                ]
+              },
+              "availability": {
+                "type": "string",
+                "enum": [
+                  "bindable",
+                  "conditional",
+                  "unavailable"
+                ]
+              },
+              "condition": {
+                "type": "string"
+              },
+              "response": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "shape",
+                  "note"
+                ],
+                "properties": {
+                  "shape": {
+                    "type": "string",
+                    "enum": [
+                      "step",
+                      "linear",
+                      "concave",
+                      "unknown"
+                    ]
+                  },
+                  "note": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "availability": {
+                      "const": "conditional"
+                    }
+                  },
+                  "required": [
+                    "availability"
+                  ]
+                },
+                "then": {
+                  "required": [
+                    "condition"
+                  ]
+                }
+              },
+              {
+                "description": "NO PUBLIC ADS API: every ads lever (campaign/keyword entity) is unavailable — the belief still informs advisory projections, but nothing binds",
+                "if": {
+                  "properties": {
+                    "entity": {
+                      "enum": [
+                        "campaign",
+                        "keyword"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "entity"
+                  ]
+                },
+                "then": {
+                  "properties": {
+                    "availability": {
+                      "const": "unavailable"
+                    }
+                  }
+                }
+              },
+              {
+                "description": "the one bindable Flipkart lever is COMMERCE-side price",
+                "if": {
+                  "properties": {
+                    "operation": {
+                      "const": "set_price"
+                    }
+                  },
+                  "required": [
+                    "operation"
+                  ]
+                },
+                "then": {
+                  "properties": {
+                    "entity": {
+                      "const": "listing"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "recommendation_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "every ads recommendation on this platform is kind=advisory by construction; a price recommendation may be bindable while an ads recommendation cannot be; never propose 'bid up top-of-search' on PLA; never recommend SmartROI for zero-history SKUs"
+        }
+      },
+      "patternProperties": {
+        "^_": {
+          "type": "string"
+        }
+      }
+    },
+    "warehouse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bronze",
+        "gold"
+      ],
+      "description": "The DM contract, Flipkart slice. Bronze = everything the platform offers as report columns (keyword/search-term/placement/product grains live here — basic gold does NOT cover them). Gold = additive daily facts only; ratios computed at read from SUM()s.",
+      "properties": {
+        "bronze": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "dimensions",
+            "metrics",
+            "entities",
+            "account"
+          ],
+          "properties": {
+            "dimensions": {
+              "type": "object",
+              "minProperties": 1,
+              "additionalProperties": {
+                "type": "string"
+              },
+              "required": [
+                "date",
+                "campaign_name",
+                "campaign_id",
+                "campaign_type",
+                "campaign_status",
+                "bidding_type",
+                "targeting_type",
+                "fsn",
+                "product_name",
+                "keyword",
+                "match_type",
+                "search_term",
+                "placement"
+              ],
+              "description": "dimension key -> definition. Enumerated platform values (contract, not free text): campaign_type = PLA | PCA | Display; bidding_type = CPC | SmartROI; targeting_type = Auto | Manual; match_type = Exact | Phrase | Broad; placement = Top of Search | Rest of Search | Top of Browse | Rest of Browse | Product Page; placement_surface = Flipkart | Flipkart Grocery | Flipkart Minutes; warehouse campaign status includes the verified DAILY_BUDGET_MET enum (cdp.flipkart_campaigns.status)"
+            },
+            "metrics": {
+              "type": "object",
+              "minProperties": 1,
+              "required": [
+                "views",
+                "clicks",
+                "ctr",
+                "spend",
+                "cpc",
+                "direct_units",
+                "indirect_units",
+                "total_units",
+                "direct_revenue",
+                "indirect_revenue",
+                "total_revenue",
+                "direct_roi",
+                "indirect_roi",
+                "roi",
+                "product_page_views",
+                "add_to_cart",
+                "orders",
+                "cvr"
+              ],
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "def"
+                ],
+                "properties": {
+                  "def": {
+                    "type": "string"
+                  },
+                  "formula": {
+                    "type": "string",
+                    "description": "display formula only — computation routes via primitives.yaml metric_sources / the semantic layer"
+                  }
+                }
+              },
+              "description": "the direct/indirect split is the single highest-value split for honest reporting — never pre-collapse; total_revenue = direct_revenue + indirect_revenue; roi = total_revenue / spend (includes halo)"
+            },
+            "entities": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              },
+              "required": [
+                "campaigns",
+                "ad_groups"
+              ],
+              "description": "minimal entity streams: display names, status, budgets for alerts — snapshot per sync (as_of)"
+            },
+            "account": {
+              "type": "string",
+              "description": "account_id, currency (INR), timezone (IST), wallet balance, status — wallet balance powers balance_runway"
+            },
+            "scraped_complement": {
+              "type": "string",
+              "description": "shopper-visible price/deal/availability snapshots live in the COMPETITION scrape tables — basic price monitoring runs on those, not on the Seller API catalog"
+            }
+          },
+          "patternProperties": {
+            "^_": {
+              "type": "string"
+            }
+          }
+        },
+        "gold": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "rules",
+            "tables",
+            "derived_at_read",
+            "entity_current"
+          ],
+          "properties": {
+            "rules": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              },
+              "description": "facts additive only, ratios at read; every table carries as_of + is_settled; display names join from the entity snapshot; rebuild = rolling 28-day partition overwrite every sync"
+            },
+            "tables": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "gold_flipkart_account_daily",
+                "gold_flipkart_campaign_daily"
+              ],
+              "properties": {
+                "gold_flipkart_account_daily": {
+                  "$ref": "#/$defs/gold_table"
+                },
+                "gold_flipkart_campaign_daily": {
+                  "$ref": "#/$defs/gold_table"
+                }
+              },
+              "description": "BASIC gold is account_daily + campaign_daily ONLY — keyword, search-term, placement, and product grains fall back to bronze, and the fallback is said out loud"
+            },
+            "derived_at_read": {
+              "type": "string",
+              "description": "ctr, cpc, cvr, roi, direct_roi, aov — never stored as columns; expressions live in primitives.yaml metric_sources.flipkart (roi always surfaced with direct_roi beside it)"
+            },
+            "entity_current": {
+              "type": "string",
+              "description": "gold_flipkart_entities_current — latest snapshot per entity for display joins"
+            }
+          },
+          "patternProperties": {
+            "^_": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "patternProperties": {
+        "^_": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "hierarchy_level": {
+      "type": "object",
+      "description": "one level of the account tree: holds, settings_here, notes/id — hand-authored facts",
+      "minProperties": 1
+    },
+    "gold_table": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "grain",
+        "facts"
+      ],
+      "properties": {
+        "grain": {
+          "type": "string"
+        },
+        "dims": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "facts": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "spend",
+              "views",
+              "clicks",
+              "product_page_views",
+              "add_to_cart",
+              "orders",
+              "direct_units",
+              "indirect_units",
+              "direct_revenue",
+              "indirect_revenue"
+            ],
+            "description": "ADDITIVE FACTS ONLY — no ratio column may exist in gold; roi/ctr/cpc/cvr/aov are derived at read"
+          }
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
