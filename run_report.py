@@ -133,7 +133,7 @@ def main():
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
 
-    library = {c["id"]: c for c in json.load(open(os.path.join(HERE, "cards", "flipkart.cards.json")))}
+    library = {c["id"]: c for c in json.load(open(os.path.join(HERE, "layers", "5-presentation-layer", "cards", "flipkart.cards.json")))}
     jobs = []
     for cid in args.card:
         if cid not in library:

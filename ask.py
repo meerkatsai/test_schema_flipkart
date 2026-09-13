@@ -30,8 +30,8 @@ from engine import contracts
 from engine.presenter import build_payload, period_table
 from engine.render_html import render_report
 
-CATALOG = json.load(open(os.path.join(HERE, "catalog", "generated", "catalog.json")))
-MF = yaml.safe_load(open(os.path.join(HERE, "metricflow", "bindings_testdb.yaml")))
+CATALOG = json.load(open(os.path.join(HERE, "layers", "2-semantic-layer", "catalog", "generated", "catalog.json")))
+MF = yaml.safe_load(open(os.path.join(HERE, "layers", "2-semantic-layer", "metricflow", "bindings_testdb.yaml")))
 WORKSPACE = "ws_flipkart_demo"
 WORKSPACE_PLATFORMS = ["flipkart"]  # company_operations: platforms.ads — unlisted platforms are refused
 
@@ -103,7 +103,7 @@ def main():
                schemas_registered=len(contracts.loaded()))
 
     # ── 4. resolve — the layer-2 catalog, VERBATIM (catalog/resolve.mjs) ─────
-    r = subprocess.run(["node", os.path.join(HERE, "catalog", "resolve.mjs"), json.dumps(task)],
+    r = subprocess.run(["node", os.path.join(HERE, "layers", "2-semantic-layer", "catalog", "resolve.mjs"), json.dumps(task)],
                        capture_output=True, text=True, check=True)
     plan_doc = json.loads(r.stdout)
     trace.span("resolve", detail=f" catalog/resolve.mjs (build {plan_doc['build_id']}) → "

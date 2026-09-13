@@ -4,22 +4,28 @@ Production test of the Meerkats layered architecture, scoped to **Flipkart Ads**
 schema → synthetic warehouse → query pipeline → charts, with contract validation
 and a task-trace + data-lineage log at every stage.
 
-## Layout
+## Layout — schemas separated by layer
 
-| Path | Layer | What it is |
-|---|---|---|
-| `meerkats_flipkart_schema-v1.schema.json` | 3 | The consolidated Flipkart platform contract (dictionary + structure + capabilities + diagnostics + DM warehouse, invariants enforced structurally) |
-| `contracts/` | 1 | The DSL contracts, vendored verbatim: task-router, query_and_act, diagnose_and_recommend, workflows_and_automations, task-trace, catalog-resolved-plan |
-| `catalog/` | 2 | The semantic catalog: `resolve.mjs` + `generated/catalog.json` (verbatim; word → concept → MetricFlow metric binding) |
-| `metricflow/` | 2 | `flipkart.yaml` (metric registry) + `bindings_testdb.yaml` (MetricFlow compile shim: same metric names/measures as `_metrics.yml`, compiled onto the test warehouse) |
-| `warehouse/` | DM | DDL + synthetic-data generators: gold (account/campaign daily + entities) and bronze (adgroup/keyword/search-term/placement/FSN/wallet), T+28 `is_settled`, bronze reconciles to gold exactly |
-| `engine/` | — | resolver, contract validation (jsonschema 2020-12, schemas registered by `$id`), presenter (card payload shapes), HTML renderer, trace |
-| `schema/card.schema.json` | 8 | The data→UI contract (vendored from ad-dashboards-prebuilt); payloads are gated against `#/$defs/<representation>Data` before render |
-| `cards/flipkart.cards.json` | 8 | The 28 prebuilt Flipkart cards — each card's `query` is a baked DSL query_task |
-| `vendor-cockpit/` | 8 | The cockpit demo UI (vanilla, seeded data) |
-| `ask.py` | — | NL flow: utterance → router envelope → contracts → catalog → MetricFlow → SQL → card, with data lineage |
-| `run_report.py` | — | Card flow: prebuilt card id → same pipeline, no router |
-| `ENGINE.md` | — | Engine details + run instructions |
+```
+layers/
+  1-task-router/          contract_task-router-v1 · contract_query_and_act-v1 · contract_diagnose_and_recommend-v1
+  2-semantic-layer/       contract_catalog-resolved-plan-v1 · catalog/ (resolve.mjs + catalog.json)
+                          metricflow/ (registry + test-DB compile shim) · warehouse/ (gold+bronze DDL & generators)
+  3-company-operations/   contract_company-operations-v1 (per-workspace knowledge)
+  4-platform-heuristics/  contract_platform-{dictionary,structure,capabilities,diagnostics}-v1
+                          meerkats_flipkart_schema-v1 (the consolidated Flipkart contract)
+  5-presentation-layer/   card.schema.json (the data→UI contract) · cards/ (28 prebuilt) · cockpit-demo/
+  6-guardrails/           contract_task-trace-v1 (observability) · contract_audit-log-v1 (hash-chained record)
+                          + README: the preventive guardrails are structural, distributed across layers
+  7-actions/              contract_capability-registry-v1 · tools-registry.yaml · contract_workflows_and_automations-v1
+engine/                   resolver · contract gates (15 schemas registered by $id) · presenter · renderer · trace
+ask.py                    NL flow: utterance → router → contracts → catalog → MetricFlow → SQL → card (+ lineage)
+run_report.py             card flow: prebuilt card id → same pipeline, no router
+```
+
+Each layer folder carries its own README. Cross-layer rules: the semantic layer is
+the single name authority; action defs (selection/operation/execution_plan) live in
+layer 1's query_and_act as shared vocabulary and are executed through layer 7.
 
 ## Run
 

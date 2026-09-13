@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meerkats.ai/schemas/platform_capabilities/v1.json",
+  "title": "Meerkats Platform Capabilities v1 — contract for platform_heuristics/<platform>/capabilities.json",
+  "description": "The automation surface of one platform: which entities exist for selection, which operations are legal per entity (an informative MIRROR of the capability registry's operation_bindings — the registry stays authoritative, and the gate script cross-checks every entity.operation pair against it), the guards the binder enforces at config creation, and the alert-layer notes. Keys starting with _ are mirror metadata (ci/mirror.py) and always allowed.",
+  "type": "object",
+  "additionalProperties": false,
+  "patternProperties": {"^_": {"type": "string"}},
+  "required": ["entities", "operations", "automation_guards"],
+  "properties": {
+    "entities": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string"},
+      "description": "canonical DSL ids for selection_request.entity and registry binding keys"
+    },
+    "operations": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {"type": "string"},
+        "description": "operation names per entity; each <entity>.<operation> must exist in the registry's operation_bindings for this platform (gate-enforced). An EMPTY list is a deliberate declaration: the entity exists but has ZERO bindable operations — everything on it fails closed (e.g. flipkart campaigns: no public ads API, alert-only)"
+      }
+    },
+    "automation_guards": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"},
+      "description": "when an operation is LEGAL AND WISE — enforced by the binder at config creation"
+    },
+    "alert_notes": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  }
+}

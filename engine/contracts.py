@@ -8,7 +8,7 @@ from referencing import Registry, Resource
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 _schemas = {}
-for f in glob.glob(os.path.join(HERE, "contracts", "*.schema.json")):
+for f in glob.glob(os.path.join(HERE, "layers", "*", "*.schema.json")):
     s = json.load(open(f))
     _schemas[s["$id"]] = s
 
@@ -17,7 +17,7 @@ CATALOG_PLAN = "https://meerkats.ai/schemas/catalog_resolved_plan/v1.json"
 CARD = "https://meerkats.ai/schemas/ad-dashboards/card.schema.json"
 
 # the data→UI contract: card.schema.json (vendored from ad-dashboards-prebuilt)
-_card_schema = json.load(open(os.path.join(HERE, "schema", "card.schema.json")))
+_card_schema = json.load(open(os.path.join(HERE, "layers", "5-presentation-layer", "card.schema.json")))
 _schemas[CARD] = _card_schema
 
 _registry = Registry().with_resources(

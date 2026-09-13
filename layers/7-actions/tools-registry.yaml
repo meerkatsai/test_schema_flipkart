@@ -1,0 +1,201 @@
+# TOOLS.registry — the capability registry (PDF Concern 3), grounded in the REAL platform APIs (researched 10 Sep 2026).
+# THE SELECTION RULE: the agent NEVER reads this file and never chooses a tool. The server-side BINDER
+# resolves (platform, entity, operation) through operation_bindings below into an exact tool chain at
+# CONFIG-CREATION time; no binding => the config FAILS CLOSED then, not at run time. The agent only ever
+# emits DSL operations (pause/resume/set_budget/increase_budget/adjust_bid) — surfacing a tool list to
+# the model is exactly the context-overload failure this file exists to prevent.
+# Schema: contracts/dsl/capability-registry-v1.schema.json
+
+meta:
+  version: 1
+  researched: "2026-09-10"
+  execution_contract:
+    - "mutating tool calls execute ONLY inside an approved workflow_run / execution_plan (approval_ref required — workflows_and_automations-v1 / query_and_act-v1)"
+    - "every mutating call carries an idempotency_key (config_id + run_id + step + member_id) — a retry can never double-apply"
+    - "every mutating call is followed by its verify read (Act -> Observe -> Verify); verify failure triggers rollback_tool if reversible, else escalation"
+    - "rate limits live in the adapter, per platform_context — the orchestrator only sees success/retry/fail"
+    - "api_version is PINNED per tool; sunset dates tracked (Google ships MONTHLY since Jan 2026, each version lives ~1 year — v22 sunsets 2026-10-07)"
+
+# (platform, entity, operation) -> ordered tool chain. THIS is what the binder consults.
+operation_bindings:
+  amazon:
+    campaign.pause:            [amazon.set_campaign_state]        # params: {state: paused}
+    campaign.resume:           [amazon.set_campaign_state]        # params: {state: enabled}
+    campaign.set_budget:       [amazon.set_campaign_budget]
+    campaign.increase_budget:  [amazon.get_campaigns, amazon.set_campaign_budget]   # read current -> compute absolute -> set
+    keyword.adjust_bid:        [amazon.set_keyword_bid]
+  meta:
+    campaign.pause:            [meta.set_campaign_status]         # params: {status: PAUSED}
+    campaign.resume:           [meta.set_campaign_status]         # params: {status: ACTIVE}
+    campaign.set_budget:       [meta.set_campaign_budget]
+    campaign.increase_budget:  [meta.get_campaign, meta.set_campaign_budget]
+    ad_set.pause:              [meta.set_adset_status]            # params: {status: PAUSED} — spec: "pause campaign/ad set"
+    ad_set.resume:             [meta.set_adset_status]            # params: {status: ACTIVE}
+    ad_set.set_budget:         [meta.set_adset_budget]            # Meta budgets live at campaign OR ad set (ABO)
+    ad_set.increase_budget:    [meta.get_adset, meta.set_adset_budget]
+  google:
+    campaign.pause:            [google.mutate_campaign_status]    # params: {status: PAUSED}
+    campaign.resume:           [google.mutate_campaign_status]    # params: {status: ENABLED}
+    campaign.set_budget:       [google.mutate_campaign_budget]
+    campaign.increase_budget:  [google.search_campaign, google.mutate_campaign_budget]
+    keyword.adjust_bid:        [google.mutate_keyword_bid]
+  flipkart:
+    # NO PUBLIC ADS API: Flipkart ad campaigns are managed in Seller Hub UI only (FCC is a closed
+    # platform). Every campaign.* operation is UNBOUND on flipkart -> binder fails closed ->
+    # flipkart automations are ALERT-ONLY (watch + notify + drill-down; human acts in Seller Hub).
+    listing.set_price:         [flipkart.update_listing_price]    # the one real mutation surface (Seller API)
+  shopify:
+    variant.set_price:         [shopify.update_variant_price]
+  notify:   # alert delivery — the ONLY channels are slack and email (workflows_and_automations-v1 notify_channel)
+    slack:                     [notify.slack_post]
+    email:                     [notify.email_send]
+
+tools:
+  # ── amazon ads (Sponsored Products v3; region hosts: advertising-api[-eu|-fe].amazon.com) ──
+  amazon.set_campaign_state:
+    api: {provider: amazon_ads, method: PUT, path: /sp/campaigns, api_version: v3,
+          content_type: application/vnd.spCampaign.v3+json,
+          doc: "https://advertising.amazon.com/API/docs/en-us/guides/sponsored-products/campaigns/overview"}
+    params: "{campaigns: [{campaignId, state: enabled|paused|archived}]}  # multi-status response: per-item success/error"
+    mutating: true
+    idempotent: true            # setting a state twice is a no-op
+    reversible: {reversible: true, rollback_tool: amazon.set_campaign_state}   # inverse state
+    verify: {tool: amazon.get_campaigns, assert: "campaign.state == requested state"}
+  amazon.set_campaign_budget:
+    api: {provider: amazon_ads, method: PUT, path: /sp/campaigns, api_version: v3,
+          content_type: application/vnd.spCampaign.v3+json}
+    params: "{campaigns: [{campaignId, budget: {budget, budgetType: DAILY}}]}"
+    mutating: true
+    idempotent: true
+    reversible: {reversible: true, rollback_tool: amazon.set_campaign_budget}  # restore captured prior value
+    verify: {tool: amazon.get_campaigns, assert: "budget.budget == requested amount"}
+  amazon.set_keyword_bid:
+    api: {provider: amazon_ads, method: PUT, path: /sp/keywords, api_version: v3,
+          content_type: application/vnd.spKeyword.v3+json}
+    params: "{keywords: [{keywordId, bid}]}"
+    mutating: true
+    idempotent: true
+    reversible: {reversible: true, rollback_tool: amazon.set_keyword_bid}
+    verify: {tool: amazon.get_keywords, assert: "keyword.bid == requested bid"}
+  amazon.get_campaigns:
+    api: {provider: amazon_ads, method: POST, path: /sp/campaigns/list, api_version: v3,
+          content_type: application/vnd.spCampaign.v3+json}
+    params: "{campaignIdFilter: {include: [...]}}"
+    mutating: false
+  amazon.get_keywords:
+    api: {provider: amazon_ads, method: POST, path: /sp/keywords/list, api_version: v3,
+          content_type: application/vnd.spKeyword.v3+json}
+    mutating: false
+
+  # ── meta marketing api (Graph v22.0, current 2026; budgets in MINOR units of account currency) ──
+  meta.set_campaign_status:
+    api: {provider: meta_graph, method: POST, path: "/{campaign_id}", api_version: v22.0,
+          doc: "https://developers.facebook.com/docs/marketing-api/reference/ad-campaign-group"}
+    params: "{status: ACTIVE|PAUSED}  # pausing a campaign pauses delivery of children; explicit child pause is best practice"
+    mutating: true
+    idempotent: true
+    reversible: {reversible: true, rollback_tool: meta.set_campaign_status}
+    verify: {tool: meta.get_campaign, assert: "status == requested"}
+  meta.set_campaign_budget:
+    api: {provider: meta_graph, method: POST, path: "/{campaign_id}", api_version: v22.0}
+    params: "{daily_budget: <minor units>} | {lifetime_budget: <minor units>}  # CBO campaigns only"
+    mutating: true
+    idempotent: true
+    reversible: {reversible: true, rollback_tool: meta.set_campaign_budget}
+    verify: {tool: meta.get_campaign, assert: "daily_budget == requested"}
+  meta.set_adset_budget:
+    api: {provider: meta_graph, method: POST, path: "/{adset_id}", api_version: v22.0}
+    params: "{daily_budget: <minor units>}  # ABO accounts budget at ad set — platform_heuristics/meta"
+    mutating: true
+    idempotent: true
+    reversible: {reversible: true, rollback_tool: meta.set_adset_budget}
+    verify: {tool: meta.get_adset, assert: "daily_budget == requested"}
+  meta.set_adset_status:
+    api: {provider: meta_graph, method: POST, path: "/{adset_id}", api_version: v22.0}
+    params: "{status: ACTIVE|PAUSED}"
+    mutating: true
+    idempotent: true
+    reversible: {reversible: true, rollback_tool: meta.set_adset_status}
+    verify: {tool: meta.get_adset, assert: "status == requested"}
+  meta.get_campaign:
+    api: {provider: meta_graph, method: GET, path: "/{campaign_id}?fields=status,daily_budget,lifetime_budget", api_version: v22.0}
+    mutating: false
+  meta.get_adset:
+    api: {provider: meta_graph, method: GET, path: "/{adset_id}?fields=status,daily_budget", api_version: v22.0}
+    mutating: false
+  meta.ad_library_search:
+    api: {provider: meta_graph, method: GET, path: "/ads_archive", api_version: v22.0,
+          doc: "https://www.facebook.com/ads/library/api/"}
+    params: "{search_terms|search_page_ids, ad_reached_countries, ad_active_status}  # CAVEAT: the API returns political/issue ads + EU (DSA) scope; INDIA commercial ads are visible in the Ad Library UI but NOT via this API — competitor ad activity for IN needs the scrape route. Report-only either way."
+    mutating: false
+
+  # ── google ads api (v25 current Jul 2026; MONTHLY releases, ~1yr sunsets — PIN AND TRACK) ──
+  google.mutate_campaign_status:
+    api: {provider: google_ads, method: POST, path: "/v25/customers/{customer_id}/campaigns:mutate", api_version: v25,
+          doc: "https://developers.google.com/google-ads/api/rest/common/mutate"}
+    params: "{operations: [{update: {resource_name, status: ENABLED|PAUSED}, update_mask: status}]}"
+    mutating: true
+    idempotent: true
+    reversible: {reversible: true, rollback_tool: google.mutate_campaign_status}
+    verify: {tool: google.search_campaign, assert: "campaign.status == requested"}
+  google.mutate_campaign_budget:
+    api: {provider: google_ads, method: POST, path: "/v25/customers/{customer_id}/campaignBudgets:mutate", api_version: v25}
+    params: "{operations: [{update: {resource_name, amount_micros}, update_mask: amount_micros}]}  # budgets can be SHARED — binder must check shared_set before mutating"
+    mutating: true
+    idempotent: true
+    reversible: {reversible: true, rollback_tool: google.mutate_campaign_budget}
+    verify: {tool: google.search_campaign, assert: "campaign_budget.amount_micros == requested"}
+  google.mutate_keyword_bid:
+    api: {provider: google_ads, method: POST, path: "/v25/customers/{customer_id}/adGroupCriteria:mutate", api_version: v25}
+    params: "{operations: [{update: {resource_name, cpc_bid_micros}, update_mask: cpc_bid_micros}]}"
+    mutating: true
+    idempotent: true
+    reversible: {reversible: true, rollback_tool: google.mutate_keyword_bid}
+    verify: {tool: google.search_keyword, assert: "cpc_bid_micros == requested"}
+  google.search_campaign:
+    api: {provider: google_ads, method: POST, path: "/v25/customers/{customer_id}/googleAds:search", api_version: v25}
+    params: "GAQL: SELECT campaign.status, campaign_budget.amount_micros FROM campaign WHERE campaign.id IN (...)"
+    mutating: false
+  google.search_keyword:
+    api: {provider: google_ads, method: POST, path: "/v25/customers/{customer_id}/googleAds:search", api_version: v25}
+    mutating: false
+
+  # ── flipkart (Marketplace Seller API v3 — LISTINGS only; ads have NO public API) ──
+  flipkart.update_listing_price:
+    api: {provider: flipkart_seller, method: POST, path: /listings/v3/update/price, api_version: v3,
+          doc: "https://seller.flipkart.com/api-docs/listing-api-docs/v3/UpdateListingsPriceAPI.html"}
+    params: "{<sku_id>: {mrp, selling_price}}  # map sku -> price update; MAX BATCH 10; per-sku errors in response"
+    mutating: true
+    idempotent: true
+    reversible: {reversible: true, rollback_tool: flipkart.update_listing_price}
+    verify: {tool: flipkart.get_listing, assert: "selling_price == requested"}
+  flipkart.get_listing:
+    api: {provider: flipkart_seller, method: GET, path: "/listings/v3/{sku_ids}", api_version: v3}
+    mutating: false
+
+  # ── shopify (Admin GraphQL — REST product APIs deprecated) ──
+  shopify.update_variant_price:
+    api: {provider: shopify_admin, method: POST, path: "/admin/api/2026-07/graphql.json", api_version: "2026-07",
+          doc: "https://shopify.dev/docs/api/admin-graphql/latest/mutations/productvariantsbulkupdate"}
+    params: "mutation productVariantsBulkUpdate(productId, variants: [{id, price}])  # per-product; no single-variant mutation exists"
+    mutating: true
+    idempotent: true
+    reversible: {reversible: true, rollback_tool: shopify.update_variant_price}
+    verify: {tool: shopify.get_variants, assert: "variant.price == requested"}
+  shopify.get_variants:
+    api: {provider: shopify_admin, method: POST, path: "/admin/api/2026-07/graphql.json", api_version: "2026-07"}
+    params: "query product(id) { variants { id price } }"
+    mutating: false
+
+  # ── notify (alert delivery — slack and email are the ONLY channels) ──
+  notify.slack_post:
+    api: {provider: slack, method: POST, path: "https://slack.com/api/chat.postMessage", api_version: web_api,
+          doc: "https://docs.slack.dev/reference/methods/chat.postmessage"}
+    params: "{channel, blocks|text}  # bot token, chat:write scope; alert renders evidence + drill-down link (never bare)"
+    mutating: false               # notification, not a platform mutation — no approval needed
+    delivery: {retry: 3, fallback: notify.email_send}   # slack failure falls back to email, firing records delivery_status
+  notify.email_send:
+    api: {provider: email_adapter, method: POST, path: "<provider send endpoint (SES/Resend behind one adapter)>", api_version: adapter_v1}
+    params: "{to[], subject, html}  # same rendered alert body as slack"
+    mutating: false
+    delivery: {retry: 3, fallback: null}   # terminal channel; failure -> alert_firing.delivery_status=failed + surfaced in app

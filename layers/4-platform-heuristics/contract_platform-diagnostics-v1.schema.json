@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meerkats.ai/schemas/platform-diagnostics/v1.json",
+  "title": "Platform diagnostics pack v1 — the diagnosis layer of platform_heuristics",
+  "description": "One pack per ad/commerce platform. Feeds the diagnose_and_recommend family: driver_graphs are the LEGAL factor decompositions a diagnosis cause_node may use (decomposition.method=factor); localization lists the dimensional splits (method=dimensional); data_artifacts are the machine-checkable data_quality.checks that must run BEFORE causes are asserted (their `check` names are the vocabulary of diagnosis_result.data_quality.checks[].name); simulation_levers source simulation assumptions (source=platform_heuristic, ref='<platform>/diagnostics#<path>'). NAME AUTHORITY: every metric/dimension name is a catalog concept/dimension/grain key — the catalog (meerkats-catalog) is the single name source; anything the catalog does not carry is flagged not_in_catalog with a note, never silently invented. ci/check_diagnostics.py enforces this against generated/catalog.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["meta", "efficiency", "driver_graphs", "localization", "data_artifacts", "simulation_levers"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["platform", "tier", "role", "name_authority"],
+      "properties": {
+        "platform": {"type": "string"},
+        "tier": {"const": "advanced"},
+        "role": {"type": "string"},
+        "name_authority": {"const": "catalog"}
+      }
+    },
+    "efficiency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary", "display_label", "invert"],
+      "description": "The platform's headline efficiency metric — what diagnosis roots on and recommendation optimizes unless told otherwise.",
+      "properties": {
+        "primary": {"type": "string", "description": "catalog concept"},
+        "display_label": {"type": "string", "description": "native label, per the dictionary pack"},
+        "invert": {"type": "boolean", "description": "true = lower is better (ACOS)"},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "driver_graphs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["metric", "identity", "terms"],
+        "description": "A multiplicative identity the diagnosis planner may decompose along (cause_node.decomposition = {method: factor, additive: false} — attribute via LMDI/log).",
+        "properties": {
+          "metric": {"type": "string", "description": "catalog concept being decomposed"},
+          "identity": {"type": "string", "description": "the identity, human-readable"},
+          "terms": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["concept"],
+              "properties": {
+                "concept": {"type": "string"},
+                "not_in_catalog": {"const": true},
+                "note": {"type": "string"}
+              },
+              "if": {"required": ["not_in_catalog"]},
+              "then": {"required": ["note"]}
+            }
+          },
+          "notes": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "localization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dims", "drill_order"],
+      "description": "Legal dimensional splits (cause_node.decomposition = {method: dimensional, additive: true}) and the default investigation order.",
+      "properties": {
+        "dims": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "kind"],
+            "properties": {
+              "name": {"type": "string"},
+              "kind": {"type": "string", "enum": ["grain", "dimension"]},
+              "not_in_catalog": {"const": true},
+              "note": {"type": "string"}
+            },
+            "if": {"required": ["not_in_catalog"]},
+            "then": {"required": ["note"]}
+          }
+        },
+        "drill_order": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    },
+    "data_artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["check", "mimics", "applies_to", "rule", "severity"],
+        "description": "A pipeline/platform artifact that mimics a real movement. Diagnosis runs these as data_quality.checks BEFORE asserting causes; `check` is the checks[].name vocabulary.",
+        "properties": {
+          "check": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+          "mimics": {"type": "string", "description": "the false story this artifact tells"},
+          "applies_to": {"type": "array", "minItems": 1, "items": {"type": "string"},
+                         "description": "catalog concepts whose movements it can fake"},
+          "rule": {"type": "string", "description": "how to test it, concretely"},
+          "severity": {"type": "string", "enum": ["blocker", "warn"],
+                       "description": "blocker: withhold the cause tree (status data_quality_blocked); warn: proceed, label"},
+          "guidance": {"type": "string"}
+        }
+      }
+    },
+    "external_factors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "signal"],
+        "description": "Real-world causes (cause_node.kind=external) and where their evidence lives.",
+        "properties": {
+          "name": {"type": "string"},
+          "signal": {"type": "string"},
+          "source": {"type": "string", "description": "pack or table that carries the evidence"},
+          "parked_concepts": {"type": "array", "items": {"type": "string"},
+                              "description": "catalog concepts with status no_data that would evidence this once ingested"}
+        }
+      }
+    },
+    "structure_checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "check", "blast_radius"],
+        "description": "Account-structure preconditions (from the structure pack) to test before per-entity reasoning — one structural cause explains many entities at once.",
+        "properties": {
+          "name": {"type": "string"},
+          "check": {"type": "string"},
+          "blast_radius": {"type": "string"}
+        }
+      }
+    },
+    "simulation_levers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["operation", "entity", "availability", "response"],
+        "description": "Lever→response beliefs for the simulation task type, and whether the lever is even bindable here (mirrors the capability registry — a lever that is unavailable makes any recommendation using it advisory).",
+        "properties": {
+          "operation": {"type": "string",
+                        "enum": ["pause", "resume", "set_budget", "increase_budget", "adjust_bid"],
+                        "description": "query_and_act operation types only — a lever must be expressible as an operation"},
+          "entity": {"type": "string"},
+          "availability": {"type": "string", "enum": ["bindable", "conditional", "unavailable"]},
+          "condition": {"type": "string", "description": "required when availability=conditional"},
+          "response": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["shape", "note"],
+            "properties": {
+              "shape": {"type": "string", "enum": ["step", "linear", "concave", "unknown"]},
+              "note": {"type": "string"}
+            }
+          }
+        },
+        "allOf": [
+          {"if": {"properties": {"availability": {"const": "conditional"}}, "required": ["availability"]},
+           "then": {"required": ["condition"]}}
+        ]
+      }
+    },
+    "recommendation_notes": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Platform truths every recommendation must respect; automation_guards in capabilities remain authoritative for execution."
+    }
+  }
+}

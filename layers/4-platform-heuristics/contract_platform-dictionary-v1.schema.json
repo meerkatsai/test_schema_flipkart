@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meerkats.ai/schemas/platform_dictionary/v1.json",
+  "title": "Meerkats Platform Dictionary v1 — contract for platform_heuristics/<platform>/dictionary.json",
+  "description": "One platform's metric vocabulary and display traps: native UI labels, formulas, API fields, attribution bases, and the traps that make numbers lie. Name authority rule stands: metric NAMES and FORMULAS for computation belong to the semantic layer (catalog/MetricFlow); this file holds PLATFORM semantics only — a term's optional `registry` key points at the semantic-layer name it computes through. Term entries are hand-authored knowledge, so the contract enforces shape, not content: a term is an object of string facts, a plain string note, or a list of open items. Keys starting with _ are mirror metadata (ci/mirror.py) and always allowed. The competition pack's dictionary is a different artifact (acquisition spec) and is outside this contract.",
+  "type": "object",
+  "additionalProperties": false,
+  "patternProperties": {"^_": {"type": "string"}},
+  "required": ["meta", "metric_terms", "display_traps"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["platform"],
+      "properties": {
+        "platform": {"type": "string"},
+        "compiled": {"type": "string"},
+        "data_status": {"type": "string"},
+        "authority": {"type": "string"},
+        "sources": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "metric_terms": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {"type": "string"},
+            "description": "a term's facts: ui_label, status (native|jargon|structural), formula, api, registry, basis, trap, surfaces, note — all string-valued"
+          },
+          {"type": "string"},
+          {"type": "array", "items": {"type": "string"}, "description": "open-items lists, e.g. needs_console_check"}
+        ]
+      }
+    },
+    "display_traps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"}
+    }
+  }
+}

@@ -10,7 +10,7 @@ Pipeline (mirrors the production layer order):
 import os, re, datetime, yaml
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-REG = yaml.safe_load(open(os.path.join(HERE, "metricflow", "flipkart.yaml")))
+REG = yaml.safe_load(open(os.path.join(HERE, "layers", "2-semantic-layer", "metricflow", "flipkart.yaml")))
 
 WORKSPACE = "ws_flipkart_demo"
 OPS = {"eq": "=", "neq": "<>", "lt": "<", "lte": "<=", "gt": ">", "gte": ">=",
